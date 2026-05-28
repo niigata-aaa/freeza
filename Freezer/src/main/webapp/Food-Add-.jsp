@@ -8,9 +8,13 @@
 </head>
 <body>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 ああああいいい
+>>>>>>> branch 'master' of https://github.com/niigata-aaa/freeza.git
+=======
+ああああいいいうううえええdddaaagg
 >>>>>>> branch 'master' of https://github.com/niigata-aaa/freeza.git
 </body>
 </html>
