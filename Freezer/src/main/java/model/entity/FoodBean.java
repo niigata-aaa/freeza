@@ -1,7 +1,6 @@
 package model.entity;
 
 import java.io.Serializable;
-import java.sql.Blob;
 import java.util.Date;
 
 public class FoodBean implements Serializable{
@@ -19,7 +18,7 @@ public class FoodBean implements Serializable{
 	/**
 	 * 食材の画像
 	 */
-	private Blob FoodImage;
+	private String FoodImage;
 	
 	/**
 	 * 食材の消費期限
@@ -56,7 +55,7 @@ public class FoodBean implements Serializable{
 	 * フィールドFoodIdの値を設定します。
 	 * @param FoodId 食材ID
 	 */
-	public void setUserId(int FoodId) {
+	public void setFoodId(int FoodId) {
 		this.FoodId = FoodId;
 	}
 	
@@ -80,7 +79,7 @@ public class FoodBean implements Serializable{
 	 * フィールドFoodImageの値を返します。
 	 * @return 食材の画像
 	 */
-	public Blob getFoodImage() {
+	public String getFoodImage() {
 		return FoodImage;
 	}
 	
@@ -88,7 +87,7 @@ public class FoodBean implements Serializable{
 	 * フィールドFoodImageの値を設定します。
 	 * @param FoodImage 食材の画像
 	 */
-	public void setFoodImage(Blob FoodImage) {
+	public void setFoodImage(String FoodImage) {
 		this.FoodImage = FoodImage;
 	}
 	/**
