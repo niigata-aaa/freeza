@@ -1,5 +1,6 @@
 package model.entity;
 
+import java.io.InputStream;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -15,10 +16,11 @@ public class FoodBean implements Serializable{
 	 */
 	private String FoodName;
 	
-	/**
-	 * 食材の画像
-	 */
-	private String FoodImage;
+//	/**
+//	 * 食材の画像
+//	 */
+//	private String FoodImage;
+	private InputStream foodImage; 
 	
 	/**
 	 * 食材の消費期限
@@ -75,21 +77,31 @@ public class FoodBean implements Serializable{
 		this.FoodName = FoodName;
 	}
 	
-	/**
-	 * フィールドFoodImageの値を返します。
-	 * @return 食材の画像
-	 */
-	public String getFoodImage() {
-		return FoodImage;
-	}
+//	/**
+//	 * フィールドFoodImageの値を返します。
+//	 * @return 食材の画像
+//	 */
+//	public String getFoodImage() {
+//		return FoodImage;
+//	}
+//	
+//	/**
+//	 * フィールドFoodImageの値を設定します。
+//	 * @param FoodImage 食材の画像
+//	 */
+//	public void setFoodImage(String FoodImage) {
+//		this.FoodImage = FoodImage;
+//	}
 	
-	/**
-	 * フィールドFoodImageの値を設定します。
-	 * @param FoodImage 食材の画像
-	 */
-	public void setFoodImage(String FoodImage) {
-		this.FoodImage = FoodImage;
-	}
+    public InputStream getFoodImage() {
+        return foodImage;
+    }
+
+    public void setFoodImage(InputStream foodImage) {
+        // サーブレットから受け取った画像の入力ストリームをセットする
+        this.foodImage = foodImage; 
+    }
+	
 	/**
 	 * フィールドFoodLostDayの値を返します。
 	 * @return 食材の消費期限
