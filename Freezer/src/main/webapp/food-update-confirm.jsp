@@ -1,0 +1,49 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" import="java.util.List,model.entity.FoodBean"%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>食材変更確認</title>
+</head>
+
+<body>
+
+<%
+FoodBean food = (FoodBean) request.getAttribute("updateFood");
+%>
+
+<h2>食材変更</h2>
+
+<p>
+    <%=food.getFoodName()%> を<br>
+    <%=food.getFoodQuantity()%> 個(またはg)削除します。<br><br>
+    よろしいですか？
+</p>
+
+<!-- 左下：キャンセル -->
+<div style="position: absolute; bottom: 20px; left: 20px;">
+    <form action="food-update.jsp" method="get">
+        <button type="submit">
+            キャンセル
+        </button>
+    </form>
+</div>
+
+<!-- 右下：変更確定 -->
+<div style="position: absolute; bottom: 20px; right: 20px;">
+    <form action="food-update-servlet" method="post">
+
+        <input type="hidden" name="foodId" value="<%=food.getFoodId()%>">
+        <input type="hidden" name="foodQuantity" value="<%=food.getFoodQuantity()%>">
+
+        <button type="submit">
+            変更する
+        </button>
+
+    </form>
+</div>
+
+</body>
+</html>
