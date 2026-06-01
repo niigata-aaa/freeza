@@ -42,27 +42,23 @@ public class RecipeDetailServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		String recipeid = request.getParameter("recipeid");
-
+		String RecipeId2 = request.getParameter("RecipeId2");
 		// DAOの生成
-		EmployeeDAO dao = new RecipeDAO();
-
+		RecipeDAO dao = new RecipeDAO();
 		try {
-			RecipeBean employee = dao.select(recipeid);
-
+			RecipeBean recipe = dao.select(RecipeId2);
 			// セッションオブジェクトの取得
 			HttpSession session = request.getSession();
-
 			// セッションスコープへの属性の設定
 			session.setAttribute("recipe", recipe);
-
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
-
 		// リクエストの転送
 		RequestDispatcher rd = request.getRequestDispatcher("recipe-detail.jsp");
 		rd.forward(request, response);
 	}
 
 }
+
+

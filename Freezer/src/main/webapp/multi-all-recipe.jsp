@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>管理者レシピ一覧</title>
+<title>レシピホーム</title>
 </head>
 <body>
 <%
@@ -17,14 +17,14 @@ List<RecipeBean> recipeList = (List<RecipeBean>) request.getAttribute("recipeLis
 %>
 <tr><td><%=recipe.getRecipeId()%></td>
    <td><%=recipe.getRecipeName()%></td>
-<!--   <td><%=recipe.getRecipeImg()%></td>-->
+   <td><%=recipe.getRecipeImg()%></td>
    <td><%=recipe.getRecipeIngredients()%></td>
    <td><%=recipe.getRecipeHowto()%></td>
    <td><%=recipe.getRecipeServings()%></td>
    <td><%=recipe.getPostingDatetime()%></td>
    <td><%=recipe.getUpdateDatetime()%></td>
 <td>
-<form action="recipe-detail-servlet" method="POST">
+<form action="recipe-all-detail-servlet" method="POST">
    <input type="hidden" name="RecipeId2" value="<%=recipe.getRecipeId()%>">
    <input type="submit" value="詳細表示">
 </form>
@@ -34,6 +34,21 @@ List<RecipeBean> recipeList = (List<RecipeBean>) request.getAttribute("recipeLis
 }
 %>
 </table>
+  <a href="recipe-all-regist-form.jsp">レシピ投稿</a>
+
+ <h2>
+    <span style="float:right;">
+        <a class="btn search" href="recipe-all-search.jsp">
+            検索
+        </a>
+    </span>
+</h2>
+<!--<h2>レシピ検索</h2>-->
+<!--   <form action="recipe-all-search2-servlet" method="POST">-->
+<!--   レシピ名：<input type="text" maxlength="60" name="RecipeName"><br>-->
+<!--   材料名：<input type="text" maxlength="50" name="RecipeIngredients"><br>-->
+<!--   <input type="submit" value="検索" name="ACTION">-->
+<!--   </form>-->
 </body>
 </html>
 

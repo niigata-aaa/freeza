@@ -10,16 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class RecipeDeleteFormServlet
+ * Servlet implementation class RecipeAllRegistConfirmServlet
  */
-@WebServlet("/recipe-delete-form-servlet")
-public class RecipeDeleteFormServlet extends HttpServlet {
+@WebServlet("/recipe-all-regist-confirm-servlet")
+public class RecipeAllRegistConfirmServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public RecipeDeleteFormServlet() {
+    public RecipeAllRegistConfirmServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -36,7 +36,7 @@ public class RecipeDeleteFormServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher("recipe-delete-confirm.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("recipe-all-register-confirm.jsp");
 		rd.forward(request, response);
 	}
 
