@@ -8,21 +8,21 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import model.dao.UserDAO;
+import model.entity.UserBean;
 
 /**
- * Servlet implementation class LoginServlet
+ * Servlet implementation class Registration
  */
-@WebServlet("/login-servlet")
-public class LoginServlet extends HttpServlet {
+@WebServlet("/registration-servlet")
+public class RegistrationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LoginServlet() {
+    public RegistrationServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,45 +32,41 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		doPost(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		String url = null;
-
 		request.setCharacterEncoding("UTF-8");
 
-		String UserId = request.getParameter("name");
-		String PassWord = request.getParameter("password");
+		//パラメータ取得
+		String userId = request.getParameter("userID");
+		String passWord = request.getParameter("password");
+
+		//Bean作成
+		UserBean userB = new UserBean();
+		userB.setUserId(userId);
+		userB.setPassWord(passWord);
+
+		String url = "login.jsp";
 
 		try {
 			UserDAO userDao = new UserDAO();
+			int count = userDao.insert(userB);
 
-			// ログイン認証
-			if(userDao.loginCheck(UserId, PassWord)) {
+			if(count > 0) {
 
-				// ログイン成功時：ホーム画面へ
-				url = "home-servlet"; 
-
-				HttpSession session = request.getSession();
-				
-				// セッションにログインしたユーザーIDを保存
-				session.setAttribute("UserId", UserId);
-
-			} else {
-				url = "login.jsp";
+				url = "login.jsp"; 
 			}
 
 		} catch(Exception e) {
 			e.printStackTrace();
-			url = "login.jsp"; 
 		}
-		
+
 		RequestDispatcher rd = request.getRequestDispatcher(url);
 		rd.forward(request, response);
 	}
+
 }
