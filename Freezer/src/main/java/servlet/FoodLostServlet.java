@@ -2,6 +2,7 @@ package servlet;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,19 +11,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.RecipeDAO;
+import model.dao.FoodLostDAO;
+import model.entity.FoodLostBean;
 
 /**
- * Servlet implementation class RecipeDeleteServlet
+ * Servlet implementation class FoodLostServlet
  */
-@WebServlet("/recipe-delete-servlet")
-public class RecipeDeleteServlet extends HttpServlet {
+@WebServlet("/food-lost-servlet")
+public class FoodLostServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public RecipeDeleteServlet() {
+    public FoodLostServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -39,24 +41,25 @@ public class RecipeDeleteServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	   	// リクエストオブジェクトのエンコーディング方式の指定
-    	request.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("UTF-8");
+		
+		List<FoodLostBean> foodlostList = null;
+		
+		FoodLostDAO dao = new FoodLostDAO();
+		
+		try {
+			// DAOの利用
+			foodlostList = dao.selectAll();
 
-        String[] ids = request.getParameterValues("delete");
-
-        // DAOの生成
-        RecipeDAO dao = new RecipeDAO();
-
-        try {
-        	// DAOの利用
-			dao.delete(ids);
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
-
-        // リクエストの転送
-        RequestDispatcher rd = request.getRequestDispatcher("search.jsp"); ///???あて先はどこに？
-        rd.forward(request, response);
+		
+		// リクエストスコープへの属性の設定
+		request.setAttribute("foodlostList", foodlostList);
+		// リクエストの転送
+			RequestDispatcher rd = request.getRequestDispatcher("food-lost.jsp");
+			rd.forward(request, response);
 	}
 
 }
