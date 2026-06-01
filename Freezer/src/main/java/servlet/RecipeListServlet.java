@@ -11,6 +11,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.dao.RecipeDAO;
+import model.entity.RecipeBean;
+
 /**
  * Servlet implementation class RecipeListServlet
  */
