@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class ConnectionManager {
 	//データベースURL
-		private static final String URL = "jdbc:mysql://localhost:3306/freezedb";
+		private static final String URL = "jdbc:mysql://localhost:3306/freezerdb";
 		
 		private static final String USER ="freezerU";
 		
