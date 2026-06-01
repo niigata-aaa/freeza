@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"  import="java.util.List" import="model.entity.FoodLostBean" import="model.entity.FoodtBean"%>
+    pageEncoding="UTF-8"  import="java.util.List" import="model.entity.FoodLostBean" import="model.entity.FoodBean"%>
 <!DOCTYPE html>
 <html>
 <head>
