@@ -1,0 +1,46 @@
+@charset "UTF-8";@charset "UTF-8";/*widthとheightの値は、セルのサイズに合わせて微調整する*/
+.example{
+    overflow: auto;
+    width: 945px;
+    height: 504px;
+}
+.example table{
+    margin: 0;
+    border-spacing: 0;
+
+}
+.example td{
+    white-space: nowrap;
+    border-right: 1px solid #999;
+    border-bottom: 1px solid #999;
+    background: #FFF;
+    padding: 5px;
+}
+.example th{
+    white-space: nowrap;
+    border-right: 1px solid #999;
+    border-bottom: 1px solid #999;
+    background: #f2f2f2;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+.example tr:first-child th{
+    border-top: 1px solid #999;
+}
+.example th:first-child{
+    border-left: 1px solid #999;
+}
+.example tr:first-child th:first-child{
+    z-index: 1;
+}
+#table_title{
+    font-weight: bold; 
+    font-size: larger;
+}
+.price{
+    text-align: right; /*数字は右寄せ設定*/
+}
+.table td{
+	border:5px black;
+}
