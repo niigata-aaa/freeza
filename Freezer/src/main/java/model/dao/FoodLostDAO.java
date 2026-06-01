@@ -1,5 +1,6 @@
 package model.dao;
 
+import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -22,7 +23,7 @@ public class FoodLostDAO {
 			while (res.next()) {
 				int FoodLostId = res.getInt("FoodLostId");
 				String FoodLostName = res.getString("FoodLostName");
-				String FoodLostImage = res.getString("FoodLostImage");
+				Blob FoodLostImage = res.getBlob("FoodLostImage");
 				
 				FoodLostBean foodlost = new FoodLostBean();
 				foodlost.setFoodLostId(FoodLostId);

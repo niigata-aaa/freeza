@@ -16,9 +16,9 @@ public class FoodBean implements Serializable{
 	private String FoodName;
 	
 	/**
-	 * 食材の画像
+	 * 画像
 	 */
-	private String FoodImage;
+	private String foodImage;
 	
 	/**
 	 * 食材の消費期限
@@ -77,18 +77,19 @@ public class FoodBean implements Serializable{
 	
 	/**
 	 * フィールドFoodImageの値を返します。
-	 * @return 食材の画像
+	 * @return 画像
 	 */
 	public String getFoodImage() {
-		return FoodImage;
+	    return foodImage;
 	}
 	
 	/**
 	 * フィールドFoodImageの値を設定します。
-	 * @param FoodImage 食材の画像
+	 * @param FoodImage 画像
 	 */
-	public void setFoodImage(String FoodImage) {
-		this.FoodImage = FoodImage;
+	public void setFoodImage(String foodImage) {
+	   
+	    this.foodImage = foodImage; 
 	}
 	/**
 	 * フィールドFoodLostDayの値を返します。
