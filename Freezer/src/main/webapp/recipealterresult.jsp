@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>更新完了画面</title>
-<link rel="stylesheet" href="common.css">
+<link rel="stylesheet" href="css/common.css">
 </head>
 <body>
 <div class="container">

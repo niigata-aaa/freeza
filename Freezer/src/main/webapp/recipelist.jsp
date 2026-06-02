@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>個人レシピ一覧(2)</title>
-<link rel="stylesheet" href="common.css">
+<link rel="stylesheet" href="css/common.css">
 </head>
 <body>
     <%-- 会員マイページエリア --%>
