@@ -75,4 +75,6 @@ for (FoodBean food : foodList) {
 %>
 
 </body>
+
+
 </html>

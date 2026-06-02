@@ -59,4 +59,9 @@ List<FoodBean> foodList = (List<FoodBean>) session.getAttribute("foodList");
 </a>
 
 </body>
+
+<!--	フッター-->
+
+	<%@ include file="footer.jsp" %>
+	
 </html>

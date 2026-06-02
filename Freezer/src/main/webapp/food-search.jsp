@@ -38,4 +38,9 @@
 
 
 </body>
+
+<!--	フッター-->
+
+	<%@ include file="footer.jsp" %>
+	
 </html>
