@@ -6,9 +6,11 @@
 <head>
 <meta charset="UTF-8">
 <title>レシピ検索画面</title>
+<link rel="stylesheet" href="css/common.css">
 </head>
 <body>
-
+<div class="container">
+        <div class="card">
 <h2>レシピ検索画面</h2>
 
 <form action="recipe-all-search2-servlet" method="post">
@@ -35,7 +37,8 @@
     <input type="submit" value="食材一覧へ戻る">
 
 </form>
-
+</div>
+</div>
 
 </body>
 </html>

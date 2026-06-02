@@ -6,7 +6,11 @@
 <meta charset="UTF-8">
 <title>管理者レシピ詳細画面</title>
 </head>
+<link rel="stylesheet" href="css/common.css">
 <body>
+<div class="container">
+
+<div class="card">
 不要？　始まり
 <jsp:useBean id="recipe" scope="session" class="model.entity.RecipeBean"/>
 レシピID：<jsp:getProperty name="recipe" property="recipeId"/><br>
@@ -19,10 +23,11 @@
 更新日時：<jsp:getProperty name="recipe" property="updateDatetime"/><br>
 <form action="recipe-delete-confirm.jsp" method="POST">
    <input type="hidden" name="RecipeId" value="<%=recipe.getRecipeId()%>">
-   <input type="submit" value="削除">
+   <input type="submit" value="削除" class="btn">
 </form>
+<br>
 <form action="recipe-list-servlet" method="POST">
-   <input type="submit" value="戻る">
+   <input type="submit" value="戻る" class="btn">
 </form>
 不要？終わり
 
@@ -59,6 +64,8 @@ List<RecipeBean> recipeList = (List<RecipeBean>) request.getAttribute("recipeLis
 }
 %>
 </table> --%>
+</div>
+</div>
 </body>
 </html>
 

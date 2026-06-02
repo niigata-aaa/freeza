@@ -5,8 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>レシピホーム</title>
+<link rel="stylesheet" href="css/common.css">
 </head>
 <body>
+<div class="container">
+        <div class="card">
 利用者のレシピ一覧
 <%
 List<RecipeBean> recipeList = (List<RecipeBean>) request.getAttribute("recipeList");
@@ -61,6 +64,8 @@ List<RecipeBean> recipeList = (List<RecipeBean>) request.getAttribute("recipeLis
 <!--   材料名：<input type="text" maxlength="50" name="RecipeIngredients"><br>-->
 <!--   <input type="submit" value="検索" name="ACTION">-->
 <!--   </form>-->
+</div>
+</div>
 </body>
 </html>
 

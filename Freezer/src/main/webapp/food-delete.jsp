@@ -99,8 +99,6 @@ input[type="button"], input[type="submit"] {
 
 </body>
 
-<!--	フッター-->
 
-	<%@ include file="footer.jsp" %>
 	
 </html>

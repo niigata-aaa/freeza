@@ -5,8 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>レシピ登録画面</title>
+<link rel="stylesheet" href="css/common.css">
 </head>
 <body>
+<div class="container">
+        <div class="card">
 <h2>レシピ登録画面</h2>
    <form action="recipe-all-regist-confirm-servlet" method="POST">
        <table>
@@ -47,5 +50,7 @@
            </tr>
        </table>
    </form>
+   </div>
+   </div>
 </body>
 </html>
