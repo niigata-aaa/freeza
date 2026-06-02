@@ -266,7 +266,7 @@ System.out.println(recipe.getPostingDatetime());			//			RecipeBean recipe = new 
 
 				RecipeBean rsRecipe = new RecipeBean();
 
-//				int RecipeId = rs.getInt("recipe_id");
+				int RecipeId = rs.getInt("recipe_id");
 				String RecipeName = rs.getString("recipe_name");
 //				Blob RecipeImg = rs.getBlob("recipe_img");
 				String RecipeIngredients = rs.getString("recipe_ingredients");
@@ -275,7 +275,7 @@ System.out.println(recipe.getPostingDatetime());			//			RecipeBean recipe = new 
 				Date PostingDatetime = rs.getDate("posting_dateTime");
 //				Date UpdateDatetime = rs.getDate("update_datetime");
 
-//				rsRecipe.setRecipeId(RecipeId);
+				rsRecipe.setRecipeId(RecipeId);
 				rsRecipe.setRecipeName(RecipeName);
 //				rsRecipe.setRecipeImg(RecipeImg);
 				rsRecipe.setRecipeIngredients(RecipeIngredients);

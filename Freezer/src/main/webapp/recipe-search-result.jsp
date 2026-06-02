@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>レシピ検索結果</title>
+<title>管理者レシピ検索結果</title>
 
 <style>
 table, tr, td, th {
@@ -53,7 +53,7 @@ for (RecipeBean recipe : recipeList) {
 
     <td><%=recipe.getRecipeName()%></td>
 <td>
-<form action="recipe-all-detail-servlet" method="POST">
+<form action="recipe-detail-servlet" method="POST">
    <input type="hidden" name="RecipeId2" value="<%=recipe.getRecipeId()%>">
    <input type="submit" value="詳細表示">
 </form>
