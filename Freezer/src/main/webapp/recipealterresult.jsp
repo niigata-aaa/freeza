@@ -5,8 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>更新完了画面</title>
+<link rel="stylesheet" href="common.css">
 </head>
 <body>
+<div class="container">
+        <div class="card">
 <%
 Integer processingNumber = (Integer) request.getAttribute("processingNumber");
 
@@ -25,5 +28,7 @@ if (processingNumber == null) {
 <jsp:setProperty name="employee" property="recipeName" param="name"/>
 
 <a href="recipeMypage.jsp"  class="btn">マイページに戻る</a>
+</div>
+</div>
 </body>
 </html>

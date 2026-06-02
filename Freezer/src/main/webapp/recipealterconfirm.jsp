@@ -18,9 +18,11 @@ request.setCharacterEncoding("UTF-8");
 <head>
 <meta charset="UTF-8">
 <title>変更確認</title>
+<link rel="stylesheet" href="common.css">
 </head>
 <body>
-
+<div class="container">
+        <div class="card">
 <%--<jsp:getProperty name='employee' property='recipeId'/> --%>
 
 レシピ情報を以下の内容に変更します。<br>
@@ -55,9 +57,13 @@ value="<jsp:getProperty name='employee' property='recipeHowto'/>">
 <input type="hidden" name="servings"
 value="<jsp:getProperty name='employee' property='recipeServings'/>">
 
-<input type="submit" value="変更">
+<input type="submit" value="  変更します  " class="btn">
 
 </form>
+<br>
+
 <a href="recipeMypage.jsp"  class="btn">キャンセル</a>
+</div>
+</div>
 </body>
 </html>

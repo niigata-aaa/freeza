@@ -9,9 +9,11 @@ String recipeId = request.getParameter("recipe_id");
 <head>
 <meta charset="UTF-8">
 <title>削除確認</title>
+<link rel="stylesheet" href="common.css">
 </head>
 <body>
-
+<div class="container">
+        <div class="card">
 <h2>削除確認</h2>
 
 <p>ID：<%= recipeId %> を本当に削除しますか？</p>
@@ -25,6 +27,7 @@ String recipeId = request.getParameter("recipe_id");
 <form action="recipeMypage.jsp" method="get">
     <input type="submit" value="キャンセル">
 </form>
-
+</div>
+</div>
 </body>
 </html>
