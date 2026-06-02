@@ -12,8 +12,6 @@ public class FoodBean implements Serializable{
 	private Date FoodLostDay;
 	private int FoodQuantity;
 	private String markColor;
-
-	private int DaysLeft;
 	
 	public FoodBean() {
 		
@@ -73,14 +71,4 @@ public class FoodBean implements Serializable{
 	    this.base64Image = base64Image;
 	}
 
-	public int getDaysLeft() {
-		return DaysLeft;
-	}
-
-	public void setDaysLeft(int DaysLeft) {
-		this.DaysLeft = DaysLeft;
-	}
-
 }
-
-

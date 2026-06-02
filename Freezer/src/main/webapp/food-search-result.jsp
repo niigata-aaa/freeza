@@ -14,15 +14,6 @@
 table, tr, td, th {
     border: black solid 1px;
 }
-
-table{
-    width: 100%;
-    margin: 0;
-    border-collapse: collapse;
-    background: #FFFDF8;
-    border-radius: 10px;
-    overflow: hidden;
-}
 </style>
 
 </head>
@@ -61,7 +52,13 @@ for (FoodBean food : foodList) {
 <tr>
 
     <td>
-        <img src="<%=food.getFoodImage()%>" width="100">
+        <%-- 画像データが存在するかチェック --%>
+        <% if (food.getBase64Image() != null && !food.getBase64Image().isEmpty()) { %>
+        <img src="data:image/jpeg;base64,<%= food.getBase64Image() %>"/>
+             
+    	<% } else { %>
+        	<div style="width:100px">No Image</div>
+    	<% } %>
     </td>
 
     <td><%=food.getFoodName()%></td>
@@ -84,6 +81,4 @@ for (FoodBean food : foodList) {
 %>
 
 </body>
-
-
 </html>

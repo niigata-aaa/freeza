@@ -31,8 +31,9 @@
 		<input type="submit" value="追加">
 	</form>
 </body>
-<!--	フッター-->
 
-	<%@ include file="footer.jsp" %>
-	
+
+<%@ include file="footer.jsp" %>
+
+
 </html>

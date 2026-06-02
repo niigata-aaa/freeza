@@ -44,31 +44,23 @@ public class FoodAddConfirmServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
 	    
-	    //パラメータの取得
 	    String foodName = request.getParameter("foodName");
 	    String number = request.getParameter("number");
 	    String unit = request.getParameter("単位");
 	    String dateStr = request.getParameter("data");  
 	    
-	    //画像ファイルの取得と保存処理
+	    // 【修正】画像をバイト配列として読み込む
 	    Part filePart = request.getPart("foodPhoto");
-	    String fileName = "";
+	    byte[] imgData = null;
+	    String base64Str = ""; // 確認画面で表示するためのBase64文字列
 	    
 	    if (filePart != null && filePart.getSize() > 0) {
-	        // ユーザーが選んだ実際のファイル名（例: "apple.png"）を取得
-	        java.nio.file.Path path = java.nio.file.Paths.get(filePart.getSubmittedFileName());
-	        fileName = path.getFileName().toString();
-	       
-	        //webapp直下の実際のパスを調べて画像を保存
-	        String uploadPath = getServletContext().getRealPath("/");
-	        filePart.write(uploadPath + java.io.File.separator + fileName);
+	        imgData = filePart.getInputStream().readAllBytes();
+	        // 確認画面で画像を表示するためにBase64に変換
+	        base64Str = java.util.Base64.getEncoder().encodeToString(imgData);
 	    }
 	    
-	    if (fileName == null || fileName.isEmpty()) {
-	        fileName = "default.png";
-	    }
-	    
-	    //java.sql.Date型作成
+	    // java.sql.Date型作成
 	    java.sql.Date foodLostDay = null;
 	    try {
 	        if (dateStr != null && !dateStr.isEmpty()) {
@@ -79,7 +71,7 @@ public class FoodAddConfirmServlet extends HttpServlet {
 	        e.printStackTrace();
 	    }
 	    
-	    //セッションの取得
+	    // セッションの取得
 	    HttpSession session = request.getSession();
 	    session.setAttribute("foodName", foodName);
 	    session.setAttribute("number", number);
@@ -87,7 +79,9 @@ public class FoodAddConfirmServlet extends HttpServlet {
 	    session.setAttribute("date", dateStr);          
 	    session.setAttribute("foodLostDay", foodLostDay); 
 	    
-	    session.setAttribute("foodImage", fileName); 
+	    // 【修正】ファイル名ではなく、画像データそのものとBase64文字列をセッションに保存
+	    session.setAttribute("foodImageBytes", imgData); 
+	    session.setAttribute("foodImageBase64", base64Str); 
 	    
 	    request.getRequestDispatcher("food-add-confirm.jsp").forward(request, response);
 	}

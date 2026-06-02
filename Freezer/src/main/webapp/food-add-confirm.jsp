@@ -14,14 +14,18 @@ String foodName = (String) session.getAttribute("foodName");
 String number = (String) session.getAttribute("number");
 String unit = (String) session.getAttribute("unit");
 String date = (String) session.getAttribute("date");
-String foodImage = (String) session.getAttribute("foodImage");
+String foodImageBase64 = (String) session.getAttribute("foodImageBase64");
 %>
 
 <table border="1">
     <tr>
         <th>画像</th>
         <td>
-            <img src="<%= request.getContextPath() %>/<%= foodImage %>" width="150">
+            <% if (foodImageBase64 != null && !foodImageBase64.isEmpty()) { %>
+                <img src="data:image/jpeg;base64,<%= foodImageBase64 %>" width="150">
+            <% } else { %>
+                <div>No Image</div>
+            <% } %>
         </td>
     </tr>
     <tr>
@@ -41,7 +45,7 @@ String foodImage = (String) session.getAttribute("foodImage");
 <br>
 <a href="javascript:history.back();">戻る</a>
 
-<form action="food-add-servlet" method="POST" style="display:inline;">
+<form action="food-add-servlet" method="POST" enctype="multipart/form-data" >
     <input type="submit" value="この内容で登録する">
 </form>
 
