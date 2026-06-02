@@ -27,7 +27,7 @@
 <hr>
 
 <div>
-    <%@ include file="recpe-all-search-result.jsp" %>
+    <%@ include file="recipe-all-search-result.jsp" %>
 </div>
 
 <br>
