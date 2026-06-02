@@ -10,7 +10,7 @@ import model.entity.UserBean;
 public class UserDAO {
 	public boolean loginCheck(String UserId, String PassWord) throws ClassNotFoundException, SQLException {
 
-		// ログイン認証（user_id と user_password を使用）
+		// ログイン認証
         String sql = "SELECT * FROM m_user WHERE user_id = ? AND user_password = ?";
 
         try(Connection con = ConnectionManager.getConnection();
@@ -34,13 +34,11 @@ public class UserDAO {
 
         int count = 0; // 件数処理
 
-        // ⭕ 列名を「user_password」に統一して修正
         String sql ="INSERT INTO m_user(user_id, user_password) VALUES(?, ?)";
 
         try(Connection con = ConnectionManager.getConnection();
             PreparedStatement pstmt = con.prepareStatement(sql)) {
-        	
-        	// DTOからのデータの取り出し
+
     		String UserId = userB.getUserId();
     		String PassWord = userB.getPassWord();
         	
