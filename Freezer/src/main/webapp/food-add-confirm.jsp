@@ -4,8 +4,12 @@
 <head>
 <meta charset="UTF-8">
 <title>追加内容確認</title>
+<link rel="stylesheet" href="css/common.css">
 </head>
 <body>
+<div class="container">
+
+<div class="card">
 <h2>以下の内容で食材を追加しますか？</h2>
 
 <%
@@ -43,11 +47,14 @@ String foodImageBase64 = (String) session.getAttribute("foodImageBase64");
 </table>
 
 <br>
-<a href="javascript:history.back();">戻る</a>
+<a href="javascript:history.back();" class="btn">戻る</a>
 
 <form action="food-add-servlet" method="POST" enctype="multipart/form-data" >
-    <input type="submit" value="この内容で登録する">
+    <input type="submit" value="この内容で登録する" class="btn">
 </form>
+</div>
+
+</div>
 
 </body>
 </html>
