@@ -18,10 +18,10 @@
                <td>レシピ名：</td>
                <td><input type="text" name="recipename" size="10"></td>
            </tr>
-<%--             <tr>
+             <tr>
                <td>レシピ画像：</td>
                <td><input type="image" name="recipeimg"></td>
-           </tr>  --%>
+           </tr>  
            <tr>
                <td>レシピ材料：</td>
                <td><textarea name="recipeingredients" cols="30" ></textarea></td>
