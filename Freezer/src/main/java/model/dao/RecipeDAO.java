@@ -12,6 +12,10 @@ import java.util.List;
 import model.entity.RecipeBean;
 
 public class RecipeDAO {
+	
+	
+	
+	//①一覧表示
 	public List<RecipeBean> selectAll()
 			throws SQLException, ClassNotFoundException {
 
@@ -30,7 +34,7 @@ public class RecipeDAO {
 				String RecipeIngredients = res.getString("recipe_ingredients");
 				String RecipeHowto = res.getString("recipe_howto");
 				int RecipeServings = res.getInt("recipe_servings");
-				Date PostingDatetime = res.getDate("posting_datetime");
+				Date PostingDatetime = res.getDate("posting_dateTime");
 				Date UpdateDatetime = res.getDate("update_datetime");
 
 				RecipeBean recipe = new RecipeBean();
@@ -48,6 +52,9 @@ public class RecipeDAO {
 		}
 		return recipeList;
 	}
+	
+	
+	//②詳細表示
 	public RecipeBean select(String RecipeId2)throws SQLException, ClassNotFoundException{
 
 		RecipeBean recipe = new RecipeBean();
@@ -68,7 +75,7 @@ public class RecipeDAO {
 				String RecipeIngredients = res.getString("recipe_ingredients");
 				String RecipeHowto = res.getString("recipe_howto");
 				int RecipeServings = res.getInt("recipe_servings");
-				Date PostingDatetime = res.getDate("posting_datetime");
+				Date PostingDatetime = res.getDate("posting_dateTime");
 				Date UpdateDatetime = res.getDate("update_datetime");
 
 				recipe.setRecipeId(RecipeId);
@@ -84,37 +91,82 @@ public class RecipeDAO {
 		}
 		return recipe;
 	}
-
+	
+	
+    //③レシピ登録
 	public int insert(RecipeBean recipe) throws ClassNotFoundException, SQLException {
 
-		String sql = "INSERT INTO t_recipe(recipe_id, recipe_name,recipe_img, recipe_ingredients, recipe_howto,recipe_servings,posting_datetime, update_datetime) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO t_recipe(recipe_name,recipe_ingredients,recipe_howto,recipe_servings,posting_dateTime,update_datetime) VALUES(?, ?, ?, ?, ?, ?)";
 
 		int result = 0;
 
 		// データベースへの接続の取得、PreparedStatementの取得
 		try (Connection con = ConnectionManager.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql)) {
-
-			//			RecipeBean recipe = new RecipeBean();
+System.out.println(recipe.getPostingDatetime());			//			RecipeBean recipe = new RecipeBean();
 
 			// プレースホルダへの値の設定
-			pstmt.setInt(1, recipe.getRecipeId());
-			pstmt.setString(2, recipe.getRecipeName());
+//			pstmt.setInt(1, recipe.getRecipeId());
+			pstmt.setString(1, recipe.getRecipeName());
 //			pstmt.setBlob(3, recipe.getRecipeImg());
-			pstmt.setString(4, recipe.getRecipeIngredients());
-			pstmt.setString(5, recipe.getRecipeHowto());
-			pstmt.setInt(6, recipe.getRecipeServings());
-			pstmt.setDate(7, recipe.getPostingDatetime());
-			pstmt.setDate(8, recipe.getUpdateDatetime());
+			pstmt.setString(2, recipe.getRecipeIngredients());
+			pstmt.setString(3, recipe.getRecipeHowto());
+			pstmt.setInt(4, recipe.getRecipeServings());
+			pstmt.setDate(5, recipe.getPostingDatetime());
+			if (recipe.getPostingDatetime() != null) {
+	            pstmt.setDate(5, recipe.getPostingDatetime());
+	        } else {
+	            // 現在時刻
+	            long now = System.currentTimeMillis();
+	            pstmt.setDate(5, new java.sql.Date(now));
+	        }
+			System.out.println(recipe.getUpdateDatetime());
+			pstmt.setDate(6, recipe.getUpdateDatetime());
+			if (recipe.getUpdateDatetime() != null) {
+	            pstmt.setDate(5, recipe.getUpdateDatetime());
+	        } else {
+	            // 現在時刻
+	            long now = System.currentTimeMillis();
+	            pstmt.setDate(5, new java.sql.Date(now));
+	        }
 
-			// SQLステートメントの実行
 			result = pstmt.executeUpdate();
 		}
 
 		return result;
 	}
 
-//削除メソッド
+
+//	public int insert(RecipeBean recipe) throws ClassNotFoundException, SQLException {
+//
+//		String sql = "INSERT INTO t_recipe(recipe_id, recipe_name,recipe_img, recipe_ingredients, recipe_howto,recipe_servings,posting_datetime, update_datetime) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+//
+//		int result = 0;
+//
+//		// データベースへの接続の取得、PreparedStatementの取得
+//		try (Connection con = ConnectionManager.getConnection();
+//				PreparedStatement pstmt = con.prepareStatement(sql)) {
+//
+//			//			RecipeBean recipe = new RecipeBean();
+//
+//			// プレースホルダへの値の設定
+//			pstmt.setInt(1, recipe.getRecipeId());
+//			pstmt.setString(2, recipe.getRecipeName());
+//			pstmt.setBlob(3, recipe.getRecipeImg());
+//			pstmt.setString(4, recipe.getRecipeIngredients());
+//			pstmt.setString(5, recipe.getRecipeHowto());
+//			pstmt.setInt(6, recipe.getRecipeServings());
+//			pstmt.setDate(7, recipe.getPostingDatetime());
+//			pstmt.setDate(8, recipe.getUpdateDatetime());
+//
+//			// SQLステートメントの実行
+//			result = pstmt.executeUpdate();
+//		}
+//
+//		return result;
+//	}
+
+     //削除メソッド
 //	public int delete(String[] RecipeId) throws SQLException, ClassNotFoundException {
 //		String sql = "DELETE  FROM t_recipe WHERE recipe_id = ?";
 //
@@ -147,6 +199,8 @@ public class RecipeDAO {
 //			return count;
 //		}
 
+	
+	//④レシピ削除
 	public int recipedelete(String[] RecipeId) throws SQLException, ClassNotFoundException {
 		if (RecipeId == null) {
 			return 0;
@@ -170,22 +224,41 @@ public class RecipeDAO {
 		}
 		return result;
 	}
+	
+	public int delete(String RecipeId) throws SQLException, ClassNotFoundException {
+		String sql = "DELETE  FROM t_recipe WHERE recipe_id = ?";
+		int result = 0;
+		// データベースへの接続の取得、PreparedStatementの取得
+		try (Connection con = ConnectionManager.getConnection();
+				PreparedStatement pstmt = con.prepareStatement(sql);) {
+			
+			 pstmt.setString(1, RecipeId);
+			
+			// SQLステートメントの実行
+			result = pstmt.executeUpdate();
+		}
+		return result;
+	}
 
 
 
-	//食材検索メソッド
+
+
+
+	//⑤レシピ検索
 
 	public List<RecipeBean> searchRecipe(RecipeBean recipe)
 			throws SQLException, ClassNotFoundException {
 
 		List<RecipeBean> recipeList = new ArrayList<>();
 
-		String sql = "SELECT * FROM t_recipe WHERE recipe_name LIKE ?";
+		String sql = "SELECT * FROM t_recipe WHERE (recipe_name LIKE ? OR recipe_ingredients LIKE ?)";
 
 		try (Connection con = ConnectionManager.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql)) {
 
 			pstmt.setString(1, "%" + recipe.getRecipeName() + "%");
+			pstmt.setString(2, "%" + recipe.getRecipeName() + "%");
 
 			ResultSet rs = pstmt.executeQuery();
 
@@ -193,30 +266,23 @@ public class RecipeDAO {
 
 				RecipeBean rsRecipe = new RecipeBean();
 
-				int RecipeId = rs.getInt("recipe_id");
+//				int RecipeId = rs.getInt("recipe_id");
 				String RecipeName = rs.getString("recipe_name");
 //				Blob RecipeImg = rs.getBlob("recipe_img");
 				String RecipeIngredients = rs.getString("recipe_ingredients");
 				String RecipeHowto = rs.getString("recipe_howto");
 				int RecipeServings = rs.getInt("recipe_servings");
-				Date PostingDatetime = rs.getDate("posting_datetime");
-				Date UpdateDatetime = rs.getDate("update_datetime");
+				Date PostingDatetime = rs.getDate("posting_dateTime");
+//				Date UpdateDatetime = rs.getDate("update_datetime");
 
-				rsRecipe.setRecipeId(RecipeId);
+//				rsRecipe.setRecipeId(RecipeId);
 				rsRecipe.setRecipeName(RecipeName);
 //				rsRecipe.setRecipeImg(RecipeImg);
 				rsRecipe.setRecipeIngredients(RecipeIngredients);
 				rsRecipe.setRecipeHowto(RecipeHowto);
 				rsRecipe.setRecipeServings(RecipeServings);
 				rsRecipe.setPostingDatetime(PostingDatetime);
-				rsRecipe.setUpdateDatetime(UpdateDatetime);
-
-
-				//                rsFood.setFoodId(rs.getInt("food_id"));
-				//                rsFood.setFoodName(rs.getString("food_name"));
-				//                rsFood.setFoodImage(rs.getString("food_img"));
-				//                rsFood.setFoodLostDay(rs.getDate("food_lostDay"));
-				//                rsFood.setFoodQuantity(rs.getInt("food_quanity"));
+//				rsRecipe.setUpdateDatetime(UpdateDatetime);
 
 				recipeList.add(rsRecipe);
 			}

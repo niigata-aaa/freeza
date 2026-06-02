@@ -7,6 +7,7 @@
 <title>レシピホーム</title>
 </head>
 <body>
+利用者のレシピ一覧
 <%
 List<RecipeBean> recipeList = (List<RecipeBean>) request.getAttribute("recipeList");
 %>
@@ -34,14 +35,25 @@ List<RecipeBean> recipeList = (List<RecipeBean>) request.getAttribute("recipeLis
 }
 %>
 </table>
-  <a href="recipe-all-regist-form.jsp">レシピ投稿</a>
+<form action="recipe-all-search2-servlet" method="post">
 
- <h2>
-    <span style="float:right;">
+    レシピ名：
+    <input type="text" maxlength="50" name="recipeName">
+
+    <br><br>
+
+    <input type="submit" value="検索">
+
+</form>
+
+<a href="recipe-all-regist-form.jsp">レシピ投稿</a>
+
+
+<%--     <span style="float:right;">
         <a class="btn search" href="recipe-all-search.jsp">
             検索
         </a>
-    </span>
+    </span> --%> 
 </h2>
 <!--<h2>レシピ検索</h2>-->
 <!--   <form action="recipe-all-search2-servlet" method="POST">-->

@@ -10,18 +10,18 @@
 <h2>レシピ登録画面</h2>
    <form action="recipe-all-regist-confirm-servlet" method="POST">
        <table>
-           <tr>
+<%--           <tr>
                <td>レシピID：</td>
                <td><input type="text" name="recipeid" size="30"></td>
-           </tr>
+           </tr>   --%> 
            <tr>
                <td>レシピ名：</td>
                <td><input type="text" name="recipename" size="10"></td>
            </tr>
-           <tr>
+<%--             <tr>
                <td>レシピ画像：</td>
                <td><input type="image" name="recipeimg"></td>
-           </tr>
+           </tr>  --%>
            <tr>
                <td>レシピ材料：</td>
                <td><textarea name="recipeingredients" cols="30" ></textarea></td>
@@ -35,13 +35,13 @@
                <td><input type="number"  name="recipeservings"></td>
            </tr>
            <tr>
-               <td>レシピ掲載日時：</td>
+<%--                <td>レシピ掲載日時：</td>
                <td><input type="date" name="posting"></td>
            </tr>
-           <tr>
+<%--           <tr>
                <td>レシピ更新日時：</td>
                <td><input type="date" name="update"></textarea></td>
-           </tr>
+           </tr>  --%> 
            <tr>
                <td><input type="submit" value="登録"></td>
            </tr>
@@ -49,4 +49,3 @@
    </form>
 </body>
 </html>
-

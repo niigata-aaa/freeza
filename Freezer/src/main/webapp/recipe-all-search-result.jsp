@@ -23,9 +23,9 @@ table, tr, td, th {
 List<RecipeBean> recipeList =
         (List<RecipeBean>) request.getAttribute("recipeList");
 
-if (foodList != null) {
+if (recipeList != null) {
 
-    if (foodList.isEmpty()) {
+    if (recipeList.isEmpty()) {
 %>
 
 <p>該当するレシピはありません。</p>
@@ -39,22 +39,18 @@ if (foodList != null) {
 <table>
 
 <tr>
-    <th>画像</th>
     <th>レシピ名</th>
 
 </tr>
 
 <%
-for (recipeBean recipe : List) {
+for (RecipeBean recipe : recipeList) {
 %>
 
 <tr>
 
-    <td>
-        <img src="<%=recipe.getRecipeImage()%>" width="100">
-    </td>
 
-    <td><%=food.getRecipeName()%></td>
+    <td><%=recipe.getRecipeName()%></td>
 
 
 
