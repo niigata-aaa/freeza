@@ -14,6 +14,15 @@
 table, tr, td, th {
     border: black solid 1px;
 }
+
+table{
+    width: 100%;
+    margin: 0;
+    border-collapse: collapse;
+    background: #FFFDF8;
+    border-radius: 10px;
+    overflow: hidden;
+}
 </style>
 
 </head>
