@@ -5,8 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>レシピ詳細情報</title>
+<link rel="stylesheet" href="css/common.css">
 </head>
 <body>
+<div class="container">
+        <div class="card">
 <jsp:useBean id="recipe" scope="session" class="model.entity.RecipeBean"/>
 レシピID：<jsp:getProperty name="recipe" property="recipeId"/><br>
 レシピ名：<jsp:getProperty name="recipe" property="recipeName"/><br>
@@ -17,7 +20,10 @@
 掲載日時：<jsp:getProperty name="recipe" property="postingDatetime"/><br>
 更新日時：<jsp:getProperty name="recipe" property="updateDatetime"/><br>
 <form action="recipe-all-list-servlet" method="POST">
-   <input type="submit" value="一覧表示">
+   <input type="submit" value="一覧表示" class="btn">
+   </form>
+   </div>
+   </div>
 </body>
 </html>
 

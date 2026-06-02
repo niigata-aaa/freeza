@@ -16,6 +16,7 @@ RecipeBean employee =
 <link rel="stylesheet" href="css/common.css">
 </head>
 <body>
+
 <div class="container">
         <div class="card">
 <form action="recipe-alter-confirm-servlet" method="POST">
@@ -50,7 +51,7 @@ RecipeBean employee =
 	<input type="number"
        name="servings"
        value="<%= employee.getRecipeServings()%>">
-    <input type="submit" value="確認">
+    <input type="submit" value="確認" class="btn">
 
 </form>
 </div>
