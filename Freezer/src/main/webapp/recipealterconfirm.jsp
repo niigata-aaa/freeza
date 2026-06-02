@@ -18,7 +18,7 @@ request.setCharacterEncoding("UTF-8");
 <head>
 <meta charset="UTF-8">
 <title>変更確認</title>
-<link rel="stylesheet" href="common.css">
+<link rel="stylesheet" href="css/common.css">
 </head>
 <body>
 <div class="container">
