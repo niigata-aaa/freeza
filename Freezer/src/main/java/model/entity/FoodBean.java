@@ -12,7 +12,20 @@ public class FoodBean implements Serializable{
 	private Date FoodLostDay;
 	private int FoodQuantity;
 	private String markColor;
+	/**
+	 * 消費期限まであと何日
+	 */
+	private int DaysLeft;
 	
+	
+	public int getDaysLeft() {
+		return DaysLeft;
+	}
+
+	public void setDaysLeft(int daysLeft) {
+		DaysLeft = daysLeft;
+	}
+
 	public FoodBean() {
 		
 	}

@@ -47,6 +47,7 @@ public class HomeServlet extends HttpServlet {
 		RecommendRecipeDAO dao2 = new RecommendRecipeDAO();
 		
 		try {
+			dao.moveExpiredFoods();
 			// DAOの利用
 			foodlostdayList = dao.selectFoodLostDay();
 			foodlostList = dao1.selectAll();

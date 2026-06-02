@@ -7,11 +7,6 @@
 <meta charset="UTF-8">
 <title>食材検索画面</title>
 </head>
-<style>
-
-
-</style>
-
 <body>
 
 <h2>食材検索画面</h2>
@@ -24,10 +19,16 @@
     <br><br>
 
     <input type="submit" value="検索">
-    
-    
 
 </form>
+
+<hr>
+
+<div>
+    <%@ include file="food-search-result.jsp" %>
+</div>
+
+<br>
 
 <form action="food-list-servlet" method="post">
 
@@ -35,20 +36,6 @@
 
 </form>
 
-<hr>
-
-<div >
-    <%@ include file="food-search-result.jsp" %>
-</div>
-
-<br>
-
-
 
 </body>
-
-<!--	フッター-->
-
-	<%@ include file="footer.jsp" %>
-	
 </html>

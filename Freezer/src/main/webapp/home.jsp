@@ -123,7 +123,13 @@
                         <span class="expiry-badge <%= foodlostday.getMarkColor() %>">
                             あと<%= foodlostday.getDaysLeft() %>日
                         </span>
-                        <img src="./<%= foodlostday.getFoodImage() %>">
+                        <%-- 画像データが存在するかチェック --%>
+						<% if (foodlostday.getBase64Image() != null && !foodlostday.getBase64Image().isEmpty()) { %>
+        					<img src="data:image/jpeg;base64,<%= foodlostday.getBase64Image() %>"/>
+             
+    					<% } else { %>
+        			<div style="width:100px">No Image</div>
+    			<% } %>
                     </div>
                     <div class="card-name-area">
                         <%= foodlostday.getFoodName() %>
@@ -152,7 +158,14 @@
                 <a href="recommend-recipe-detail-servlet?recipeId=<%= recipe.getRecipeId() %>" style="text-decoration: none; color: inherit;">
                     <div class="custom-card">
                         <div class="card-img-area">
-                            <img src="./<%= recipe.getRecipeImg() %>">
+                             <%-- 画像データが存在するかチェック --%>
+       							 <% if (recipe.getBase64Image() != null && !recipe.getBase64Image().isEmpty()) { %>
+							        <img src="data:image/jpeg;base64,<%= recipe.getBase64Image() %>"/>
+							             
+							    	<% } else { %>
+							        	<div style="width:100px">No Image</div>
+							    <% } %>
+
                         </div>
                         <div class="card-name-area">
                             <%= recipe.getRecipeName() %>
@@ -176,14 +189,21 @@
                 <p style="color: #666; font-size: 14px;">廃棄された食材はありません</p>
             <% 
             } else { 
-                for(FoodLostBean lost : foodlostList) { 
+                for(FoodLostBean foodlost : foodlostList) { 
             %>
                 <div class="custom-card">
                     <div class="card-img-area">
-                        <img src="./<%= lost.getFoodLostImage() %>">
+                        <%-- 画像データが存在するかチェック --%>
+					        <% if (foodlost.getBase64Image() != null && !foodlost.getBase64Image().isEmpty()) { %>
+					        <img src="data:image/jpeg;base64,<%= foodlost.getBase64Image() %>"/>
+					             
+					    	<% } else { %>
+					        	<div style="width:100px">No Image</div>
+					    	<% } %>
+                        
                     </div>
                     <div class="card-name-area">
-                        <%= lost.getFoodLostName() %>
+                        <%= foodlost.getFoodLostName() %>
                     </div>
                 </div>
             <% 
@@ -194,6 +214,5 @@
     </div>
 
 </body>
-
 <%@ include file="footer.jsp" %>
 </html>
