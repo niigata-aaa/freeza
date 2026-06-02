@@ -108,4 +108,9 @@ if (foodList != null && !foodList.isEmpty()) {
 </a>
 
 </body>
+
+<!--	フッター-->
+
+	<%@ include file="footer.jsp" %>
+	
 </html>
