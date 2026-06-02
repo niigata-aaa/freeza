@@ -5,8 +5,11 @@
 <meta charset="UTF-8">
 <title>削除結果</title>
 </head>
+<link rel="stylesheet" href="common.css">
 <body>
+<div class="container">
 
+<div class="card">
 <%
 Integer result = (Integer)request.getAttribute("result");
 String error = (String)request.getAttribute("error");
@@ -30,6 +33,7 @@ if(error != null){
 %>
 
 <a href="recipeMypage.jsp">戻る</a>
-
+</div>
+</div>
 </body>
 </html>

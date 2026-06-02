@@ -57,7 +57,13 @@ if (foodList != null && !foodList.isEmpty()) {
 %>
 <tr>
     <td>
-        <img src="./<%= food.getFoodImage() %>" width="100">
+        <%-- 画像データが存在するかチェック --%>
+        <% if (food.getBase64Image() != null && !food.getBase64Image().isEmpty()) { %>
+        <img src="data:image/jpeg;base64,<%= food.getBase64Image() %>"/>
+             
+    	<% } else { %>
+        	<div style="width:100px">No Image</div>
+    	<% } %>
     </td>
 
     <td>
@@ -102,4 +108,9 @@ if (foodList != null && !foodList.isEmpty()) {
 </a>
 
 </body>
+
+<!--	フッター-->
+
+	<%@ include file="footer.jsp" %>
+	
 </html>

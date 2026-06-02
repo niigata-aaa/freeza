@@ -8,8 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>レシピ検索結果</title>
-<link rel="stylesheet" href="css/common.css">
+<title>管理者レシピ検索結果</title>
 
 <style>
 table, tr, td, th {
@@ -19,8 +18,7 @@ table, tr, td, th {
 
 </head>
 <body>
-<div class="container">
-        <div class="card">
+
 <%
 List<RecipeBean> recipeList =
         (List<RecipeBean>) request.getAttribute("recipeList");
@@ -55,9 +53,9 @@ for (RecipeBean recipe : recipeList) {
 
     <td><%=recipe.getRecipeName()%></td>
 <td>
-<form action="recipe-all-detail-servlet" method="POST">
+<form action="recipe-detail-servlet" method="POST">
    <input type="hidden" name="RecipeId2" value="<%=recipe.getRecipeId()%>">
-   <input type="submit" value="詳細表示" class="btn">
+   <input type="submit" value="詳細表示">
 </form>
 </td>
 </tr>
@@ -72,7 +70,6 @@ for (RecipeBean recipe : recipeList) {
     }
 }
 %>
-</div>
-</div>
+
 </body>
 </html>

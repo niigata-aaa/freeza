@@ -6,8 +6,12 @@
 <head>
 <meta charset="UTF-8">
 <title>食材更新画面</title>
+<link rel="stylesheet" href="css/common.css">
 </head>
 <body>
+<div class="container">
+
+<div class="card">
 
 <%
 List<FoodBean> foodList = (List<FoodBean>) session.getAttribute("foodList");
@@ -57,6 +61,13 @@ List<FoodBean> foodList = (List<FoodBean>) session.getAttribute("foodList");
 <a href="food-list-servlet">
     食材一覧に戻る
 </a>
+</div>
 
+</div>
 </body>
+
+<!--	フッター-->
+
+	<%@ include file="footer.jsp" %>
+	
 </html>

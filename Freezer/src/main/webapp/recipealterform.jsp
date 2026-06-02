@@ -13,9 +13,12 @@ RecipeBean employee =
 <head>
 <meta charset="UTF-8">
 <title>編集画面</title>
+<link rel="stylesheet" href="css/common.css">
 </head>
 <body>
 
+<div class="container">
+        <div class="card">
 <form action="recipe-alter-confirm-servlet" method="POST">
 
     <%-- レシピID：
@@ -48,9 +51,10 @@ RecipeBean employee =
 	<input type="number"
        name="servings"
        value="<%= employee.getRecipeServings()%>">
-    <input type="submit" value="確認">
+    <input type="submit" value="確認" class="btn">
 
 </form>
-
+</div>
+</div>
 </body>
 </html>

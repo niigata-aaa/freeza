@@ -25,7 +25,8 @@ public class RecipeBean implements Serializable {
 	/**
 	 * レシピ画像
 	 */
-	private String RecipeImg;
+	private byte[] RecipeImg;
+	private String base64Image;
 
 	/**
 	 * 材料
@@ -91,7 +92,13 @@ public class RecipeBean implements Serializable {
 	 * フィールドrecipeImgの値を返します。
 	 * @return 画像
 	 */
-	
+	public String getBase64Image() {
+	    return base64Image;
+	}
+
+	public void setBase64Image(String base64Image) {
+	    this.base64Image = base64Image;
+	}
 
 	/**
 	 * フィールドrecipeIngredientsの値を返します。
@@ -101,11 +108,10 @@ public class RecipeBean implements Serializable {
 		return RecipeIngredients;
 	}
 
-	
-	public String getRecipeImg() {
+	public byte[] getRecipeImg() {
 		return RecipeImg;
 	}
-	public void setRecipeImg(String recipeImg) {
+	public void setRecipeImg(byte[] recipeImg) {
 		RecipeImg = recipeImg;
 	}
 	/**

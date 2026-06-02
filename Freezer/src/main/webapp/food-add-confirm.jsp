@@ -4,8 +4,12 @@
 <head>
 <meta charset="UTF-8">
 <title>追加内容確認</title>
+<link rel="stylesheet" href="css/common.css">
 </head>
 <body>
+<div class="container">
+
+<div class="card">
 <h2>以下の内容で食材を追加しますか？</h2>
 
 <%
@@ -14,14 +18,18 @@ String foodName = (String) session.getAttribute("foodName");
 String number = (String) session.getAttribute("number");
 String unit = (String) session.getAttribute("unit");
 String date = (String) session.getAttribute("date");
-String foodImage = (String) session.getAttribute("foodImage");
+String foodImageBase64 = (String) session.getAttribute("foodImageBase64");
 %>
 
 <table border="1">
     <tr>
         <th>画像</th>
         <td>
-            <img src="<%= request.getContextPath() %>/<%= foodImage %>" width="150">
+            <% if (foodImageBase64 != null && !foodImageBase64.isEmpty()) { %>
+                <img src="data:image/jpeg;base64,<%= foodImageBase64 %>" width="150">
+            <% } else { %>
+                <div>No Image</div>
+            <% } %>
         </td>
     </tr>
     <tr>
@@ -39,11 +47,14 @@ String foodImage = (String) session.getAttribute("foodImage");
 </table>
 
 <br>
-<a href="javascript:history.back();">戻る</a>
+<a href="javascript:history.back();" class="btn">戻る</a>
 
-<form action="food-add-servlet" method="POST" style="display:inline;">
-    <input type="submit" value="この内容で登録する">
+<form action="food-add-servlet" method="POST" enctype="multipart/form-data" >
+    <input type="submit" value="この内容で登録する" class="btn">
 </form>
+</div>
+
+</div>
 
 </body>
 </html>

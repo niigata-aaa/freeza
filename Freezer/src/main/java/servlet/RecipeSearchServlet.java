@@ -15,19 +15,19 @@ import model.dao.RecipeDAO;
 import model.entity.RecipeBean;
 
 /**
- * Servlet implementation class RecipeAllSearch2Servlet
+ * Servlet implementation class RecipeSearchServlet
  */
-@WebServlet("/recipe-all-search2-servlet")
-public class RecipeAllSearch2Servlet extends HttpServlet {
+@WebServlet("/recipe-search-servlet")
+public class RecipeSearchServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
-	public RecipeAllSearch2Servlet() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public RecipeSearchServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -73,11 +73,9 @@ public class RecipeAllSearch2Servlet extends HttpServlet {
 		}
 
 		// 検索画面へ戻る
-		RequestDispatcher rd = request.getRequestDispatcher("recipe-all-search.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("recipe-list.jsp");
 
 		rd.forward(request, response);
 	}
+
 }
-
-
-
