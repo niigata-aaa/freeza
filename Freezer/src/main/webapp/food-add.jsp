@@ -5,8 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>食材追加</title>
+<link rel="stylesheet" href="css/common.css">
 </head>
 <body>
+<div class="container">
+
+<div class="card">
 食材追加<br>
 	
 	<form action="food-add-confirm-servlet" method="POST" enctype="multipart/form-data">
@@ -27,8 +31,12 @@
 				</select><br>
 		消費期限：<input type="date" name="data"><br>
 		
-		<a href="javascript:history.back();">戻る</a>
-		<input type="submit" value="追加">
+		<a href="javascript:history.back();" class="btn">戻る</a>
+		<input type="submit" value="追加" class="btn">
 	</form>
+	
+</div>
+
+</div>
 </body>
 </html>

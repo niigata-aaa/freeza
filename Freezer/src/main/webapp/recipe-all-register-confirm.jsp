@@ -5,9 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>レシピ登録画面</title>
+<link rel="stylesheet" href="css/common.css">
 </head>
 <body>
 <h2>レシピ登録画面</h2>
+<div class="container">
+        <div class="card">
    <form action="recipe-all-regist-confirm-servlet" method="POST">
        <table>
            <tr>
@@ -33,9 +36,11 @@
            <tr>
 
            <tr>
-               <td><input type="submit" value="登録"></td>
+               <td><input type="submit" value="登録" class="btn"></td>
            </tr>
        </table>
    </form>
+   </div>
+   </div>
 </body>
 </html>

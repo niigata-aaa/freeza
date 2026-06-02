@@ -6,8 +6,12 @@
 <head>
 <meta charset="UTF-8">
 <title>食材検索画面</title>
+<link rel="stylesheet" href="css/common.css">
 </head>
 <body>
+<div class="container">
+
+<div class="card">
 
 <h2>食材検索画面</h2>
 
@@ -18,7 +22,7 @@
 
     <br><br>
 
-    <input type="submit" value="検索">
+    <input type="submit" value="検索" class="btn">
 
 </form>
 
@@ -32,10 +36,12 @@
 
 <form action="food-list-servlet" method="post">
 
-    <input type="submit" value="食材一覧へ戻る">
+    <input type="submit" value="食材一覧へ戻る" class="btn">
 
 </form>
 
+</div>
 
+</div>
 </body>
 </html>
