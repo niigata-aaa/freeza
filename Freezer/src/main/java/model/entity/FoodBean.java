@@ -1,142 +1,86 @@
 package model.entity;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Date;
 
 public class FoodBean implements Serializable{
-	
-	/**
-	 * 食材ID
-	 */
+	private int FoodInt;
 	private int FoodId;
-	
-	/**
-	 * 食材名
-	 */
 	private String FoodName;
-	
-	/**
-	 * 画像
-	 */
-	private String foodImage;
-	
-	/**
-	 * 食材の消費期限
-	 */
+	private byte[] FoodImage;
+	private String base64Image;
 	private Date FoodLostDay;
-	
-	/**
-	 * 食材の量
-	 */
 	private int FoodQuantity;
-	
-	/**
-	 * 消費期限マーカー
-	 */
-	private String MarkColor;
-	
-    /**
-	 * FoodBeanを構築します。
-	 */
-	public FoodBean() {
+	private String markColor;
 
-	}
-			
+	private int DaysLeft;
 	
-	/**
-	 * フィールドFoodIdの値を返します。
-	 * @return 食材ID
-	 */
+	public FoodBean() {
+		
+	}
+	
+	public int getFoodInt() {
+		return FoodInt;
+	}
+	public void setFoodInt(int foodInt) {
+		FoodInt = foodInt;
+	}
+	
 	public int getFoodId() {
 		return FoodId;
 	}
-	
-	/**
-	 * フィールドFoodIdの値を設定します。
-	 * @param FoodId 食材ID
-	 */
-	public void setFoodId(int FoodId) {
-		this.FoodId = FoodId;
+	public void setFoodId(int foodId) {
+		FoodId = foodId;
 	}
-	
-	/**
-	 * フィールドFoodNameの値を返します。
-	 * @return 食材名
-	 */
 	public String getFoodName() {
 		return FoodName;
 	}
-	
-	/**
-	 * フィールドFoodNameの値を設定します。
-	 * @param FoodName 食材名
-	 */
-	public void setFoodName(String FoodName) {
-		this.FoodName = FoodName;
+	public void setFoodName(String foodName) {
+		FoodName = foodName;
 	}
 	
-	/**
-	 * フィールドFoodImageの値を返します。
-	 * @return 画像
-	 */
-	public String getFoodImage() {
-	    return foodImage;
+	public byte[] getFoodImage() {
+		return FoodImage;
 	}
-	
-	/**
-	 * フィールドFoodImageの値を設定します。
-	 * @param FoodImage 画像
-	 */
-	public void setFoodImage(String foodImage) {
-	   
-	    this.foodImage = foodImage; 
+
+	public void setFoodImage(byte[] foodImage) {
+		FoodImage = foodImage;
 	}
-	/**
-	 * フィールドFoodLostDayの値を返します。
-	 * @return 食材の消費期限
-	 */
+
 	public Date getFoodLostDay() {
 		return FoodLostDay;
 	}
-	
-	/**
-	 * フィールドFoodLostDayの値を設定します。
-	 * @param FoodLostDay 食材の消費期限
-	 */
-	public void setFoodLostDay(Date FoodLostDay) {
-		this.FoodLostDay = FoodLostDay;
+	public void setFoodLostDay(Date foodLostDay) {
+		FoodLostDay = foodLostDay;
 	}
-	
-	/**
-	 * フィールドFoodQuantityの値を返します。
-	 * @return 食材の量
-	 */
 	public int getFoodQuantity() {
 		return FoodQuantity;
 	}
-	
-	/**
-	 * フィールドFoodQuantityの値を設定します。
-	 * @param FoodQuantity 食材の量
-	 */
-	public void setFoodQuantity(int FoodQuantity) {
-		this.FoodQuantity = FoodQuantity;
+	public void setFoodQuantity(int foodQuantity) {
+		FoodQuantity = foodQuantity;
 	}
-	
-	/**
-	 * フィールドMarkColorの値を返します。
-	 * @return 消費期限マーカー
-	 */
 	public String getMarkColor() {
-		return MarkColor;
+		return markColor;
 	}
-	
-	/**
-	 * フィールドFoodQuantityの値を設定します。
-	 * @param FoodQuantity 消費期限マーカー
-	 */
-	public void setMarkColor(String MarkColor) {
-		this.MarkColor = MarkColor;
+	public void setMarkColor(String markColor) {
+		this.markColor = markColor;
+	}
+	public String getBase64Image() {
+	    return base64Image;
+	}
+
+	public void setBase64Image(String base64Image) {
+	    this.base64Image = base64Image;
+	}
+
+	public int getDaysLeft() {
+		return DaysLeft;
+	}
+
+	public void setDaysLeft(int DaysLeft) {
+		this.DaysLeft = DaysLeft;
 	}
 
 }
+
+

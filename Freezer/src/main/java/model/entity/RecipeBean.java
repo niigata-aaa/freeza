@@ -25,6 +25,7 @@ public class RecipeBean implements Serializable {
 	/**
 	 * レシピ画像
 	 */
+	
 	private String RecipeImg;
 
 	/**
@@ -48,7 +49,6 @@ public class RecipeBean implements Serializable {
 	 * 更新日時
 	 */
 	private Date UpdateDatetime;
-	
 	
 	/**
 	 * EmployeeBeanを構築します。
@@ -91,7 +91,17 @@ public class RecipeBean implements Serializable {
 	 * フィールドrecipeImgの値を返します。
 	 * @return 画像
 	 */
-	
+	public String getRecipeImg() {
+		return RecipeImg;
+	}
+
+	/**
+	 * フィールドrecipeImgの値を設定します。
+	 * @param 画像
+	 */
+	public void setRecipeImg(String RecipeImg) {
+		this.RecipeImg = RecipeImg;
+	}
 
 	/**
 	 * フィールドrecipeIngredientsの値を返します。
@@ -101,13 +111,6 @@ public class RecipeBean implements Serializable {
 		return RecipeIngredients;
 	}
 
-	
-	public String getRecipeImg() {
-		return RecipeImg;
-	}
-	public void setRecipeImg(String recipeImg) {
-		RecipeImg = recipeImg;
-	}
 	/**
 	 * フィールドrecipeIngredientsの値を設定します。
 	 * @param recipeIngredients 材料
@@ -181,5 +184,4 @@ public Date getUpdateDatetime() {
 public void setUpdateDatetime(Date UpdateDatetime) {
 	this.UpdateDatetime = UpdateDatetime;
 }
-
 }
