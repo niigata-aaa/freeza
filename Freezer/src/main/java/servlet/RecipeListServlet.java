@@ -42,23 +42,21 @@ public class RecipeListServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<RecipeBean> recipeList = null;
-
 		// DAOの生成
 		RecipeDAO dao = new RecipeDAO();
-
 		try {
 			// DAOの利用
 			recipeList = dao.selectAll();
 		} catch (SQLException | ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-
 		// リクエストスコープへの属性の設定
 		request.setAttribute("recipeList", recipeList);
-
 		// リクエストの転送
 		RequestDispatcher rd = request.getRequestDispatcher("recipe-list.jsp");
 		rd.forward(request, response);
 	}
 
 }
+
+

@@ -7,6 +7,10 @@ public class FoodLostBean implements Serializable {
 	private String FoodLostName;
 	private String FoodLostImage;
 	
+	public FoodLostBean() {
+		
+	}
+
 	public int getFoodLostId() {
 		return FoodLostId;
 	}
@@ -31,10 +35,7 @@ public class FoodLostBean implements Serializable {
 		FoodLostImage = foodLostImage;
 	}
 
-	public FoodLostBean() {
-		
-	}
-
+	
 	
 	
 }

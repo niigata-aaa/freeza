@@ -1,8 +1,6 @@
 package servlet;
 
 import java.io.IOException;
-import java.sql.SQLException;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,20 +9,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.dao.FoodLostDAO;
-import model.entity.FoodLostBean;
+import model.dao.UserDAO;
+import model.entity.UserBean;
 
 /**
- * Servlet implementation class FoodLostServlet
+ * Servlet implementation class Registration
  */
-@WebServlet("/food-lost-servlet")
-public class FoodLostServlet extends HttpServlet {
+@WebServlet("/registration-servlet")
+public class RegistrationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public FoodLostServlet() {
+    public RegistrationServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,7 +32,7 @@ public class FoodLostServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		doPost(request, response);
 	}
 
 	/**
@@ -42,24 +40,33 @@ public class FoodLostServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		
-		List<FoodLostBean> foodlostList = null;
-		
-		FoodLostDAO dao = new FoodLostDAO();
-		
-		try {
-			// DAOの利用
-			foodlostList = dao.selectAll();
 
-		} catch (ClassNotFoundException | SQLException e) {
+		//パラメータ取得
+		String userId = request.getParameter("userID");
+		String passWord = request.getParameter("password");
+
+		//Bean作成
+		UserBean userB = new UserBean();
+		userB.setUserId(userId);
+		userB.setPassWord(passWord);
+
+		String url = "login.jsp";
+
+		try {
+			UserDAO userDao = new UserDAO();
+			int count = userDao.insert(userB);
+
+			if(count > 0) {
+
+				url = "login.jsp"; 
+			}
+
+		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		
-		// リクエストスコープへの属性の設定
-		request.setAttribute("foodlostList", foodlostList);
-		// リクエストの転送
-			RequestDispatcher rd = request.getRequestDispatcher("food-lost.jsp");
-			rd.forward(request, response);
+
+		RequestDispatcher rd = request.getRequestDispatcher(url);
+		rd.forward(request, response);
 	}
 
 }

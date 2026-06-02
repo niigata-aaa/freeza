@@ -1,7 +1,7 @@
 package servlet;
 
 import java.io.IOException;
-import java.util.List;
+import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,24 +10,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.dao.FoodLostDAO;
-import model.dao.FoodLostDayDAO;
-import model.dao.RecommendRecipeDAO;
-import model.entity.FoodBean;
-import model.entity.FoodLostBean;
+import model.dao.RecipePersonalDAO;
 import model.entity.RecipeBean;
 
 /**
- * Servlet implementation class HomeServlet
+ * Servlet implementation class recipeDatailServlet
  */
-@WebServlet("/home-servlet")
-public class HomeServlet extends HttpServlet {
+@WebServlet("/recipe-datail-servlet")
+public class RecipeDatailServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public HomeServlet() {
+    public RecipeDatailServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -44,33 +40,25 @@ public class HomeServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
+		String recipe_iD = request.getParameter("code");
+		int recipe_id = Integer.parseInt(recipe_iD);
 		
-		List<FoodBean> foodlostdayList = null;
-		List<FoodLostBean> foodlostList = null;
-		List<RecipeBean> recipeList = null;
-		
-		FoodLostDayDAO dao = new FoodLostDayDAO();
-		FoodLostDAO dao1 = new FoodLostDAO();
-		RecommendRecipeDAO dao2 = new RecommendRecipeDAO();
+		RecipePersonalDAO dao = new RecipePersonalDAO();
 		
 		try {
-			// DAOの利用
-			foodlostdayList = dao.selectFoodLostDay();
-			foodlostList = dao1.selectAll();
-			recipeList = dao2.selectIngredients();
-
-		} catch (Exception e) {
+			RecipeBean employee  = dao.select(recipe_id);
+			//HttpSession session = request.getSession();
+			
+			request.setAttribute("employee",employee);
+		}catch(SQLException | ClassNotFoundException e) {
 			e.printStackTrace();
 		}
 		
-		// リクエストスコープへの属性の設定
-		request.setAttribute("foodlostdayList", foodlostdayList);
-		request.setAttribute("foodlostList", foodlostList);
-		request.setAttribute("recipeList", recipeList);
-		// リクエストの転送
-			RequestDispatcher rd = request.getRequestDispatcher("home.jsp");
-			rd.forward(request, response);
+		
+		RequestDispatcher rd = request.getRequestDispatcher("recipeDetail.jsp");
+		rd.forward(request,response);
 	}
 
 }

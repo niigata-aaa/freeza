@@ -10,34 +10,50 @@ import java.util.List;
 import model.entity.FoodBean;
 
 
-
-
 public class FoodLostDayDAO {
 	public List<FoodBean> selectFoodLostDay() throws SQLException, ClassNotFoundException {
 		
-		List<FoodBean> foodlostdayList = new ArrayList<FoodBean>();
-		String sql = "SELECT food_id, food_image FROM t_food" +
-						"WHERE food_lost_day >= CURDATE()" + //CURDATは今日の日付
-							"AND food_lost_day < CURDATE_ADD(CURDATE(),INTERVAL 3 DAY";
-		
-		try (Connection con = ConnectionManager.getConnection();
-				PreparedStatement pstmt = con.prepareStatement(sql);
-				ResultSet res = pstmt.executeQuery()) {
-					
-			while (res.next()) {
-				int FoodId = res.getInt("FoodId");
-				String FoodName = res.getString("FoodName");
-				String FoodImage = res.getString("FoodImage");
-				
-				FoodBean foodlostday = new FoodBean();
-				foodlostday.setFoodId(FoodId);
-				foodlostday.setFoodName(FoodName);
-				foodlostday.setFoodImage(FoodImage);
-				
-				foodlostdayList.add(foodlostday);
-			}
-		}
-		return foodlostdayList;
-	}
+		List<FoodBean> list = new ArrayList<>();
 
+        String sql =
+            "SELECT food_id, food_name, food_img " +
+            "FROM t_food " +
+            "WHERE food_lost_day >= CURDATE() " +
+            "AND food_lost_day < DATE_ADD(CURDATE(), INTERVAL 3 DAY)";
+
+        try (Connection con = ConnectionManager.getConnection();
+             PreparedStatement ps = con.prepareStatement(sql);
+             ResultSet rs = ps.executeQuery()) {
+
+            while (rs.next()) {
+
+                FoodBean bean = new FoodBean();
+
+//                bean.setFoodId(rs.getInt("food_id"));
+                bean.setFoodName(rs.getString("food_name"));
+                bean.setFoodImage(rs.getString("food_img"));
+
+                list.add(bean);
+            }
+        }
+
+        return list;
+	}
+	
+	public void moveExpiredFoods() throws Exception {
+	    String insertSql =
+	        "INSERT INTO t_lostfood (food_lost_name, food_lost_img) " +
+	        "SELECT food_name, food_img FROM t_food WHERE food_lost_day < CURDATE()";
+
+	    String deleteSql =
+	        "DELETE FROM t_food WHERE food_lost_day < CURDATE()";
+
+	    try (Connection con = ConnectionManager.getConnection();
+	         PreparedStatement ps1 = con.prepareStatement(insertSql);
+	         PreparedStatement ps2 = con.prepareStatement(deleteSql)) {
+
+	        ps1.executeUpdate();
+	        ps2.executeUpdate();
+	    }
+	}
 }

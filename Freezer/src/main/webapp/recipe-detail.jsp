@@ -1,29 +1,64 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+   pageEncoding="UTF-8" import="java.util.List,model.entity.RecipeBean"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>レシピ-詳細</title>
+<title>管理者レシピ詳細画面</title>
 </head>
 <body>
-	<jsp:useBean id="recipe" scope="session"
-		class="model.entity.RecipeBean" />
+不要？　始まり
+<jsp:useBean id="recipe" scope="session" class="model.entity.RecipeBean"/>
+レシピID：<jsp:getProperty name="recipe" property="recipeId"/><br>
+レシピ名：<jsp:getProperty name="recipe" property="recipeName"/><br>
+<%--レシピ画像：<jsp:getProperty name="recipe" property="recipeImg"/><br>--%>
+レシピ材料：<jsp:getProperty name="recipe" property="recipeIngredients"/><br>
+レシピ作り方：<jsp:getProperty name="recipe" property="recipeHowto"/><br>
+レシピ何人前：<jsp:getProperty name="recipe" property="recipeServings"/><br>
+掲載日時：<jsp:getProperty name="recipe" property="postingDatetime"/><br>
+更新日時：<jsp:getProperty name="recipe" property="updateDatetime"/><br>
+<form action="recipe-delete-confirm.jsp" method="POST">
+   <input type="hidden" name="RecipeId" value="<%=recipe.getRecipeId()%>">
+   <input type="submit" value="削除">
+</form>
+<form action="recipe-list-servlet" method="POST">
+   <input type="submit" value="戻る">
+</form>
+不要？終わり
 
-	料理名：<jsp:getProperty name="employee" property="code" /><br> 画像：<jsp:getProperty
-		name="employee" property="name" /><br> 材料：<jsp:getProperty
-		name="employee" property="age" /><br> 手順：<jsp:getProperty
-		name="employee" property="section" /><br> 何人前：<jsp:getProperty
-		name="employee" property="section" /><br> 掲載日時：<jsp:getProperty
-		name="employee" property="section" /><br> 更新日時：<jsp:getProperty
-		name="employee" property="section" /><br>
-
-	<form action="employee-register-form-servlet" method="POST">
-		<input type="submit" value="削除する">
-	</form>
-
-	<form action="employee-list-servlet" method="POST">
-		<input type="submit" value="戻る">
-	</form>
+<%--
+<%
+List<RecipeBean> recipeList = (List<RecipeBean>) request.getAttribute("recipeList");
+%>
+<table>
+<tr><th>レシピID</th><th>レシピ名</th><th>材料</th><th>手順</th><th>何人前</th><th>掲載日時</th><th>更新日時</th>
+<%
+   for(RecipeBean recipe : recipeList){
+%>
+<tr><td><%=recipe.getRecipeId()%></td>
+   <td><%=recipe.getRecipeName()%></td>
+<%-- --   <td><%=recipe.getRecipeImg()%></td>-->
+   <td><%=recipe.getRecipeIngredients()%></td>
+   <td><%=recipe.getRecipeHowto()%></td>
+   <td><%=recipe.getRecipeServings()%></td>
+   <td><%=recipe.getPostingDatetime()%></td>
+   <td><%=recipe.getUpdateDatetime()%></td>
+<td>
+<form action="recipe-delete-form-servlet" method="POST">
+   <input type="hidden" name="RecipeId" value="<%=recipe.getRecipeId()%>">
+   <input type="submit" value="削除">
+</form>
+</td>
+<td>
+<form action="recipe-list-servlet" method="POST">
+   <input type="submit" value="戻る">
+</form>
+</td>
+</tr>
+<%
+}
+%>
+</table> --%>
 </body>
 </html>
+
