@@ -9,6 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <title>食材検索結果</title>
+<link rel="stylesheet" href="css/common.css">
 
 <style>
 table, tr, td, th {
@@ -18,12 +19,9 @@ table, tr, td, th {
 
 </head>
 <body>
+<div class="container">
+        <div class="card">
 
-<form action="food-list-servlet" method="post">
-
-    <input type="submit" value="食材一覧へ戻る">
-
-</form>
 
 <%
 List<FoodBean> foodList =

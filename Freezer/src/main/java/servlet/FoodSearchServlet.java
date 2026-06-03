@@ -27,6 +27,7 @@ public class FoodSearchServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request,
             HttpServletResponse response)
             throws ServletException, IOException {
+    	System.out.println("a");
 
         request.setCharacterEncoding("UTF-8");
 
@@ -57,7 +58,7 @@ public class FoodSearchServlet extends HttpServlet {
         }
 
         // 検索画面へ戻る
-        RequestDispatcher rd = request.getRequestDispatcher("food-search-result.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("food-search.jsp");
 
         rd.forward(request, response);
     }
