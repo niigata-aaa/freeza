@@ -50,4 +50,28 @@ public class UserDAO {
 
         return count;
     }
+    
+    //利用者か管理者か判定する
+    public Boolean admin_flg_Check(String user_id) throws ClassNotFoundException, SQLException {
+        String sql = "SELECT admin_flg FROM m_user WHERE user_id = ?";
+
+        Boolean a = null; // 初期化
+        
+        try(Connection con = ConnectionManager.getConnection();
+            PreparedStatement pstmt = con.prepareStatement(sql)){
+
+            pstmt.setString(1, user_id);
+
+            ResultSet res = pstmt.executeQuery();
+
+            if(res.next()) {
+                if(res.getBoolean("admin_flg")) {
+                    a = true;  // 管理者
+                } else {
+                    a = false; // 利用者
+                }
+            }
+        } 
+        return a;
+    }
 }

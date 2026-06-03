@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import model.dao.AdminDAO;
 import model.dao.UserDAO;
 
 /**
@@ -23,52 +22,51 @@ public class LoginServlet extends HttpServlet {
        
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-        
-        String id = request.getParameter("id");
-        String password = request.getParameter("password");
-        
-        HttpSession session = request.getSession();
-        String nextPage = "login.jsp";
-        boolean isLoginSuccess = false;
-        
-        try {
-            // 普通の利用者(m_user)としてログインできるかチェック
-            UserDAO userDao = new UserDAO();
-            if (userDao.loginCheck(id, password)) {
-                isLoginSuccess = true;
-                session.setAttribute("userId", id);
-                nextPage = "home-servlet"; // 利用者用トップへ
-            } 
-            // 管理者(m_admin)としてチェック
-            else {
-                AdminDAO adminDao = new AdminDAO();
-                if (adminDao.loginCheck(id, password)) {
-                    isLoginSuccess = true;
-                    session.setAttribute("adminId", id);
-                    nextPage = "recipe-list.jsp"; // 管理者用トップへ
-                }
-            }
-            
-            // 🚀 判定結果に基づいた画面転送
-            if (isLoginSuccess) {
-                RequestDispatcher rd = request.getRequestDispatcher(nextPage);
-                rd.forward(request, response);
-            } else {
-                // どちらのテーブルにも存在しなかった場合
-                request.setAttribute("errorMsg", "IDまたはパスワードが間違っています。");
-                RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
-                rd.forward(request, response);
-            }
-            
-        } catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
-            request.setAttribute("errorMsg", "サーバーエラーが発生しました。");
-            RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
-            rd.forward(request, response);
-        }
-    }
+		
+		// login.jsp のフォームから入力された値を取得
+		String id = request.getParameter("id");
+		String password = request.getParameter("password");
+		
+		// 遷移先URLの初期化
+		String url = null;
+		
+		HttpSession session = request.getSession();
+		UserDAO dao = new UserDAO();
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.sendRedirect("login.jsp");
-    }
+		try {
+			// 入力されたIDとパスワードが正しいかチェック
+			if (dao.loginCheck(id, password)) {
+				
+				// 認証成功：セッションに user_id を保存
+				session.setAttribute("user_id", id);
+				
+				//ログインした人が会員か管理者か判定
+				if (dao.admin_flg_Check(id)) {
+					// アドミンフラグ成功はRecipeListServletへ
+					url = "recipe-list-servlet";
+				} else {
+					// アドミンフラグ失敗はHomeNormalServletへ
+					url = "home-servlet";
+				}
+				
+			} else {
+				// 認証失敗：ログイン画面に戻してエラーメッセージを表示
+				request.setAttribute("errorMsg", "IDまたはパスワードが間違っています。");
+				url = "login.jsp";
+			}
+			
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+			request.setAttribute("errorMsg", "サーバーエラーが発生しました。");
+			url = "login.jsp";
+		}
+
+		// 決定したURLへフォワード
+		RequestDispatcher rd = request.getRequestDispatcher(url);
+		rd.forward(request, response);
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doPost(request, response);
+	}
 }

@@ -10,7 +10,7 @@
 <style>
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: #fffaf6; /*薄いクリーム色の背景 */
+    background-color: #fffaf6;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,18 +22,18 @@ body {
 .container {
     background-color: #ffffff;
     border: 1px solid #f5ebe0;
-    border-radius: 24px; /* 大きめの角丸 */
+    border-radius: 24px;
     width: 420px;
     padding: 40px 35px;
     box-sizing: border-box;
-    box-shadow: 0 8px 24px rgba(218, 192, 163, 0.2); /* 優しい影 */
+    box-shadow: 0 8px 24px rgba(218, 192, 163, 0.2);
     text-align: center;
     position: relative;
 }
 
-/* タイトル「ログイン画面」の装飾 */
+/*「ログイン画面」の装飾 */
 h2 {
-    color: #4a3b32; /* 優しい焦げ茶色 */
+    color: #4a3b32;
     font-size: 26px;
     margin-top: 0;
     margin-bottom: 35px;
@@ -41,7 +41,6 @@ h2 {
     letter-spacing: 2px;
 }
 
-/* 装飾を再現 */
 h2::before, h2::after {
     content: " ✧ ";
     color: #e6ccb2;
@@ -101,7 +100,7 @@ h2::before, h2::after {
     background: transparent;
 }
 
-/* プレースホルダー（うっすら見えるヒント文字）の色 */
+/* プレースホルダーの色 */
 .input-wrapper input::placeholder {
     color: #cbc0b7;
 }
@@ -113,7 +112,7 @@ h2::before, h2::after {
 }
 
 .footer-group a {
-    color: #6b8e23; /* ナチュラルなグリーン */
+    color: #6b8e23;
     font-size: 15px;
     text-decoration: underline;
     font-weight: bold;
@@ -123,7 +122,7 @@ h2::before, h2::after {
     color: #4b6613;
 }
 
-/* ログインボタン（オレンジ色・丸み） */
+/* ログインボタン */
 .btn-submit-container {
     text-align: center;
 }
@@ -132,7 +131,7 @@ h2::before, h2::after {
     background-color: #dd7a4a;
     color: #ffffff;
     border: none;
-    border-radius: 30px; /* 完全なカプセル型 */
+    border-radius: 30px; /* カプセル型 */
     width: 85%;
     padding: 14px 0;
     font-size: 18px;
@@ -143,7 +142,7 @@ h2::before, h2::after {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    gap: 10px; /* 文字とアイコンの間隔 */
+    gap: 10px; 
 }
 
 .btn-login:hover {
@@ -184,7 +183,7 @@ h2::before, h2::after {
         <span class="input-label">ID</span>
         <div class="form-group">
             <div class="input-wrapper">
-                <i class="fa-solid fa-user"></i> <input type="text" name="id" id="idField" placeholder="IDを入力してください" required autocomplete="off">
+                <i class="fa-solid fa-user"></i> <input type="text" name="id" id="idField" placeholder="IDを入力してください" required autocomplete="off" minlength="6" required>
             </div>
         </div>
         
