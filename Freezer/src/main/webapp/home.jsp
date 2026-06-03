@@ -5,8 +5,17 @@
 <head>
 <meta charset="UTF-8">
 <title>HOME</title>
+
 <link rel="stylesheet" href="css/styles.css">
+
 <style>
+	body {
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+        background-color: #fffaf6; 
+        margin: 0;
+        padding-top: 100px;    /* 上の余白を空ける設定 */
+        padding-bottom: 60px;   /* フッター用の下の余白 */
+    }
     /* 全体のコンテナスタイル */
     .home-section {
         margin: 20px 10px;
@@ -99,9 +108,8 @@
     }
 </style>
 </head>
+<%@ include file="header.jsp" %>
 <body>
-
-    <h1 style="text-align: center; color: #2B3A67; margin-top: 15px;">ロスロス</h1>
 
     <div class="home-section">
         <div class="section-title">⚠️ 消費期限が近い食材</div>
