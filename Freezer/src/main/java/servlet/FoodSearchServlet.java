@@ -57,7 +57,7 @@ public class FoodSearchServlet extends HttpServlet {
         }
 
         // 検索画面へ戻る
-        RequestDispatcher rd = request.getRequestDispatcher("food-search.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("food-search-result.jsp");
 
         rd.forward(request, response);
     }
