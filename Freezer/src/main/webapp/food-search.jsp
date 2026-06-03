@@ -25,7 +25,7 @@
 <form action="food-search-servlet" method="post">
 
     食材名：
-    <input type="text" maxlength="50" name="foodName">
+    <input required type="text" maxlength="50" name="foodName">
 
     <br><br>
 
