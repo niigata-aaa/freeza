@@ -14,7 +14,7 @@
         font-family: 'Helvetica Neue', Arial, sans-serif;
         background-color: #fffaf6; 
         margin: 0;
-        padding-top: 0px;    /* 上の余白を空ける設定 */
+        padding-top: 100px;    /* 上の余白を空ける設定 */
         padding-bottom: 60px;   /* フッター用の下の余白 */
     }
     /* 全体のコンテナスタイル */
