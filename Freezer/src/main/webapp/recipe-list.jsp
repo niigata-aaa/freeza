@@ -5,6 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>管理者レシピ一覧</title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/localrecipeTable.css">
 </head>
 <body>
 <%

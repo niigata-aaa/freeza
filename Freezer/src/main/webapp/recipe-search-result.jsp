@@ -9,6 +9,8 @@
 <head>
 <meta charset="UTF-8">
 <title>レシピ検索結果</title>
+
+<link rel="stylesheet" href="css/localrecipeTable.css">
 <link rel="stylesheet" href="css/common.css">
 
 <style>

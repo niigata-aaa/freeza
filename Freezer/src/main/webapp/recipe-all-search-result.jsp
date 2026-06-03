@@ -10,6 +10,7 @@
 <meta charset="UTF-8">
 <title>レシピ検索結果</title>
 <link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/localrecipeTable.css">
 
 <style>
 table, tr, td, th {

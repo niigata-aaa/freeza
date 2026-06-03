@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>一つのレシピの詳細(3)</title>
 <link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/localrecipeTable.css">
 </head>
 <body>
 

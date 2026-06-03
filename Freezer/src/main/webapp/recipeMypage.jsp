@@ -5,8 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>会員マイページ(1)</title>
-<link rel="stylesheet" href="common.css">
-<link rel="stylesheet" href="localrecipeTable.css">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/localrecipeTable.css">
 </head>
 <form action="recipe-list-servletX" method="post">
 <input class="btn" type="submit" value="投稿したレシピを見る">

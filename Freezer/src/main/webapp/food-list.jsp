@@ -5,7 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>食材情報一覧</title>
-
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/localrecipeTable.css">
 <style>
 .btn {
     display: inline-block;

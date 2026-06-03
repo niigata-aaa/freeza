@@ -5,8 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>個人レシピ一覧(2)</title>
-<link rel="stylesheet" href="common.css">
-<link rel="stylesheet" href="localrecipeTable.css">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/localrecipeTable.css">
 </head>
 <body>
 <a href="recipeMypage.jsp" class="btn">マイページに戻る</a>

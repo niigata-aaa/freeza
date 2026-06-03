@@ -1,8 +1,8 @@
-@charset "UTF-8";@charset "UTF-8";/*widthとheightの値は、セルのサイズに合わせて微調整する*/
+@charset "UTF-8";/*widthとheightの値は、セルのサイズに合わせて微調整する*/
 .example{
     overflow: auto;
-    width: 945px;
-    height: 504px;
+
+	height: 504px;
 }
 .example table{
     margin: 0;
@@ -13,7 +13,7 @@
     white-space: nowrap;
     border-right: 1px solid #999;
     border-bottom: 1px solid #999;
-    background: #FFF;
+    background: rgb(255, 255, 255);
     padding: 5px;
 }
 .example th{

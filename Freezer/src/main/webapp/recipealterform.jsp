@@ -14,6 +14,7 @@ RecipeBean employee =
 <meta charset="UTF-8">
 <title>編集画面</title>
 <link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/localrecipeTable.css">
 </head>
 <body>
 

@@ -7,7 +7,8 @@
 <title>HOME</title>
 
 <link rel="stylesheet" href="css/styles.css">
-
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/localrecipeTable.css">
 <style>
 	body {
         font-family: 'Helvetica Neue', Arial, sans-serif;

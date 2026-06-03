@@ -9,7 +9,8 @@
 <head>
 <meta charset="UTF-8">
 <title>食材検索結果</title>
-
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/localrecipeTable.css">
 <style>
 table, tr, td, th {
     border: black solid 1px;

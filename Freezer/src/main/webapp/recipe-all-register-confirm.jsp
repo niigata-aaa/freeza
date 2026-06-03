@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>レシピ投稿確認画面</title>
 <link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/localrecipeTable.css">
 </head>
 <body>
 

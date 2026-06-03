@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>新しいレシピの投稿</title>
+    <link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/localrecipeTable.css">
 </head>
 <body>
     <h2>新しいレシピを投稿する</h2>

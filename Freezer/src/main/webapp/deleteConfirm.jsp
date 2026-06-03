@@ -9,7 +9,8 @@ String recipeId = request.getParameter("recipe_id");
 <head>
 <meta charset="UTF-8">
 <title>削除確認</title>
-<link rel="stylesheet" href="common.css">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/localrecipeTable.css">
 </head>
 <body>
 <div class="container">

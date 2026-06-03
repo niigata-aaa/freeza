@@ -5,7 +5,8 @@
 <meta charset="UTF-8">
 <title>削除結果</title>
 </head>
-<link rel="stylesheet" href="common.css">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/localrecipeTable.css">
 <body>
 <div class="container">
 
