@@ -11,13 +11,21 @@
 List<RecipeBean> recipeList = (List<RecipeBean>) request.getAttribute("recipeList");
 %>
 <table>
-<tr><th>レシピID</th><th>レシピ名</th><th>レシピ写真</th><th>材料</th><th>手順</th><th>何人前</th><th>掲載日時</th><th>更新日時</th>
+<tr>
+<!--<th>レシピID</th>-->
+<th>レシピ名</th><th>レシピ写真</th><th>材料</th><th>手順</th><th>何人前</th><th>掲載日時</th><th>更新日時</th>
 <%
    for(RecipeBean recipe : recipeList){
 %>
-<tr><td><%=recipe.getRecipeId()%></td>
+<tr>
+<!--<td><%=recipe.getRecipeId()%></td>-->
    <td><%=recipe.getRecipeName()%></td>
-<!--   <td><%=recipe.getRecipeImg()%></td>-->
+<%-- 画像データが存在するかチェック --%>
+        <td><% if (recipe.getBase64Image() != null && !recipe.getBase64Image().isEmpty()) { %>
+        <img src="data:image/png;base64,<%= recipe.getBase64Image() %>" width="100px" />
+    	<% } else { %>
+        	<div style="width:100px">No Image</div>
+    	<% } %></td>
    <td><%=recipe.getRecipeIngredients()%></td>
    <td><%=recipe.getRecipeHowto()%></td>
    <td><%=recipe.getRecipeServings()%></td>
@@ -34,6 +42,18 @@ List<RecipeBean> recipeList = (List<RecipeBean>) request.getAttribute("recipeLis
 }
 %>
 </table>
+
+<form action="recipe-search-servlet" method="post">
+
+    レシピ名または食材名:
+    <input type="text" maxlength="50" name="recipeName">
+
+    <br><br>
+
+    <input type="submit" value="検索">
+
+</form>
+
 </body>
 </html>
 

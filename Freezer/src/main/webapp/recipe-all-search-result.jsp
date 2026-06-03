@@ -51,7 +51,7 @@ for (RecipeBean recipe : recipeList) {
 
 <tr>
 
-    <td><%=recipe.getRecipeId()%></td>
+<!--    <td><%=recipe.getRecipeId()%></td>-->
 
     <td><%=recipe.getRecipeName()%></td>
 <td>

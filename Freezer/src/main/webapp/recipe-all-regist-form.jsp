@@ -11,7 +11,7 @@
 <div class="container">
         <div class="card">
 <h2>レシピ登録画面</h2>
-   <form action="recipe-all-regist-confirm-servlet" method="POST">
+   <form action="recipe-all-regist-confirm-servlet" method="POST" enctype="multipart/form-data">
        <table>
 <%--           <tr>
                <td>レシピID：</td>
@@ -19,23 +19,23 @@
            </tr>   --%> 
            <tr>
                <td>レシピ名：</td>
-               <td><input type="text" name="recipename" size="10"></td>
+               <td><input required type="text" name="recipename" size="10"></td>
            </tr>
              <tr>
                <td>レシピ画像：</td>
-               <td><input type="image" name="recipeimg"></td>
+               <td><input required type="file" id="recipePhoto" name="recipePhoto" accept="image/*" class="file-input"></td>
            </tr>  
            <tr>
                <td>レシピ材料：</td>
-               <td><textarea name="recipeingredients" cols="30" ></textarea></td>
+               <td><textarea required name="recipeingredients" cols="30" ></textarea></td>
            </tr>
            <tr>
                <td>レシピ作り方：</td>
-               <td><textarea name="recipehowto" cols="30" ></textarea></td>
+               <td><textarea required name="recipehowto" cols="30" ></textarea></td>
            </tr>
            <tr>
                <td>レシピ何人前：</td>
-               <td><input type="number"  name="recipeservings"></td>
+               <td><input required type="number"  name="recipeservings" min="1" step="1"></td>
            </tr>
            <tr>
 <%--                <td>レシピ掲載日時：</td>
@@ -48,9 +48,15 @@
            <tr>
                <td><input type="submit" value="登録"></td>
            </tr>
+           
        </table>
    </form>
    </div>
    </div>
+   <tr><form action="recipe-all-list-servlet" method="post">
+
+			    <td><input type="submit" value="食材一覧へ戻る">
+			
+			</tr></form>
 </body>
 </html>

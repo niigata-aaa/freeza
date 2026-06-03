@@ -15,13 +15,24 @@
 List<RecipeBean> recipeList = (List<RecipeBean>) request.getAttribute("recipeList");
 %>
 <table>
-<tr><th>レシピID</th><th>レシピ名</th><th>レシピ写真</th><th>材料</th><th>手順</th><th>何人前</th><th>掲載日時</th><th>更新日時</th>
+<tr>
+<!--<th>レシピID</th>-->
+<th>レシピ名</th><th>レシピ写真</th><th>材料</th><th>手順</th><th>何人前</th><th>掲載日時</th><th>更新日時</th>
 <%
+if (recipeList != null && !recipeList.isEmpty()) {
    for(RecipeBean recipe : recipeList){
 %>
-<tr><td><%=recipe.getRecipeId()%></td>
+<tr>
+<!--<td><%=recipe.getRecipeId()%></td>-->
    <td><%=recipe.getRecipeName()%></td>
-   <td><%=recipe.getRecipeImg()%></td>
+   
+   <td><%-- 画像データが存在するかチェック --%>
+        <% if (recipe.getBase64Image() != null && !recipe.getBase64Image().isEmpty()) { %>
+        <img src="data:image/png;base64,<%= recipe.getBase64Image() %>"width="100px" />
+    	<% } else { %>
+        	<div style="width:100px">No Image</div>
+    	<% } %></td>
+    	
    <td><%=recipe.getRecipeIngredients()%></td>
    <td><%=recipe.getRecipeHowto()%></td>
    <td><%=recipe.getRecipeServings()%></td>
@@ -36,11 +47,20 @@ List<RecipeBean> recipeList = (List<RecipeBean>) request.getAttribute("recipeLis
 </tr>
 <%
 }
+} else { // listがnullか空だった場合
+%>
+ <tr>
+        <td colspan="8" style="text-align: center; padding: 20px;">
+            表示するレシピ情報がありません。
+        </td>
+    </tr>
+<%
+} // ifの閉じ
 %>
 </table>
 <form action="recipe-all-search2-servlet" method="post">
 
-    レシピ名：
+    レシピ名または食材名:
     <input type="text" maxlength="50" name="recipeName">
 
     <br><br>
@@ -51,19 +71,6 @@ List<RecipeBean> recipeList = (List<RecipeBean>) request.getAttribute("recipeLis
 
 <a href="recipe-all-regist-form.jsp">レシピ投稿</a>
 
-
-<%--     <span style="float:right;">
-        <a class="btn search" href="recipe-all-search.jsp">
-            検索
-        </a>
-    </span> --%> 
-</h2>
-<!--<h2>レシピ検索</h2>-->
-<!--   <form action="recipe-all-search2-servlet" method="POST">-->
-<!--   レシピ名：<input type="text" maxlength="60" name="RecipeName"><br>-->
-<!--   材料名：<input type="text" maxlength="50" name="RecipeIngredients"><br>-->
-<!--   <input type="submit" value="検索" name="ACTION">-->
-<!--   </form>-->
 </div>
 </div>
 </body>
