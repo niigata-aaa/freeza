@@ -18,8 +18,8 @@ public class RecommendRecipeDAO {
    	 List<RecipeBean> list = new ArrayList<>();
 
      String sql = "SELECT DISTINCT recipe_name, recipe_img FROM t_recipe re "
-     		+ "INNER JOIN t_food fo ON FIND_IN_SET(fo.food_name, re.recipe_ingredients) > 0 "
-     		+ "WHERE food_lost_day >= CURDATE() AND food_lost_day < DATE_ADD(CURDATE(), INTERVAL 3 DAY) ";
+      		+ "INNER JOIN t_food fo ON FIND_IN_SET(fo.food_name, REPLACE(re.recipe_ingredients, ' ', ',')) > 0 "
+      		+ "WHERE food_lost_day >= CURDATE() AND food_lost_day < DATE_ADD(CURDATE(), INTERVAL 3 DAY) ";
 
      try (Connection con = ConnectionManager.getConnection();
           PreparedStatement ps = con.prepareStatement(sql)) {
