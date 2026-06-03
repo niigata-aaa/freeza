@@ -61,7 +61,7 @@ List<RecipeBean> recipeList = (List<RecipeBean>) request.getAttribute("recipeLis
     <input type="submit" value="検索">
 
 </form>
-
+<a href="logout.jsp">ログアウト</a>
 </body>
 </html>
 
