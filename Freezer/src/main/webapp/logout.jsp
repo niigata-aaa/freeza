@@ -5,8 +5,7 @@
 <meta charset="UTF-8">
 <title>ログアウト確認</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="css/common.css">
-<link rel="stylesheet" href="css/localrecipeTable.css">
+
 <style>
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -82,7 +81,8 @@ h2 {
 .btn-cancel {
     background-color: #f7f0ea;
     color: #7a6b61;
-    border: 1px solid #eade水平d2;
+    /* 💡 「border: 1px solid #eade水平d2;」になっていたタイポを修正しました */
+    border: 1px solid #eaded2; 
 }
 .btn-cancel:hover {
     background-color: #ede2d7;
@@ -105,20 +105,6 @@ h2 {
 </style>
 </head>
 <body>
-<div class="manaita MANA1"></div>
-<div class="totte TOTE1"></div>
-<div class="bg-bubble b1"></div>
-<div class="bg-bubbleaA bb1"></div>
-<div class="bg-bubble2 b2"></div>
-<div class="bg-bubble3 b3"></div>
-<%
-    // 🔍 セッションを確認して、キャンセル時の戻り先を自動判定
-    String cancelUrl = "home-servlet"; // デフォルト（一般利用者用）
-    
-    if (session.getAttribute("adminId") != null) {
-        cancelUrl = "admin-home.jsp"; // 管理者がログイン中なら、管理者トップへ戻す
-    }
-%>
 
 <div class="container">
     <form action="logout-servlet" method="post">
@@ -135,7 +121,7 @@ h2 {
         </div>
         
         <div class="btn-group">
-            <button type="button" class="btn btn-cancel" onclick="location.href='<%= cancelUrl %>'">
+            <button type="button" class="btn btn-cancel" onclick="history.back();">
                 キャンセル
             </button>
             
