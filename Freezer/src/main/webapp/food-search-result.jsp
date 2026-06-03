@@ -19,6 +19,12 @@ table, tr, td, th {
 </head>
 <body>
 
+<form action="food-list-servlet" method="post">
+
+    <input type="submit" value="食材一覧へ戻る">
+
+</form>
+
 <%
 List<FoodBean> foodList =
         (List<FoodBean>) request.getAttribute("foodList");

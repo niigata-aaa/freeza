@@ -37,11 +37,30 @@ List<FoodBean> foodList = (List<FoodBean>) request.getAttribute("foodList");
 <h2>
     食材一覧
     <span style="float:right;">
-        <a class="btn search" href="food-search.jsp">
+        <a class="btn search" href="food-search-result.jsp">
             検索
         </a>
     </span>
+    <form action="food-search-servlet" method="post">
+
+    食材名：
+    <input type="text" maxlength="50" name="foodName">
+
+    <br><br>
+
+
+</form>
 </h2>
+<a class="btn add" href="food-add.jsp">
+    追加
+</a>
+<a class="btn update" href="food-update.jsp"> 
+    変更
+</a>
+
+<a class="btn delete" href="food-delete.jsp"> 
+    削除
+</a>
 
 <table border="1">
 <tr>
@@ -93,19 +112,8 @@ if (foodList != null && !foodList.isEmpty()) {
 %>
 </table>
 
-<br>
 
-<a class="btn add" href="food-add.jsp">
-    追加
-</a>
 
-<a class="btn update" href="food-update.jsp"> 
-    変更
-</a>
-
-<a class="btn delete" href="food-delete.jsp"> 
-    削除
-</a>
 
 </body>
 
