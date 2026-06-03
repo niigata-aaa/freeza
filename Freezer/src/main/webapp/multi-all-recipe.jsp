@@ -81,5 +81,8 @@ if (recipeList != null && !recipeList.isEmpty()) {
 </div>
 </div>
 </body>
+
+<%@ include file="footer.jsp" %>
+
 </html>
 
