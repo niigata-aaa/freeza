@@ -23,7 +23,9 @@
 <%
 List<FoodBean> foodList = (List<FoodBean>) session.getAttribute("foodList");
 %>
-
+<a href="food-list-servlet" class="btn">
+    食材一覧に戻る
+</a>
 <h2>使用した食材</h2>
 
 <form action="food-update-confirm-servlet" method="post">
@@ -57,7 +59,7 @@ List<FoodBean> foodList = (List<FoodBean>) session.getAttribute("foodList");
 
     <br><br>
 
-    <button type="submit">
+    <button type="submit" class="btn">
         変更
     </button>
 
@@ -65,9 +67,7 @@ List<FoodBean> foodList = (List<FoodBean>) session.getAttribute("foodList");
 
 <br>
 
-<a href="food-list-servlet">
-    食材一覧に戻る
-</a>
+
 </div>
 
 </div>
