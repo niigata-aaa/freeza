@@ -38,7 +38,7 @@
            </tr>
            <tr>
                <td>レシピ作り方：</td>
-               <td><textarea required name="recipehowto" cols="50" rows="20" maxlength="1000"></textarea></td>
+               <td><textarea required name="recipehowto" cols="50" rows="20" maxlength="1000" class="space"></textarea></td>
            </tr>
            <tr>
                <td>レシピ何人前：</td>
