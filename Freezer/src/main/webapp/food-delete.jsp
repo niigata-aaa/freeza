@@ -59,7 +59,7 @@ input[type="button"], input[type="submit"] {
 	padding: 8px 30px;
 	font-size: 16px;
 	cursor: pointer;
-	background-color: #fff;
+
 	border: 1px solid #333;
 }
 </style>
@@ -97,8 +97,8 @@ input[type="button"], input[type="submit"] {
 			</div>
 
 			<div class="button-group">
-				<input type="button" value="戻る" onclick="history.back()" class="btn"> <input
-					type="submit" value="削除" class="btn">
+				<input type="button" value="戻る" onclick="history.back()" class="btn"> 
+				<input type="submit" value="削除" class="btn">
 			</div>
 
 		</form>
