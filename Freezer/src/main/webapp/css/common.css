@@ -36,7 +36,7 @@ textarea{
     border-radius:12px;
     box-sizing:border-box;
     margin-top:5px;
-    margin-bottom:15px;
+/*	white-space: pre-wrap;*/
 }
 
 textarea{
