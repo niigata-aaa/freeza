@@ -10,7 +10,11 @@
 <meta charset="UTF-8">
 <title>食材検索結果</title>
 <link rel="stylesheet" href="css/common.css">
+<<<<<<< HEAD
 
+=======
+<link rel="stylesheet" href="css/localrecipeTable.css">
+>>>>>>> branch 'master' of https://github.com/niigata-aaa/freeza.git
 <style>
 table, tr, td, th {
     border: black solid 1px;
@@ -19,9 +23,23 @@ table, tr, td, th {
 
 </head>
 <body>
+<<<<<<< HEAD
 <div class="container">
         <div class="card">
 
+=======
+<div class="manaita MANA1"></div>
+<div class="totte TOTE1"></div>
+<div class="bg-bubble b1"></div>
+<div class="bg-bubbleaA bb1"></div>
+<div class="bg-bubble2 b2"></div>
+<div class="bg-bubble3 b3"></div>
+<form action="food-list-servlet" method="post">
+
+    <input type="submit" value="食材一覧へ戻る">
+
+</form>
+>>>>>>> branch 'master' of https://github.com/niigata-aaa/freeza.git
 
 <%
 List<FoodBean> foodList =

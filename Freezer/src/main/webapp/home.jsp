@@ -7,7 +7,8 @@
 <title>HOME</title>
 
 <link rel="stylesheet" href="css/styles.css">
-
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/localrecipeTable.css">
 <style>
 	body {
         font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -110,7 +111,12 @@
 </head>
 <%@ include file="header.jsp" %>
 <body>
-
+<div class="manaita MANA1"></div>
+<div class="totte TOTE1"></div>
+<div class="bg-bubble b1"></div>
+<div class="bg-bubbleaA bb1"></div>
+<div class="bg-bubble2 b2"></div>
+<div class="bg-bubble3 b3"></div>
     <div class="home-section">
         <div class="section-title">⚠️ 消費期限が近い食材</div>
         <div class="scroll-box">

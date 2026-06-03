@@ -4,6 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <title>会員登録 - ロスロス</title>
+<link rel="stylesheet" href="common.css">
+<link rel="stylesheet" href="localrecipeTable.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>

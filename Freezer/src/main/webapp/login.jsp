@@ -6,7 +6,8 @@
 <meta charset="UTF-8">
 <title>ログイン画面</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/localrecipeTable.css">
 <style>
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -168,7 +169,12 @@ h2::before, h2::after {
 </style>
 </head>
 <body>
-
+<div class="manaita MANA1"></div>
+<div class="totte TOTE1"></div>
+<div class="bg-bubble b1"></div>
+<div class="bg-bubbleaA bb1"></div>
+<div class="bg-bubble2 b2"></div>
+<div class="bg-bubble3 b3"></div>
 <div class="container">
     <h2>ログイン画面</h2>
 
