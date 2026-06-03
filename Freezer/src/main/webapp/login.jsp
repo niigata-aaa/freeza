@@ -169,7 +169,12 @@ h2::before, h2::after {
 </style>
 </head>
 <body>
-
+<div class="manaita MANA1"></div>
+<div class="totte TOTE1"></div>
+<div class="bg-bubble b1"></div>
+<div class="bg-bubbleaA bb1"></div>
+<div class="bg-bubble2 b2"></div>
+<div class="bg-bubble3 b3"></div>
 <div class="container">
     <h2>ログイン画面</h2>
 

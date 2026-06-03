@@ -20,6 +20,12 @@ table, tr, td, th {
 
 </head>
 <body>
+<div class="manaita MANA1"></div>
+<div class="totte TOTE1"></div>
+<div class="bg-bubble b1"></div>
+<div class="bg-bubbleaA bb1"></div>
+<div class="bg-bubble2 b2"></div>
+<div class="bg-bubble3 b3"></div>
 <div class="container">
         <div class="card">
 <%

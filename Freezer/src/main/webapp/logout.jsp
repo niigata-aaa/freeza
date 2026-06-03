@@ -105,7 +105,12 @@ h2 {
 </style>
 </head>
 <body>
-
+<div class="manaita MANA1"></div>
+<div class="totte TOTE1"></div>
+<div class="bg-bubble b1"></div>
+<div class="bg-bubbleaA bb1"></div>
+<div class="bg-bubble2 b2"></div>
+<div class="bg-bubble3 b3"></div>
 <%
     // 🔍 セッションを確認して、キャンセル時の戻り先を自動判定
     String cancelUrl = "home-servlet"; // デフォルト（一般利用者用）
