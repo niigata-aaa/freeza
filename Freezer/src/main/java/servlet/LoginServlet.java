@@ -39,7 +39,7 @@ public class LoginServlet extends HttpServlet {
 				
 				// 認証成功：セッションに user_id を保存
 				session.setAttribute("user_id", id);
-				
+				session.setAttribute("password", password);
 				//ログインした人が会員か管理者か判定
 				if (dao.admin_flg_Check(id)) {
 					// アドミンフラグ成功はRecipeListServletへ

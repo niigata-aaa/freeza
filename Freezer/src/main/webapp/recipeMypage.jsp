@@ -30,17 +30,17 @@
 <div class="container">
 
 <div class="card">
-<div class="fade-in">
-<%
-String userId = (String) session.getAttribute("user_id");
-%>
+    <div class="fade-in">
 
-<h2>ユーザーID</h2>
-<p><%= userId %></p>
-</div>
+        <h2>ユーザー情報</h2>
 
+        <p>ユーザーID：${sessionScope.user_id}</p>
+        <p>パスワード：${sessionScope.password}</p>
 
+        <p>登録食材数：0件</p>
+        <p>投稿レシピ：0件</p>
 
+    </div>
 </div>
 
 </div>
