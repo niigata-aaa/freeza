@@ -169,7 +169,7 @@
             } else { 
                 for(RecipeBean recipe : recipeList) { 
             %>
-                <a href="recommend-recipe-detail-servlet?recipeId=<%= recipe.getRecipeId() %>" style="text-decoration: none; color: inherit;">
+                <a href="recipe-all-detail-servlet?recipeId=<%= recipe.getRecipeId() %>" style="text-decoration: none; color: inherit;">
                     <div class="custom-card">
                         <div class="card-img-area">
                              <%-- 画像データが存在するかチェック --%>
