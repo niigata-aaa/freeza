@@ -24,7 +24,7 @@ List<RecipeBean> recipeList = (List<RecipeBean>) request.getAttribute("recipeLis
 <table>
 <tr>
 <!--<th>レシピID</th>-->
-<th>レシピ名</th><th>レシピ写真</th><th>材料</th><th>手順</th><th>何人前</th><th>掲載日時</th><th>更新日時</th>
+<th>レシピ名</th><th>レシピ写真</th><th>材料</th><th>掲載日時</th><th>更新日時</th>
 <%
 if (recipeList != null && !recipeList.isEmpty()) {
    for(RecipeBean recipe : recipeList){
@@ -41,8 +41,8 @@ if (recipeList != null && !recipeList.isEmpty()) {
     	<% } %></td>
     	
    <td><%=recipe.getRecipeIngredients()%></td>
-   <td><%=recipe.getRecipeHowto()%></td>
-   <td><%=recipe.getRecipeServings()%></td>
+<!--   <td><%=recipe.getRecipeHowto()%></td>
+   <td><%=recipe.getRecipeServings()%></td>-->
    <td><%=recipe.getPostingDatetime()%></td>
    <td><%=recipe.getUpdateDatetime()%></td>
 <td>

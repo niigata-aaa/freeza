@@ -21,12 +21,12 @@ List<RecipeBean> recipeList = (List<RecipeBean>) request.getAttribute("recipeLis
 <table>
 <tr>
 <!--<th>レシピID</th>-->
-<th>レシピ名</th><th>レシピ写真</th><th>材料</th><th>手順</th><th>何人前</th><th>掲載日時</th><th>更新日時</th>
+<th>レシピ名</th><th>レシピ写真</th><th>材料</th><th>掲載日時</th><th>更新日時</th>
 <%
    for(RecipeBean recipe : recipeList){
 %>
 <tr>
-<!--<td><%=recipe.getRecipeId()%></td>-->
+<%--<td><%=recipe.getRecipeId()%></td>--%>
    <td><%=recipe.getRecipeName()%></td>
 <%-- 画像データが存在するかチェック --%>
         <td><% if (recipe.getBase64Image() != null && !recipe.getBase64Image().isEmpty()) { %>
@@ -35,8 +35,8 @@ List<RecipeBean> recipeList = (List<RecipeBean>) request.getAttribute("recipeLis
         	<div style="width:100px">No Image</div>
     	<% } %></td>
    <td><%=recipe.getRecipeIngredients()%></td>
-   <td><%=recipe.getRecipeHowto()%></td>
-   <td><%=recipe.getRecipeServings()%></td>
+<%--   <td><%=recipe.getRecipeHowto()%></td>
+   <td><%=recipe.getRecipeServings()%></td> --%>
    <td><%=recipe.getPostingDatetime()%></td>
    <td><%=recipe.getUpdateDatetime()%></td>
 <td>

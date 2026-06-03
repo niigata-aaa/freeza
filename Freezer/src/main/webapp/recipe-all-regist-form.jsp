@@ -26,7 +26,7 @@
            </tr>   --%> 
            <tr>
                <td>レシピ名：</td>
-               <td><input required type="text" name="recipename" size="10"></td>
+               <td><input required type="text" name="recipename" size="10" maxlength="50"></td>
            </tr>
              <tr>
                <td>レシピ画像：</td>
@@ -34,11 +34,11 @@
            </tr>  
            <tr>
                <td>レシピ材料：</td>
-               <td><textarea required name="recipeingredients" cols="30" ></textarea></td>
+               <td><textarea required name="recipeingredients" cols="50" rows="4" maxlength="200"></textarea></td>
            </tr>
            <tr>
                <td>レシピ作り方：</td>
-               <td><textarea required name="recipehowto" cols="30" ></textarea></td>
+               <td><textarea required name="recipehowto" cols="50" rows="20" maxlength="1000"></textarea></td>
            </tr>
            <tr>
                <td>レシピ何人前：</td>
