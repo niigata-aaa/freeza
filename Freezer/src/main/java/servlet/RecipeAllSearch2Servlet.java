@@ -80,4 +80,3 @@ public class RecipeAllSearch2Servlet extends HttpServlet {
 }
 
 
-

@@ -57,4 +57,3 @@ public class RecipeAllDetailServlet extends HttpServlet {
 }
 
 
-

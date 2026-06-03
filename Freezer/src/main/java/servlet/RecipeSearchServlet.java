@@ -73,7 +73,7 @@ public class RecipeSearchServlet extends HttpServlet {
 		}
 
 		// 検索画面へ戻る
-		RequestDispatcher rd = request.getRequestDispatcher("recipe-list.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("recipe-search.jsp");
 
 		rd.forward(request, response);
 	}
