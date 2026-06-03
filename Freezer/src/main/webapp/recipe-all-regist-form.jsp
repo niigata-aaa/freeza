@@ -56,6 +56,7 @@
                <td><input type="submit" value="登録" class="btn"></td>
            </tr>
            
+           
        </table>
    </form>
    </div>
