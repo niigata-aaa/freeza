@@ -34,11 +34,10 @@
 
         <h2>ユーザー情報</h2>
 
-        <p>ユーザーID：${sessionScope.user_id}</p>
-        <p>パスワード：${sessionScope.password}</p>
-
-        <p>登録食材数：0件</p>
-        <p>投稿レシピ：0件</p>
+        <p>ユーザーID：ようこそ ${sessionScope.user_id} さん</p>
+        <p onclick="this.innerText='${sessionScope.password}'">
+パスワード：●●●●（クリックで表示）
+</p>
 
     </div>
 </div>
