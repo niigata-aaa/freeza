@@ -31,10 +31,12 @@
 
 <div class="card">
 <div class="fade-in">
-<h2> ユーザーID</h2>
+<%
+String userId = (String) session.getAttribute("user_id");
+%>
 
-<p>登録食材数：0件</p>
-<p>投稿レシピ：0件</p>
+<h2>ユーザーID</h2>
+<p><%= userId %></p>
 </div>
 
 
