@@ -18,6 +18,7 @@
 <form action="recipe-list-servletX" method="post">
 <input type="submit" value="投稿したレシピを見る" class="btn">
 </form>
+<br>
 <a href="logout.jsp" class="btn">ログアウトはこちら</a>
 </div>
 
