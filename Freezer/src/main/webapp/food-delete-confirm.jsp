@@ -44,7 +44,7 @@
         padding: 8px 30px;
         font-size: 16px;
         cursor: pointer;
-        background-color: #fff;
+
         border: 1px solid #333;
     }
 </style>
