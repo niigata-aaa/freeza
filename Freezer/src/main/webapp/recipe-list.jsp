@@ -15,13 +15,29 @@
 <div class="bg-bubbleaA bb1"></div>
 <div class="bg-bubble2 b2"></div>
 <div class="bg-bubble3 b3"></div>
+
+
+<form action="recipe-search-servlet" method="post">
+
+    レシピ名または食材名:
+    <input required type="text" maxlength="50" name="recipeName">
+
+    <br><br>
+
+    <input type="submit" value="検索">
+
+</form>
+
+<a href="logout.jsp">ログアウト</a>
+
+
 <%
 List<RecipeBean> recipeList = (List<RecipeBean>) request.getAttribute("recipeList");
 %>
 <table>
 <tr>
 <!--<th>レシピID</th>-->
-<th>レシピ名</th><th>レシピ写真</th><th>材料</th><th>掲載日時</th><th>更新日時</th>
+<th>レシピ名</th><th>レシピ写真</th><th>材料</th><th>詳細表示</th>
 <%
    for(RecipeBean recipe : recipeList){
 %>
@@ -36,9 +52,9 @@ List<RecipeBean> recipeList = (List<RecipeBean>) request.getAttribute("recipeLis
     	<% } %></td>
    <td><%=recipe.getRecipeIngredients()%></td>
 <%--   <td><%=recipe.getRecipeHowto()%></td>
-   <td><%=recipe.getRecipeServings()%></td> --%>
+   <td><%=recipe.getRecipeServings()%></td> 
    <td><%=recipe.getPostingDatetime()%></td>
-   <td><%=recipe.getUpdateDatetime()%></td>
+   <td><%=recipe.getUpdateDatetime()%></td>　--%>
 <td>
 <form action="recipe-detail-servlet" method="POST">
    <input type="hidden" name="RecipeId2" value="<%=recipe.getRecipeId()%>">
@@ -51,7 +67,7 @@ List<RecipeBean> recipeList = (List<RecipeBean>) request.getAttribute("recipeLis
 %>
 </table>
 
-<form action="recipe-search-servlet" method="post">
+<%-- <form action="recipe-search-servlet" method="post">
 
     レシピ名または食材名:
     <input type="text" maxlength="50" name="recipeName">
@@ -61,7 +77,7 @@ List<RecipeBean> recipeList = (List<RecipeBean>) request.getAttribute("recipeLis
     <input type="submit" value="検索">
 
 </form>
-<a href="logout.jsp">ログアウト</a>
+<a href="logout.jsp">ログアウト</a>  --%>
 </body>
 </html>
 

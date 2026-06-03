@@ -133,22 +133,8 @@ body {
     left: auto;
 
 }
-.totte {
-    position: fixed;
-    border-radius: 10%;
-    background: linear-gradient(135deg, rgb(255, 255, 255));
-    z-index: -2.5; /* コンテンツ（カード）の後ろに回す */
-    pointer-events: none; /* クリックなどの邪魔をしない */
-}
-.TOTE1 {
-    width: 200px;
-    height: 50px;
-    top: auto;
-    left: auto;
-	right: 805px;
-	bottom:450px;
 
-}
+
 
 .bg-bubble {
     position: fixed;
@@ -189,13 +175,6 @@ body {
     left: -50px;
     animation: floatAnimation1 7s infinite alternate ease-in-out;
 }
-.bb1 {
-    width: 1000px;
-    height: 1000px;
-    top: -50px;
-    left: -50px;
-    animation: floatAnimation1 7s infinite alternate ease-in-out;
-}
 
 /* 丸2 */
 .b2 {
@@ -212,7 +191,7 @@ body {
     height: 200px;
     top: 250px;
     left: 70px;
-    animation: floatAnimation1 2.5s infinite alternate ease-in-out;
+    animation: floatAnimation1 12s infinite alternate ease-in-out;
 }
 
 /* 丸の動き方の定義 */

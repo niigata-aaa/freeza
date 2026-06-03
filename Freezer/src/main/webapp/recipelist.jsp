@@ -29,6 +29,7 @@
 	<%
 	List<RecipeBean> RecipeParsonalList = (List<RecipeBean>) request.getAttribute("RecipeParsonalList");
 	%>
+	
 	<div class="container">
         <div class="card">
         <div class="color">
@@ -53,7 +54,7 @@
                             <td style="text-align: center;">
                                 <%-- 参考データの手法で、DBから読んできたBLOB（Base64文字列）を綺麗に描写 --%>
                                 <% if (employee.getBase64Image() != null && !employee.getBase64Image().isEmpty()) { %>
-                                    <img src="data:image/jpeg;base64,<%= employee.getBase64Image() %>" width="100" height="100" style="object-fit: cover;">
+                                    <img src="data:image/jpeg;base64,<%= employee.getBase64Image() %>" width="100px" height="100px" style="object-fit: cover;">
                                 <% } else { %>
                                     No Image
                                 <% } %>
@@ -62,10 +63,7 @@
                             <td><%= employee.getRecipeServings() %></td>
                             <td><%= employee.getUpdateDatetime() %></td>
                             <td>
-                                <form action="recipe-datail-servlet" method="POST">
-                                    <input type="hidden" name="code" value="<%= employee.getRecipeId() %>">
-                                    <input type="submit" value="編集" class="btn">
-                                </form>
+                           
                             </td>
                         </tr>
                         <% } %>
