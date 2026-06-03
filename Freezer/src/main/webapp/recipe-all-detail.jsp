@@ -6,15 +6,8 @@
 <meta charset="UTF-8">
 <title>レシピ詳細情報</title>
 <link rel="stylesheet" href="css/common.css">
-<link rel="stylesheet" href="css/localrecipeTable.css">
 </head>
 <body>
-<div class="manaita MANA1"></div>
-<div class="totte TOTE1"></div>
-<div class="bg-bubble b1"></div>
-<div class="bg-bubbleaA bb1"></div>
-<div class="bg-bubble2 b2"></div>
-<div class="bg-bubble3 b3"></div>
 <div class="container">
         <div class="card">
 <jsp:useBean id="recipe" scope="session" class="model.entity.RecipeBean"/>
@@ -32,15 +25,11 @@
 掲載日時：<jsp:getProperty name="recipe" property="postingDatetime"/><br>
 更新日時：<jsp:getProperty name="recipe" property="updateDatetime"/><br>
 <form action="recipe-all-list-servlet" method="POST">
-   <input type="submit" value="一覧表示" class="btn">
+   <input type="submit" value="食材一覧へ戻る" class="btn">
    </form>
    </div>
    </div>
-  <form action="recipe-all-list-servlet" method="post">
-
-    <input type="submit" value="食材一覧へ戻る">
-
-</form>
+  
 </body>
 </html>
 

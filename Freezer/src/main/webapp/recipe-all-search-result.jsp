@@ -10,7 +10,6 @@
 <meta charset="UTF-8">
 <title>レシピ検索結果</title>
 <link rel="stylesheet" href="css/common.css">
-<link rel="stylesheet" href="css/localrecipeTable.css">
 
 <style>
 table, tr, td, th {
@@ -20,12 +19,6 @@ table, tr, td, th {
 
 </head>
 <body>
-<div class="manaita MANA1"></div>
-<div class="totte TOTE1"></div>
-<div class="bg-bubble b1"></div>
-<div class="bg-bubbleaA bb1"></div>
-<div class="bg-bubble2 b2"></div>
-<div class="bg-bubble3 b3"></div>
 <div class="container">
         <div class="card">
 <%
@@ -47,20 +40,26 @@ if (recipeList != null) {
 
 <table>
 
-<tr>
-    <th>レシピ名</th>
-
-</tr>
-
+<th>レシピ名</th><th>レシピ写真</th><th>材料</th><th>手順</th><th>何人前</th>
 <%
-for (RecipeBean recipe : recipeList) {
+if (recipeList != null && !recipeList.isEmpty()) {
+   for(RecipeBean recipe : recipeList){
 %>
-
 <tr>
-
-<!--    <td><%=recipe.getRecipeId()%></td>-->
-
-    <td><%=recipe.getRecipeName()%></td>
+<!--<td><%=recipe.getRecipeId()%></td>-->
+   <td><%=recipe.getRecipeName()%></td>
+   
+   <td><%-- 画像データが存在するかチェック --%>
+        <% if (recipe.getBase64Image() != null && !recipe.getBase64Image().isEmpty()) { %>
+        <img src="data:image/png;base64,<%= recipe.getBase64Image() %>"width="100px" />
+    	<% } else { %>
+        	<div style="width:100px">No Image</div>
+    	<% } %></td>
+    	
+   <td><%=recipe.getRecipeIngredients()%></td>
+   <td><%=recipe.getRecipeHowto()%></td>
+   <td><%=recipe.getRecipeServings()%></td>
+   
 <td>
 <form action="recipe-all-detail-servlet" method="POST">
    <input type="hidden" name="RecipeId2" value="<%=recipe.getRecipeId()%>">
@@ -70,6 +69,7 @@ for (RecipeBean recipe : recipeList) {
 </tr>
 
 <%
+}
 }
 %>
 
