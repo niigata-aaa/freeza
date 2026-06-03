@@ -53,7 +53,7 @@
                <td><input type="date" name="update"></textarea></td>
            </tr>  --%> 
            <tr>
-               <td><input type="submit" value="登録"></td>
+               <td><input type="submit" value="登録" class="btn"></td>
            </tr>
            
        </table>
@@ -62,7 +62,7 @@
    </div>
    <tr><form action="recipe-all-list-servlet" method="post">
 
-			    <td><input type="submit" value="食材一覧へ戻る">
+			    <td><input type="submit" value="食材一覧へ戻る" class="btn">
 			
 			</tr></form>
 </body>

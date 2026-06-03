@@ -25,7 +25,7 @@
 
  
 
-    <input type="submit" value="検索">
+    <input type="submit" value="検索" class="btn">
 
 </form>
 
@@ -33,7 +33,7 @@
 <br>
 <br>
 
-<a href="recipe-all-regist-form.jsp">レシピ投稿</a>
+<a href="recipe-all-regist-form.jsp" class="btn">レシピ投稿</a>
         
 <br>
 <br>
@@ -56,7 +56,7 @@ if (recipeList != null && !recipeList.isEmpty()) {
    
    <td><%-- 画像データが存在するかチェック --%>
         <% if (recipe.getBase64Image() != null && !recipe.getBase64Image().isEmpty()) { %>
-        <img src="data:image/png;base64,<%= recipe.getBase64Image() %>"width="100px" />
+        <img src="data:image/png;base64,<%= recipe.getBase64Image() %>"width="100px" height="100px"/>
     	<% } else { %>
         	<div style="width:100px">No Image</div>
     	<% } %></td>

@@ -36,7 +36,7 @@ FoodBean food = (FoodBean) request.getAttribute("updateFood");
 <!-- 左下：キャンセル -->
 <div style="position: absolute; bottom: 20px; left: 20px;">
     <form action="food-update.jsp" method="get">
-        <button type="submit">
+        <button type="submit" class="btn">
             キャンセル
         </button>
     </form>
@@ -49,7 +49,7 @@ FoodBean food = (FoodBean) request.getAttribute("updateFood");
         <input type="hidden" name="foodId" value="<%=food.getFoodId()%>">
         <input type="hidden" name="foodQuantity" value="<%=food.getFoodQuantity()%>">
 
-        <button type="submit">
+        <button type="submit" class="btn">
             変更する
         </button>
 

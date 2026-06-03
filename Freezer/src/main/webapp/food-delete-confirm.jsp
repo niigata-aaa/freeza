@@ -81,8 +81,8 @@
         </div>
 
         <div class="button-group">
-            <input type="button" name="cancel" value="キャンセル" onclick="history.back()">
-            <input type="submit" value="削除">
+            <input type="button" name="cancel" value="キャンセル" onclick="history.back()" class="btn">
+            <input type="submit" value="削除" class="btn">
         </div>
         
     </form>

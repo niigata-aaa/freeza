@@ -39,7 +39,7 @@ if(error != null){
 }
 %>
 
-<a href="recipeMypage.jsp">戻る</a>
+<a href="recipeMypage.jsp" class="btn">戻る</a>
 </div>
 </div>
 </body>
