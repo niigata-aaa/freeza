@@ -5,21 +5,19 @@
 <head>
 <meta charset="UTF-8">
 <title>個人レシピ一覧(2)</title>
-<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="common.css">
+<link rel="stylesheet" href="localrecipeTable.css">
 </head>
 <body>
-    <%-- 会員マイページエリア --%>
-    <div class="container">
-        <div class="card">
-            <h2>ユーザーID</h2>
-            <p>登録食材数</p>
-            <p>投稿レシピ</p>
-            
-            <a href="logout.jsp">ログアウトはこちら</a>
+<a href="recipeMypage.jsp" class="btn">マイページに戻る</a>
         </div>
-    </div>
-
-    <hr>
+        <a href="recipeUpload.jsp" class="btn">新しいレシピを投稿する</a><br>
+            <%-- <form action="recipe-list-servletX" method="post">
+                <input type="submit" value="先頭に戻る">
+            </form>--%>
+<div class="bg-bubble b1"></div>
+<div class="bg-bubble b2"></div>
+<div class="bg-bubble b3"></div>
 
     <%-- 個人レシピ一覧テーブルエリア --%>
 	<%
@@ -29,6 +27,7 @@
         <div class="card">
         <div class="color">
 	        <div class="table_title">レシピリスト</div>
+	        
 	        <div class="example">
 	            <table>
 		            <tr>
@@ -39,10 +38,11 @@
                         <th>更新日</th>
                         <th>操作</th>
                     </tr>
-                    
+                   
                     <% if (RecipeParsonalList != null && !RecipeParsonalList.isEmpty()) { %>
                         <% for (RecipeBean employee : RecipeParsonalList){ %>
                         <tr>
+                     
                             <td><%= employee.getRecipeName() %></td>
                             <td style="text-align: center;">
                                 <%-- 参考データの手法で、DBから読んできたBLOB（Base64文字列）を綺麗に描写 --%>
@@ -69,15 +69,11 @@
                         </tr>
                     <% } %>
 	            </table>
+	            </div>
             </div>
             </div>
             <br>
-            <a href="recipeMypage.jsp" class="btn">マイページに戻る</a>
-        </div>
-        <a href="recipeUpload.jsp" class="btn" style="display:inline-block; margin-bottom:10px; padding:5px 10px; background:#4CAF50; color:#fff; text-decoration:none; border-radius:3px;">新しいレシピを投稿する</a><br>
-            <form action="recipe-list-servletX" method="post">
-                <input type="submit" value="先頭に戻る">
-            </form>
-    </div>
+            
+
 </body>
 </html>
