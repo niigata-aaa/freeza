@@ -18,13 +18,23 @@
 <jsp:useBean id="employee" scope="request" class="model.entity.RecipeBean"/>
 <div class="container">
         <div class="card">
+        <form action="recipe-alter-form-servlet" method="POST">
+    <input type="hidden" name="id" value="<%= employee.getRecipeId() %>">
+    <input type="submit" value="変更" class="btn">
+</form>
+
+<form action="delete.jsp" method="POST">
+    <input type="hidden" name="recipe_id" value="<%= employee.getRecipeId() %>">
+    <input type="submit" value="削除" class="btn">
+</form>
+<a href="recipeMypage.jsp">マイページ</a>
 <h2>レシピ詳細</h2>
 レシピ名：<jsp:getProperty name="employee" property="recipeName"/><br>
 材料：<jsp:getProperty name="employee" property="recipeIngredients"/><br>
 
 画像：<br>
 <% if (employee.getBase64Image() != null && !employee.getBase64Image().isEmpty()) { %>
-    <img src="data:image/jpeg;base64,<%= employee.getBase64Image() %>" width="300" style="max-height:400px;">
+    <img src="data:image/jpeg;base64,<%= employee.getBase64Image() %>" width="300px" style="max-height:300px;">
 <% } else { %>
     No Image
 <% } %>
@@ -37,16 +47,7 @@
 
 <hr>
 
-<form action="recipe-alter-form-servlet" method="POST">
-    <input type="hidden" name="id" value="<%= employee.getRecipeId() %>">
-    <input type="submit" value="変更" class="btn">
-</form>
 
-<form action="delete.jsp" method="POST">
-    <input type="hidden" name="recipe_id" value="<%= employee.getRecipeId() %>">
-    <input type="submit" value="削除" class="btn">
-</form>
-<a href="recipeMypage.jsp">マイページ</a>
 </div>
 </div>
 </body>

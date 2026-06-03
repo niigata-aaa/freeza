@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="css/localrecipeTable.css">
 </head>
 <body>
+<a href="recipe-list-servletX" class="btn">レシピ一覧に戻る</a>
 <div class="manaita MANA1"></div>
 <div class="totte TOTE1"></div>
 <div class="bg-bubble b1"></div>
@@ -22,9 +23,9 @@
         何人前: <input type="number" name="recipeServings" required /><br/><br/>
         料理画像: <input type="file" name="recipeImage" accept="image/*" required /><br/><br/>
         
-        <input type="submit" value="アップロードして一覧へ" />
+        <input type="submit" value="アップロードして一覧へ" class="btn"/>
     </form>
     <br/>
-    <a href="recipe-list-servletX">レシピ一覧に戻る</a>
+    
 </body>
 </html>
