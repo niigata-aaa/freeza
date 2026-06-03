@@ -51,7 +51,8 @@ public class RecipeUploadServlet extends HttpServlet {
             dao.insertRecipe(recipe); // DBへインサートを実行
             
             // 投稿が完了したら、一覧表示を司るサーブレットへリダイレクト
-            response.sendRedirect("recipe-list-servletX");
+            request.getRequestDispatcher("recipe-list-servletX")
+            .forward(request, response);
             
         } catch (Exception e) {
             e.printStackTrace();

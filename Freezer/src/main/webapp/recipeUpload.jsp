@@ -8,7 +8,10 @@
 <link rel="stylesheet" href="css/localrecipeTable.css">
 </head>
 <body>
-<a href="recipe-list-servletX" class="btn">レシピ一覧に戻る</a>
+<form action="recipe-list-servletX" method="post">
+        <input type="submit" value="レシピ一覧に戻る" class="btn"/>
+    </form>
+    <br/>
 <div class="manaita MANA1"></div>
 <div class="totte TOTE1"></div>
 <div class="bg-bubble b1"></div>
