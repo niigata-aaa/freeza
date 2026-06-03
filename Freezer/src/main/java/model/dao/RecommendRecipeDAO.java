@@ -33,7 +33,7 @@ public class RecommendRecipeDAO {
 
              RecipeBean bean = new RecipeBean();
 
-//             bean.setRecipeId(rs.getInt("recipe_id"));
+             bean.setRecipeId(rs.getInt("recipe_id"));
              bean.setRecipeName(rs.getString("recipe_name"));
              byte[] img = rs.getBytes("recipe_img");
      	    bean.setRecipeImg(img);
