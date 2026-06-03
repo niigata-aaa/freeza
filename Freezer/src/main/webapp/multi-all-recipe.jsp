@@ -69,7 +69,7 @@ if (recipeList != null && !recipeList.isEmpty()) {
 <td>
 <form action="recipe-all-detail-servlet" method="POST">
    <input type="hidden" name="RecipeId2" value="<%=recipe.getRecipeId()%>">
-   <input type="submit" value="詳細表示">
+   <input type="submit" value="詳細表示" class="btn">
 </form>
 </td>
 </tr>
