@@ -71,7 +71,7 @@ List<FoodBean> foodList = (List<FoodBean>) request.getAttribute("foodList");
 <form action="food-search-servlet" method="post">
 
     レシピ名または食材名:
-    <input type="text" maxlength="50" name="foodName" >
+    <input required type="text" maxlength="50" name="foodName" >
 
     <br><br>
 

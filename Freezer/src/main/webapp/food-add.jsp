@@ -24,19 +24,19 @@
 	
 		<div class="container">
     	<div class="photo-upload-container">
-        	<input type="file" id="foodPhoto" name="foodPhoto" accept="image/*" class="file-input">
+        	<input required type="file" id="foodPhoto" name="foodPhoto" accept="image/*" class="file-input">
 			<span class="upload-label-text">+写真を追加</span>
     	</div>
     	</div>
     	
-		食材名：<input type="text" name="foodName">
-				<input type="number" name="number">
+		食材名：<input required type="text" name="foodName">
+				<input required type="number" name="number" min="1" step="1">
 				<select name ="単位">
 					<option value="個">個</option>
 					<option value="本">本</option>
 					<option value="g">g</option>
 				</select><br>
-		消費期限：<input type="date" name="data"><br>
+		消費期限：<input required type="date" name="data"><br>
 		
 		<a href="javascript:history.back();" class="btn">戻る</a>
 		<input type="submit" value="追加" class="btn">
