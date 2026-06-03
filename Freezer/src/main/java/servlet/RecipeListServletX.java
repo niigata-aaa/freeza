@@ -25,7 +25,7 @@ public class RecipeListServletX extends HttpServlet {
     // アップロード後のリダイレクト（GET）を受け取るために、ここに処理を記述します
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
-        List<RecipeBean> RecipeParsonalList = null;
+       /* List<RecipeBean> RecipeParsonalList = null;
         RecipePersonalDAO dao = new RecipePersonalDAO();
         
         try {
@@ -40,9 +40,25 @@ public class RecipeListServletX extends HttpServlet {
         RequestDispatcher rd = request.getRequestDispatcher("recipelist.jsp");
         rd.forward(request, response);
     }
-
+*/
+    }
     // もしフォームなどからPOSTでアクセスされても、上記のGET処理と同じ動きにする
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request, response);
-    }
+		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub
+				List<RecipeBean> RecipeParsonalList = null;
+				
+				RecipePersonalDAO dao = new RecipePersonalDAO();
+				
+				try {
+					RecipeParsonalList  = dao.selectAll();
+				}catch(SQLException | ClassNotFoundException e) {
+					e.printStackTrace();
+				}
+				
+				request.setAttribute("RecipeParsonalList", RecipeParsonalList);
+				
+				RequestDispatcher rd = request.getRequestDispatcher("recipelist.jsp");
+				rd.forward(request,response);
+			}
 }
