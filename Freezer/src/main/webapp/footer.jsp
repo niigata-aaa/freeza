@@ -54,7 +54,7 @@
 
 <div class="footer-container">
     <nav class="main-footer">
-        <a href="home.jsp" class="footer-item active">
+        <a href="home-servlet" class="footer-item active">
             <i class="fa-solid fa-house"></i>
             <span>ホーム</span>
         </a>
