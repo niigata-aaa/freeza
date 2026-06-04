@@ -49,7 +49,7 @@
                             <td style="text-align: center;">
                                 <%-- 参考データの手法で、DBから読んできたBLOB（Base64文字列）を綺麗に描写 --%>
                                 <% if (employee.getBase64Image() != null && !employee.getBase64Image().isEmpty()) { %>
-                                    <img src="data:image/jpeg;base64,<%= employee.getBase64Image() %>" width="100" height="100" style="object-fit: cover;">
+                                    <img src="data:image/jpeg;base64,<%= employee.getBase64Image() %>" width="200" height="200" style="object-fit: cover;">
                                 <% } else { %>
                                     No Image
                                 <% } %>

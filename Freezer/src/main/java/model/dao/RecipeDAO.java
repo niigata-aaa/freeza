@@ -216,7 +216,8 @@ System.out.println(recipe.getPostingDatetime());			//			RecipeBean recipe = new 
 				PreparedStatement pstmt = con.prepareStatement(sql)) {
 
 			pstmt.setString(1, "%" + recipe.getRecipeName() + "%");
-			pstmt.setString(2, "%" + recipe.getRecipeIngredients() + "%");
+			pstmt.setString(2, "%" + recipe.getRecipeName() + "%");
+			
 
 			ResultSet rs = pstmt.executeQuery();
 

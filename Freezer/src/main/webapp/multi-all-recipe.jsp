@@ -47,7 +47,7 @@ List<RecipeBean> recipeList = (List<RecipeBean>) request.getAttribute("recipeLis
 <table>
 <tr>
 <!--<th>レシピID</th>-->
-<th>レシピ名</th><th>レシピ写真</th><th>材料</th><th>詳細表示</th> 
+<tr><th>レシピ名</th><th>レシピ写真</th><th>材料</th><th>詳細表示</th> </tr>
 <%
 if (recipeList != null && !recipeList.isEmpty()) {
    for(RecipeBean recipe : recipeList){
@@ -58,10 +58,10 @@ if (recipeList != null && !recipeList.isEmpty()) {
    
    <td><%-- 画像データが存在するかチェック --%>
         <% if (recipe.getBase64Image() != null && !recipe.getBase64Image().isEmpty()) { %>
-        <img src="data:image/png;base64,<%= recipe.getBase64Image() %>"width="100px" height="100px"/>
+        <img src="data:image/png;base64,<%= recipe.getBase64Image() %>"width="200px" height="200px"/>
     	<% } else { %>
         	<div style="width:100px">No Image</div>
-    	<% } %></td>
+    	<% } %></td> 
     	
    <td><%=recipe.getRecipeIngredients()%></td>
 <%--   <td><%=recipe.getRecipeHowto()%></td>
