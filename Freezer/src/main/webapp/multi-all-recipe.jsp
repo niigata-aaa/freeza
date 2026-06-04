@@ -18,26 +18,8 @@
 <div class="container">
         <div class="card">
         
-<form action="recipe-all-search2-servlet" method="post">
-
-    レシピ名または食材名:
-    <input required type="text" maxlength="50" name="recipeName">
-
- 
-
-    <input type="submit" value="検索" class="btn">
-
-</form>
-
-<br>
-<br>
-<br>
-
+<form action="recipe-all-search2-servlet" method="post" style="white-space: nowrap;">レシピ名または食材名: <input required type="text" maxlength="50" name="recipeName" style="width: 240px;"> <input type="submit" value=" 検索 " class="btn"></form>
 <a href="recipe-all-regist-form.jsp" class="btn">レシピ投稿</a>
-        
-<br>
-<br>
-<br>
 <div class="table_title">レシピ一覧</div>
 
 <%

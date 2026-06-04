@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8" import="java.util.List,model.entity.RecipeBean"%>
+  pageEncoding="UTF-8" import="java.util.List,model.entity.RecipeBean"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,52 +15,38 @@
 <div class="bg-bubbleaA bb1"></div>
 <div class="bg-bubble2 b2"></div>
 <div class="bg-bubble3 b3"></div>
-
-
-<form action="recipe-search-servlet" method="post">
-
-    レシピ名または食材名:
-    <input required type="text" maxlength="50" name="recipeName">
-
-    <br><br>
-
-    <input type="submit" value="検索" class="btn">
-
-</form>
-
+<h2>管理者レシピ一覧画面</h2>
+<form action="recipe-search-servlet" method="post" style="white-space: nowrap;">レシピ名または食材名: <input required type="text" maxlength="50" name="recipeName" style="width: 240px;"> <input type="submit" value="検索" class="btn"></form>
 <a href="logout.jsp">ログアウト</a>
-
-
 <%
 List<RecipeBean> recipeList = (List<RecipeBean>) request.getAttribute("recipeList");
 %>
 <div class="example">
 <table>
-
 <tr>
 <!--<th>レシピID</th>-->
 	        <div class="table_title"><th>レシピ名</th><th>レシピ写真</th><th>材料</th><th>詳細表示</th></div>
 <%
-   for(RecipeBean recipe : recipeList){
+  for(RecipeBean recipe : recipeList){
 %>
 <tr>
 <%--<td><%=recipe.getRecipeId()%></td>--%>
-   <td><%=recipe.getRecipeName()%></td>
+  <td><%=recipe.getRecipeName()%></td>
 <%-- 画像データが存在するかチェック --%>
-        <td><% if (recipe.getBase64Image() != null && !recipe.getBase64Image().isEmpty()) { %>
-        <img src="data:image/png;base64,<%= recipe.getBase64Image() %>" width="100px" />
-    	<% } else { %>
-        	<div style="width:100px">No Image</div>
-    	<% } %></td>
-   <td><%=recipe.getRecipeIngredients()%></td>
+       <td><% if (recipe.getBase64Image() != null && !recipe.getBase64Image().isEmpty()) { %>
+       <img src="data:image/png;base64,<%= recipe.getBase64Image() %>" width="100px" />
+   	<% } else { %>
+       	<div style="width:100px">No Image</div>
+   	<% } %></td>
+  <td><%=recipe.getRecipeIngredients()%></td>
 <%--   <td><%=recipe.getRecipeHowto()%></td>
-   <td><%=recipe.getRecipeServings()%></td> 
-   <td><%=recipe.getPostingDatetime()%></td>
-   <td><%=recipe.getUpdateDatetime()%></td>　--%>
+  <td><%=recipe.getRecipeServings()%></td>
+  <td><%=recipe.getPostingDatetime()%></td>
+  <td><%=recipe.getUpdateDatetime()%></td>　--%>
 <td>
 <form action="recipe-detail-servlet" method="POST">
-   <input type="hidden" name="RecipeId2" value="<%=recipe.getRecipeId()%>">
-   <input type="submit" value="詳細表示" class="btn">
+  <input type="hidden" name="RecipeId2" value="<%=recipe.getRecipeId()%>">
+  <input type="submit" value="詳細表示" class="btn">
 </form>
 </td>
 </tr>
@@ -69,16 +55,11 @@ List<RecipeBean> recipeList = (List<RecipeBean>) request.getAttribute("recipeLis
 %>
 </table>
 </div>
-
 <%-- <form action="recipe-search-servlet" method="post">
-
-    レシピ名または食材名:
-    <input type="text" maxlength="50" name="recipeName">
-
-    <br><br>
-
-    <input type="submit" value="検索">
-
+   レシピ名または食材名:
+   <input type="text" maxlength="50" name="recipeName">
+   <br><br>
+   <input type="submit" value="検索">
 </form>
 <a href="logout.jsp">ログアウト</a>  --%>
 </body>
