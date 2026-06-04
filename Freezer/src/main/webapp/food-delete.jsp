@@ -20,6 +20,7 @@ body {
 	width: 480px;
 	padding: 20px;
 	box-sizing: border-box;
+	background:#FFFAFA;
 }
 
 h2 {

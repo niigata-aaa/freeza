@@ -17,6 +17,7 @@
         width: 450px;
         padding: 20px;
         box-sizing: border-box;
+        background:#FFFAFA;
     }
     h2 {
         margin-top: 0;
