@@ -39,7 +39,9 @@ if(error != null){
 }
 %>
 
-<a href="recipeMypage.jsp" class="btn">戻る</a>
+ 			<button type="button" class="btn btn-cancel" onclick="history.back();">
+                前の画面に戻る
+            </button>
 </div>
 </div>
 </body>

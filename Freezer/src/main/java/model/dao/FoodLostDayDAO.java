@@ -49,12 +49,14 @@ public class FoodLostDayDAO {
 				bean.setDaysLeft(daysLeft);
 
 				// アラート
-				if (daysLeft == 0 || daysLeft == 1) {
+				if (daysLeft == 0) {
 					bean.setMarkColor("red");
-				} else if (daysLeft == 2) {
+				} else if (daysLeft == 1) {
 					bean.setMarkColor("orange");
-				} else {
+				} else if (daysLeft == 2) {
 					bean.setMarkColor("green");
+				} else {
+					bean.setMarkColor("blue");
 				}
 
 				list.add(bean);

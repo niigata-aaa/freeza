@@ -46,6 +46,7 @@ public class RecipeUploadServlet extends HttpServlet {
         recipe.setRecipeHowto(howto);
         recipe.setRecipeServings(servings);
         
+        
         try {
             RecipePersonalDAO dao = new RecipePersonalDAO();
             dao.insertRecipe(recipe); // DBへインサートを実行
