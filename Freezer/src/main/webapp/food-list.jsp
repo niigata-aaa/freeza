@@ -26,6 +26,8 @@
 .update { background: #f39c12; }
 .delete { background: #e74c3c; }
 .search { background: #2ecc71; }
+
+
 </style>
 
 </head>
@@ -70,8 +72,9 @@ List<FoodBean> foodList = (List<FoodBean>) request.getAttribute("foodList");
 <a class="btn delete" href="food-delete.jsp"> 
     削除
 </a>
-<div class="example">
-<table border="1">
+ <div class="table_title">
+ <div class="example">
+<table class= "table2" border="1">
 <tr>
     <th>画像</th>
     <th>名前</th>
@@ -83,6 +86,7 @@ List<FoodBean> foodList = (List<FoodBean>) request.getAttribute("foodList");
 if (foodList != null && !foodList.isEmpty()) {
     for (FoodBean food : foodList){
 %>
+
 <tr>
     <td>
         <%-- 画像データが存在するかチェック --%>
@@ -121,7 +125,7 @@ if (foodList != null && !foodList.isEmpty()) {
 %>
 </table>
 </div>
-
+</div>
 
 
 </body>
