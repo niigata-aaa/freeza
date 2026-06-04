@@ -33,10 +33,10 @@ String recipeId = request.getParameter("recipe_id");
            name="recipe_id"
            value="<%= recipeId %>">
 
-    <input type="submit" value="削除する">
+    <input type="submit" value="削除する" class="btn">
 </form>
 
-<a href="recipeMypage.jsp">キャンセル</a>
+<a href="recipeMypage.jsp" class="btn">キャンセル</a>
 </div>
 </div>
 </body>
