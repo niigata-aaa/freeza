@@ -47,15 +47,17 @@ List<FoodBean> foodList = (List<FoodBean>) request.getAttribute("foodList");
             
         </a>
     </span>
-    <form action="food-search-servlet" method="post">
+	<form action="food-search-servlet" method="post">
 
-    食材名：
-    <input type="text" maxlength="50" name="foodName">
+    食材名:
+    <input required type="text" maxlength="50" name="foodName" >
 
     <br><br>
 
+    <input type="submit" value="検索" class="btn">
 
-</form>
+	</form>
+
 </h2>
 <a class="btn add" href="food-add.jsp">
     追加
@@ -67,17 +69,6 @@ List<FoodBean> foodList = (List<FoodBean>) request.getAttribute("foodList");
 <a class="btn delete" href="food-delete.jsp"> 
     削除
 </a>
-
-<form action="food-search-servlet" method="post">
-
-    レシピ名または食材名:
-    <input required type="text" maxlength="50" name="foodName" >
-
-    <br><br>
-
-    <input type="submit" value="検索" class="btn">
-
-</form>
 
 <table border="1">
 <tr>
