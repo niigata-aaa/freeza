@@ -70,7 +70,7 @@ List<FoodBean> foodList = (List<FoodBean>) request.getAttribute("foodList");
 <a class="btn delete" href="food-delete.jsp"> 
     削除
 </a>
-
+<div class="example">
 <table border="1">
 <tr>
     <th>画像</th>
@@ -120,7 +120,7 @@ if (foodList != null && !foodList.isEmpty()) {
 }
 %>
 </table>
-
+</div>
 
 
 
