@@ -41,7 +41,7 @@
 
 <form action="recipe-all-list-servlet" method="post">
 
-    <input type="submit" value="食材一覧へ戻る" class="btn">
+    <input type="submit" value="レシピ一覧へ戻る" class="btn">
 
 </form>
 </div>
