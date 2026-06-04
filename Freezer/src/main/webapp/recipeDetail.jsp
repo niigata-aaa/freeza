@@ -17,20 +17,24 @@
 <div class="bg-bubble3 b3"></div>
 <jsp:useBean id="employee" scope="request" class="model.entity.RecipeBean"/>
 <div class="container">
-        <div class="card">
-        <form action="recipe-alter-form-servlet" method="POST">
-    <input type="hidden" name="id" value="<%= employee.getRecipeId() %>">
-    <input type="submit" value="変更" class="btn">
-</form>
+<div class="card">
 
-<form action="delete.jsp" method="POST">
-    <input type="hidden" name="recipe_id" value="<%= employee.getRecipeId() %>">
-    <input type="submit" value="削除" class="btn">
-</form>
-<div class="button-group">
-            <input type="button" name="cancel" value="キャンセル" onclick="history.back()" class="btn">
-          
-        </div>
+<div style="display: flex; justify-content: center; gap: 15px; width: 100%; margin-top: 30px;">
+
+    <form action="recipe-alter-form-servlet" method="POST" style="margin: 0;">
+        <input type="hidden" name="id" value="<%= employee.getRecipeId() %>">
+        <input type="submit" value="変更" class="btn">
+    </form>
+
+    <form action="delete.jsp" method="POST" style="margin: 0;">
+        <input type="hidden" name="recipe_id" value="<%= employee.getRecipeId() %>">
+        <input type="submit" value="削除" class="btn">
+    </form>
+
+    <input type="button" name="cancel" value="キャンセル" onclick="history.back()" class="btn">
+
+</div>
+
 <h2>レシピ詳細</h2>
 レシピ名：<jsp:getProperty name="employee" property="recipeName"/><br>
 材料：<jsp:getProperty name="employee" property="recipeIngredients"/><br>

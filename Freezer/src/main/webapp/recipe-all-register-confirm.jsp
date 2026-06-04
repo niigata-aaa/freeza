@@ -60,15 +60,19 @@ String recipeBase64 = (String) session.getAttribute("recipeBase64");
 
 <br>
 
-<%-- 登録サーブレットを呼び出すボタン（データはセッションにあるので、hiddenは不要です） --%>
-<form action="recipe-all-register-servlet" method="POST">
-   <input type="submit" value="投稿する" class="btn">
-</form>
+</table>
 
-<br>
-<%-- 前の入力画面に戻るボタン --%>
-<a href="javascript:history.back();" class="btn">戻る</a>
+<div style="clear: both; padding-top: 40px; width: 100%;">
 
+    <a href="javascript:history.back();" class="btn" style="display: inline-block; min-width: 220px; color: white; text-decoration: none; font-weight: bold; text-align: center; line-height: normal;">戻る</a>
+
+    <form action="recipe-all-register-servlet" method="POST" style="display: inline-block; float: right;">
+       <input type="submit" value="投稿する" class="btn" style="min-width: 220px;">
+    </form>
+
+</div>
+
+<div style="clear: both; height: 40px;"></div>
 </div>
 </div>
 

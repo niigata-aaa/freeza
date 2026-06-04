@@ -46,30 +46,24 @@ request.setCharacterEncoding("UTF-8");
 人数：<jsp:getProperty name="employee" property="recipeServings"/><br>
 <br><br>
 
-<form action="recipe-alter-servlet" method="POST">
+<div style="clear: both; padding-top: 30px; width: 100%;">
 
-<input type="hidden" name="id"
-value="<jsp:getProperty name='employee' property='recipeId'/>">
+    <a href="recipeMypage.jsp" class="btn" style="display: inline-block; color: white; text-decoration: none; font-weight: bold; text-align: center;">キャンセル</a>
 
-<input type="hidden" name="name"
-value="<jsp:getProperty name='employee' property='recipeName'/>">
+    <form action="recipe-alter-servlet" method="POST" style="display: inline-block; float: right;">
+        <input type="hidden" name="id" value="<jsp:getProperty name='employee' property='recipeId'/>">
+        <input type="hidden" name="name" value="<jsp:getProperty name='employee' property='recipeName'/>">
+        <input type="hidden" name="ingredients" value="<jsp:getProperty name='employee' property='recipeIngredients'/>">
+        <input type="hidden" name="howto" value="<jsp:getProperty name='employee' property='recipeHowto'/>">
+        <input type="hidden" name="servings" value="<jsp:getProperty name='employee' property='recipeServings'/>">
+        
+        <input type="submit" value="変更します" class="btn">
+    </form>
 
+</div>
 
-<input type="hidden" name="ingredients"
-value="<jsp:getProperty name='employee' property='recipeIngredients'/>">
+<div style="clear: both; height: 40px;"></div>
 
-<input type="hidden" name="howto"
-value="<jsp:getProperty name='employee' property='recipeHowto'/>">
-
-<input type="hidden" name="servings"
-value="<jsp:getProperty name='employee' property='recipeServings'/>">
-
-<input type="submit" value="  変更します  " class="btn">
-
-</form>
-<br>
-
-<a href="recipeMypage.jsp"  class="btn">キャンセル</a>
 </div>
 </div>
 </body>
