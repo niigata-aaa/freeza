@@ -11,7 +11,7 @@
 <body>
 <a href="recipeMypage.jsp" class="btn">マイページに戻る</a>
         </div>
-        <a href="recipeUpload.jsp" class="btn">自分だけの秘密レシピを追加する</a><br>
+        <a href="recipeUpload.jsp" class="btn">自分だけのお気に入りレシピを追加する</a><br>
             <%-- <form action="recipe-list-servletX" method="post">
                 <input type="submit" value="先頭に戻る">
             </form>--%>
