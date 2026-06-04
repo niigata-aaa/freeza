@@ -77,8 +77,7 @@ input[type="button"], input[type="submit"] {
 		<form action="food-delete-confirm-servlet" method="post">
 
 			<div class="form-group">
-				<label for="foodSelect">削除する食材：</label> <select name="foodDelete"
-					id="foodSelect">
+				<label for="foodSelect">削除する食材：</label> <select name="foodDelete" id="foodSelect" required>
 					<option value="">-- 選択してください --</option>
 
 					<%

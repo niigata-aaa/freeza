@@ -25,7 +25,7 @@ request.setCharacterEncoding("UTF-8");
 			value="<%=request.getParameter("RecipeId")%>"> <input
 			type="submit" value="削除する">
 	</form>
-	<a href="search.jsp">戻る</a>
+	<a href="">戻る</a>
 </body>
 </html>
 

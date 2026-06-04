@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>食材変更確認</title>
+<title>食材消費確認</title>
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/localrecipeTable.css">
 </head>
@@ -25,12 +25,11 @@
 FoodBean food = (FoodBean) request.getAttribute("updateFood");
 %>
 
-<h2>食材変更</h2>
+<h2>食材消費</h2>
 
 <p>
     <%=food.getFoodName()%> を<br>
-    <%=food.getFoodQuantity()%> 個(またはg)削除します。<br><br>
-    よろしいですか？
+    <%=food.getFoodQuantity()%> （個・本・ｇ）をたべましたか？<br><br>
 </p>
 
 <!-- 左下：キャンセル -->
@@ -50,7 +49,7 @@ FoodBean food = (FoodBean) request.getAttribute("updateFood");
         <input type="hidden" name="foodQuantity" value="<%=food.getFoodQuantity()%>">
 
         <button type="submit" class="btn">
-            変更する
+           たべた！ 
         </button>
 
     </form>

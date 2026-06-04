@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>食材更新画面</title>
+<title>食材消費画面</title>
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/localrecipeTable.css">
 </head>
@@ -54,13 +54,13 @@ List<FoodBean> foodList = (List<FoodBean>) session.getAttribute("foodList");
 
     <br><br>
 
-    <p>数量（個・g）</p>
+    <p>数量（個・本・g）</p>
     <input type="number" name="foodQuantity" min="1" required>
 
     <br><br>
 
     <button type="submit" class="btn">
-        変更
+       たべた！
     </button>
 
 </form>
