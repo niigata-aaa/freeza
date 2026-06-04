@@ -8,14 +8,37 @@
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/localrecipeTable.css">
 <style>
-.btn {
-    display: inline-block;
-    padding: 6px 12px;
-    margin: 2px;
-    background: #4CAF50;
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
+:root{
+    --footer-height: 70px;   /* 固定フッターの高さに合わせる */
+}
+
+html, body{
+    height: 100%;
+    margin: 0;
+    overflow: hidden;        /* 画面全体はスクロールさせない */
+}
+
+/* containerの幅は今のまま */
+.container{
+    height: calc(90vh - var(--footer-height));
+    box-sizing: border-box;
+    padding-bottom: 10px;    /* フッターにピッタリくっつきすぎない用 */
+}
+
+/* cardを縦レイアウトに */
+.card{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* 見出し・検索・ボタンは固定 */
+.card h2,
+.search-form,
+.button-area{
+    flex-shrink: 0;
 }
 
 .btn:hover {
@@ -26,6 +49,43 @@
 .update { background: #f39c12; }
 .delete { background: #e74c3c; }
 .search { background: #2ecc71; }
+
+.search-form{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.search-form label{
+    white-space:nowrap;
+}
+
+.search-form input[type="text"]{
+    flex:1;
+    margin-top:0;
+}
+.search-form input[type="submit"]{
+    margin-top:0;
+}
+
+.button-area{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    margin:20px 0;
+    height: 48px;
+}
+
+
+
+/* 2. テーブルの下が隠れてしまう問題を解決する設定 */
+.table_title {
+    flex: 1;             /* cardの中の残りの高さをいっぱいに使う */
+    min-height: 0;       /* flex子要素の高さバグを防ぐ */
+    display: flex;       /* 中の .example を正しく広げる */
+    flex-direction: column;
+}
+
 
 
 </style>
@@ -41,40 +101,30 @@
 <%
 List<FoodBean> foodList = (List<FoodBean>) request.getAttribute("foodList");
 %>
+<div class="container">
 
-<h2>
-    食材一覧
-<!--    <span style="float:right;">-->
-<!--        <a class="btn search" href="food-search-servlet">-->
-            
-<!--        </a>-->
-<!--    </span>-->
+    <div class="card">
+<h2>食材一覧</h2>
     
-	<form action="food-search-servlet" method="post">
-
-    食材名:
+	<form action="food-search-servlet" method="post"  class="search-form">
+    <label for="foodName">食材名：</label>
     <input required type="text" maxlength="50" name="foodName" >
-
-    <br><br>
-
     <input type="submit" value="検索" class="btn">
-
 	</form>
+	
+<div class="button-area">
+    <a class="btn" href="food-add.jsp">追加</a>
 
-</h2>
-<a class="btn add" href="food-add.jsp">
-    追加
-</a>
-<a class="btn update" href="food-update.jsp"> 
-    変更
-</a>
+    <a class="btn" href="food-update.jsp">変更</a>
 
-<a class="btn delete" href="food-delete.jsp"> 
-    削除
-</a>
- <div class="table_title">
+    <a class="btn" href="food-delete.jsp">削除</a>
+</div>
+
+
+ 
  <div class="example">
-<table class= "table2" border="1">
+<table class= "table2">
+
 <tr>
     <th>画像</th>
     <th>名前</th>
@@ -91,7 +141,7 @@ if (foodList != null && !foodList.isEmpty()) {
     <td>
         <%-- 画像データが存在するかチェック --%>
         <% if (food.getBase64Image() != null && !food.getBase64Image().isEmpty()) { %>
-        <img src="data:image/jpeg;base64,<%= food.getBase64Image() %>"width="125" height="125" style="object-fit: cover;">
+        <img src="data:image/jpeg;base64,<%= food.getBase64Image() %>"width="200" height="200" style="object-fit: cover;">
              
     	<% } else { %>
         	<div style="width:100px">No Image</div>
@@ -125,9 +175,10 @@ if (foodList != null && !foodList.isEmpty()) {
 %>
 </table>
 </div>
+
+
 </div>
-
-
+</div>
 </body>
 
 <!--	フッター-->

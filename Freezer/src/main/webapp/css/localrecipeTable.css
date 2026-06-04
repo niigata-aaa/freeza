@@ -1,12 +1,13 @@
 @charset "UTF-8";/*widthとheightの値は、セルのサイズに合わせて微調整する*/
 .example{
     overflow: auto;
-
+	border-radius: 15px !important;
 	height: 504px;
 }
 .example table{
     margin: 0;
     border-spacing: 0;
+	border-collapse: separate !important;
 
 }
 .example td{
@@ -20,7 +21,8 @@
     white-space: nowrap;
     border-right: 1px solid #999;
     border-bottom: 1px solid #999;
-    background: #f2f2f2;
+	background: rgb(231, 108, 78) !important; /* 優先的にオレンジ色を適用 */
+	color: white !important;
     position: sticky;
     top: 0;
     left: 0;

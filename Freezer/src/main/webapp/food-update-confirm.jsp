@@ -8,6 +8,26 @@
 <title>食材消費確認</title>
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/localrecipeTable.css">
+
+<style>
+	.card {
+    background-color: #ffffff; /* 白い枠 */
+    border-radius: 15px;       /* 角丸 */
+    padding: 30px;             /* 内側の余白 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 軽い影 */
+}
+
+/* ボタンを横並びにするための入れ物（コンテナ） */
+.btn-container {
+    display: flex;                 /* 横並びにする */
+    justify-content: space-between; /* キャンセルを左端、たべた！を右端に */
+    align-items: center;            /* ボタンの上下の真ん中を揃える */
+    width: 100%;                    /* 枠の横幅いっぱいに広げる */
+    margin-top: 30px;               /* 上の文字との間の隙間 */
+}
+
+
+</style>
 </head>
 
 <body>
@@ -32,27 +52,31 @@ FoodBean food = (FoodBean) request.getAttribute("updateFood");
     <%=food.getFoodQuantity()%> （個・本・ｇ）をたべましたか？<br><br>
 </p>
 
-<div style="clear: both; padding-top: 40px; width: 100%; text-align: justify; text-justify: inter-ideograph;">
-
-    <form action="food-update.jsp" method="get" style="display: inline-block; margin-left: 25px;">
-        <button type="submit" class="btn" style="min-width: 220px;">
+<div class="btn-container">
+<!-- 左下：キャンセル -->
+<!--<div style="position: absolute; bottom: 20px; left: 20px;">-->
+    <form action="food-update.jsp" method="get">
+        <button type="submit" class="btn">
             キャンセル
         </button>
     </form>
+<!--</div>-->
 
-    <form action="food-update-servlet" method="post" style="display: inline-block; float: right; margin-right: 25px;">
+<!-- 右下：変更確定 -->
+<!--<div style="position: absolute; bottom: 20px; right: 20px;">-->
+    <form action="food-update-servlet" method="post">
+
         <input type="hidden" name="foodId" value="<%=food.getFoodId()%>">
         <input type="hidden" name="foodQuantity" value="<%=food.getFoodQuantity()%>">
-        <button type="submit" class="btn" style="min-width: 220px;">
+
+        <button type="submit" class="btn">
            たべた！ 
         </button>
+
     </form>
-
+<!--</div>-->
 </div>
-
-<div style="clear: both; height: 40px;"></div>
 </div>
-
 </div>
 </body>
 </html>

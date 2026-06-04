@@ -18,14 +18,15 @@
 <div class="container">
 
 <div class="card">
-食材追加<br>
+<h2>食材追加</h2>
+<br>
 	
 	<form action="food-add-confirm-servlet" method="POST" enctype="multipart/form-data">
 	
 		<div class="container">
     	<div class="photo-upload-container">
-        	<input required type="file" id="foodPhoto" name="foodPhoto" accept="image/*" class="file-input">
-			<span class="upload-label-text">+写真を追加</span>
+        	写真を追加：<input required type="file" id="foodPhoto" name="foodPhoto" accept="image/*" class="file-input">
+			<span class="upload-label-text"></span>
     	</div>
     	</div>
     	
@@ -38,7 +39,7 @@
 				</select><br>
 		消費期限：<input required type="date" name="data"><br>
 		
-		<a href="javascript:history.back();" class="btn">戻る</a>
+		<button type="button" onclick="history.back();" class="btn">戻る</button>
 		<input type="submit" value="追加" class="btn">
 	</form>
 	
