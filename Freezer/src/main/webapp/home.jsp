@@ -5,18 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>HOME</title>
-
 <link rel="stylesheet" href="css/styles.css">
-<link rel="stylesheet" href="css/common.css">
-<link rel="stylesheet" href="css/localrecipeTable.css">
 <style>
-	body {
-        font-family: 'Helvetica Neue', Arial, sans-serif;
-        background-color: #fffaf6; 
-        margin: 0;
-        padding-top: 70px;    /* 上の余白を空ける設定 */
-        padding-bottom: 60px;   /* フッター用の下の余白 */
-    }
     /* 全体のコンテナスタイル */
     .home-section {
         margin: 20px 10px;
@@ -109,14 +99,10 @@
     }
 </style>
 </head>
-<%@ include file="header.jsp" %>
 <body>
-<div class="manaita MANA1"></div>
-<div class="totte TOTE1"></div>
-<div class="bg-bubble b1"></div>
-<div class="bg-bubbleaA bb1"></div>
-<div class="bg-bubble2 b2"></div>
-<div class="bg-bubble3 b3"></div>
+
+    <h1 style="text-align: center; color: #2B3A67; margin-top: 15px;">ロスロス</h1>
+
     <div class="home-section">
         <div class="section-title">⚠️ 消費期限が近い食材</div>
         <div class="scroll-box">
@@ -135,7 +121,12 @@
                 <div class="custom-card">
                     <div class="card-img-area">
                         <span class="expiry-badge <%= foodlostday.getMarkColor() %>">
+                            <% if (foodlostday.getDaysLeft() != 0) { %>
                             あと<%= foodlostday.getDaysLeft() %>日
+                            <% } else { %>
+                            今日まで
+                            <% } %>
+                            
                         </span>
                         <%-- 画像データが存在するかチェック --%>
 						<% if (foodlostday.getBase64Image() != null && !foodlostday.getBase64Image().isEmpty()) { %>
@@ -169,7 +160,7 @@
             } else { 
                 for(RecipeBean recipe : recipeList) { 
             %>
-                <a href="recipe-all-detail-servlet?RecipeId2=<%= recipe.getRecipeId() %>" style="text-decoration: none; color: inherit;">
+                <a href="recommend-recipe-detail-servlet?recipeId=<%= recipe.getRecipeId() %>" style="text-decoration: none; color: inherit;">
                     <div class="custom-card">
                         <div class="card-img-area">
                              <%-- 画像データが存在するかチェック --%>
