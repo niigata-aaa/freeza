@@ -19,13 +19,13 @@
 <div class="container">
         <div class="card">
         <form action="recipe-alter-form-servlet" method="POST">
-    <input type="hidden" name="id" value="<%= employee.getRecipeId() %>">
-    <input type="submit" value="変更" class="btn">
+    <input required type="hidden" name="id" value="<%= employee.getRecipeId() %>">
+    <input required type="submit" value="変更" class="btn">
 </form>
 
 <form action="delete.jsp" method="POST">
-    <input type="hidden" name="recipe_id" value="<%= employee.getRecipeId() %>">
-    <input type="submit" value="削除" class="btn">
+    <input required type="hidden" name="recipe_id" value="<%= employee.getRecipeId() %>">
+    <input required type="submit" value="削除" class="btn">
 </form>
 <a href="recipeMypage.jsp">マイページ</a>
 <h2>レシピ詳細</h2>
