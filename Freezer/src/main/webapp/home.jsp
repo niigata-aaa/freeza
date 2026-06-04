@@ -99,6 +99,7 @@
     .expiry-badge.red { background-color: #E57373; }
     .expiry-badge.orange { background-color: #FFB74D; }
     .expiry-badge.green { background-color: #81C784; }
+    .expiry-badge.blue　{ background-color: #64B5F6;}
 
     /* サブテキスト（日付など） */
     .sub-date {
