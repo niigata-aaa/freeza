@@ -61,7 +61,7 @@ if (recipeList != null && !recipeList.isEmpty()) {
         <img src="data:image/png;base64,<%= recipe.getBase64Image() %>"width="200px" height="200px"/>
     	<% } else { %>
         	<div style="width:100px">No Image</div>
-    	<% } %></td>
+    	<% } %></td> 
     	
    <td><%=recipe.getRecipeIngredients()%></td>
 <%--   <td><%=recipe.getRecipeHowto()%></td>
