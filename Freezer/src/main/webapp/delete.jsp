@@ -36,8 +36,14 @@ String recipeId = request.getParameter("recipe_id");
     <input type="submit" value="削除する" class="btn">
 </form>
 
-<a href="recipeMypage.jsp" class="btn">キャンセル</a>
+ <button type="button" class="btn" onclick="history.back();">
+              キャンセル
+            </button>
+
 </div>
+
+           
+
 </div>
 </body>
 </html>

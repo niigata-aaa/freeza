@@ -12,6 +12,11 @@
         <input type="submit" value="レシピ一覧に戻る" class="btn"/>
     </form>
     <br/>
+    
+    <button type="button" onclick="history.back();">
+     前の画面に戻る
+    </button>
+    
 <div class="manaita MANA1"></div>
 <div class="totte TOTE1"></div>
 <div class="bg-bubble b1"></div>
@@ -28,6 +33,10 @@
         
         <input type="submit" value="アップロードして一覧へ" class="btn"/>
     </form>
+    
+            <div class="btn-group">
+
+    
     <br/>
     
 </body>
