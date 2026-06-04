@@ -19,7 +19,7 @@
 <div class="bg-bubble2 b2"></div>
 <div class="bg-bubble3 b3"></div>
     <h2>新しいお気に入りレシピを追加する</h2>
-    <form action="recipe-upload-add-servlet" method="post" enctype="multipart/form-data">
+    <form action="recipe-upload-servlet" method="post" enctype="multipart/form-data">
         レシピ名: <input type="text" name="recipeName" required /><br/><br/>
         材料: <input type="text" name="recipeIngredients" required /><br/><br/>
         作り方: <br/><textarea name="recipeHowto" rows="5" cols="40" required></textarea><br/><br/>
