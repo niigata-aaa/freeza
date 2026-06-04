@@ -42,11 +42,12 @@ List<FoodBean> foodList = (List<FoodBean>) request.getAttribute("foodList");
 
 <h2>
     食材一覧
-    <span style="float:right;">
-        <a class="btn search" href="food-search-servlet">
+<!--    <span style="float:right;">-->
+<!--        <a class="btn search" href="food-search-servlet">-->
             
-        </a>
-    </span>
+<!--        </a>-->
+<!--    </span>-->
+    
 	<form action="food-search-servlet" method="post">
 
     食材名:
