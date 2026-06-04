@@ -7,6 +7,11 @@
 <title>レシピホーム</title>
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/localrecipeTable.css">
+<style>html, body{
+    height: 100%;
+    margin: 0;
+    overflow: hidden;        /* 画面全体はスクロールさせない */
+}</style>
 </head>
 <body>
 <div class="manaita MANA1"></div>

@@ -7,6 +7,21 @@
 <title>レシピ登録画面</title>
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/localrecipeTable.css">
+<style>
+.photo-circle-btn {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #555;
+    background-color: #EFEFEF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    color: #555;
+    font-weight: normal;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}</style>
 </head>
 <body>
 <div class="manaita MANA1"></div>
