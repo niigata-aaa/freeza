@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="css/localrecipeTable.css">
 </head>
 <form action="recipe-list-servletX" method="post">
-<input class="btn" type="submit" value="投稿したレシピを見る"> 
+<input class="btn" type="submit" value="自分だけのお気に入りレシピを見る"> 
 </form>
 
 <br>
