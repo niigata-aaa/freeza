@@ -34,11 +34,11 @@ table, tr, td, th {
 <div class="bg-bubbleaA bb1"></div>
 <div class="bg-bubble2 b2"></div>
 <div class="bg-bubble3 b3"></div>
-<form action="food-list-servlet" method="post">
+<!--<form action="food-list-servlet" method="post">-->
 
-    <input type="submit" value="食材一覧へ戻る">
+<!--    <input type="submit" value="食材一覧へ戻る">-->
 
-</form>
+<!--</form>-->
 
 
 <%
