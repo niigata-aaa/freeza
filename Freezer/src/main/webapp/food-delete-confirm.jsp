@@ -24,6 +24,7 @@
         border-bottom: 1px solid #333;
         padding-bottom: 10px;
     }
+    
     .message-box {
         border: 1px solid #333;
         margin: 30px 0;
