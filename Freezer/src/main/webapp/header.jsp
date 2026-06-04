@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <style>
     /* ヘッダー全体の背景や余白の設定 */
-    .main-header {
-        position: fixed; 
+    .main-header { 
         top: 0;
         left: 0;         
         width: 100%;
