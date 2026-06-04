@@ -13,9 +13,7 @@
     </form>
     <br/>
     
-    <button type="button" onclick="history.back();">
-     前の画面に戻る
-    </button>
+
     
 <div class="manaita MANA1"></div>
 <div class="totte TOTE1"></div>

@@ -27,7 +27,10 @@
     <input type="hidden" name="recipe_id" value="<%= employee.getRecipeId() %>">
     <input type="submit" value="削除" class="btn">
 </form>
-<a href="recipeMypage.jsp">マイページ</a>
+<div class="button-group">
+            <input type="button" name="cancel" value="キャンセル" onclick="history.back()" class="btn">
+          
+        </div>
 <h2>レシピ詳細</h2>
 レシピ名：<jsp:getProperty name="employee" property="recipeName"/><br>
 材料：<jsp:getProperty name="employee" property="recipeIngredients"/><br>
