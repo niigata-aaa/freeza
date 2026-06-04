@@ -135,7 +135,11 @@
                 <div class="custom-card">
                     <div class="card-img-area">
                         <span class="expiry-badge <%= foodlostday.getMarkColor() %>">
+                            <% if (foodlostday.getDaysLeft() != 0) { %>
                             あと<%= foodlostday.getDaysLeft() %>日
+                            <% } else { %>
+                            今日まで
+                            <% } %>
                         </span>
                         <%-- 画像データが存在するかチェック --%>
 						<% if (foodlostday.getBase64Image() != null && !foodlostday.getBase64Image().isEmpty()) { %>
