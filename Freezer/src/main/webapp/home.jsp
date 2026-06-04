@@ -6,6 +6,8 @@
 <meta charset="UTF-8">
 <title>HOME</title>
 <link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/localrecipeTable.css">
 <style>
 <<<<<<< HEAD
 	body {
