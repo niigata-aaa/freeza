@@ -48,7 +48,7 @@ request.setCharacterEncoding("UTF-8");
 
 <div style="clear: both; padding-top: 30px; width: 100%;">
 
-    <a href="recipeMypage.jsp" class="btn" style="display: inline-block; color: white; text-decoration: none; font-weight: bold; text-align: center;">キャンセル</a>
+    <a href="javascript:history.back();" class="btn" style="display: inline-block; color: white; text-decoration: none; font-weight: bold; text-align: center;">キャンセル</a>
 
     <form action="recipe-alter-servlet" method="POST" style="display: inline-block; float: right;">
         <input type="hidden" name="id" value="<jsp:getProperty name='employee' property='recipeId'/>">

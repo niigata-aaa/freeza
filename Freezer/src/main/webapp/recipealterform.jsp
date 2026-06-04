@@ -57,11 +57,11 @@ RecipeBean employee =
 	<input required type="number"
        name="servings"
        value="<%= employee.getRecipeServings()%>">
-    <input type="submit" value="確認" class="btn">
+    <input type="submit" value="確認" class="btn">    <button type="button" class="btn btn-cancel" onclick="history.back();">
+     													キャンセル
+    												</button>
     <br>
-    <button type="button" class="btn btn-cancel" onclick="history.back();">
-     キャンセル
-    </button>
+
     
 
 </form>
