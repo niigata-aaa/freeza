@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/localrecipeTable.css">
 </head>
+<%@ include file="header.jsp" %>
 <form action="recipe-list-servletX" method="post">
 <input class="btn" type="submit" value="自分だけのお気に入りレシピを見る"> 
 </form>
@@ -18,7 +19,7 @@
 <a class="btn btn-sub" href="logout.jsp">
 ログアウト
 </a>
-<%@ include file="header.jsp" %>
+
 <body>
 <div class="manaita MANA1"></div>
 <div class="totte TOTE1"></div>
