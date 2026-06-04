@@ -14,7 +14,7 @@
         font-family: 'Helvetica Neue', Arial, sans-serif;
         background-color: #fffaf6; 
         margin: 0;
-        padding-top: 70px;    /* 上の余白を空ける設定 */
+        padding-top: 20px;    /* 上の余白を空ける設定 */
         padding-bottom: 60px;   /* フッター用の下の余白 */
     }
     /* 全体のコンテナスタイル */
@@ -109,7 +109,6 @@
     }
 </style>
 </head>
-<%@ include file="header.jsp" %>
 <body>
 <div class="manaita MANA1"></div>
 <div class="totte TOTE1"></div>

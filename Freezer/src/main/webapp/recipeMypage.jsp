@@ -18,6 +18,7 @@
 <a class="btn btn-sub" href="logout.jsp">
 ログアウト
 </a>
+<%@ include file="header.jsp" %>
 <body>
 <div class="manaita MANA1"></div>
 <div class="totte TOTE1"></div>
