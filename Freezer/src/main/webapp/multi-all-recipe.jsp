@@ -42,10 +42,11 @@
 <%
 List<RecipeBean> recipeList = (List<RecipeBean>) request.getAttribute("recipeList");
 %>
+<div class="example">
 <table>
 <tr>
 <!--<th>レシピID</th>-->
-<th>レシピ名</th><th>レシピ写真</th><th>材料</th><th>詳細表示</th>
+	        <div class="table_title"><th>レシピ名</th><th>レシピ写真</th><th>材料</th><th>詳細表示</th></tr>div
 <%
 if (recipeList != null && !recipeList.isEmpty()) {
    for(RecipeBean recipe : recipeList){
@@ -86,6 +87,7 @@ if (recipeList != null && !recipeList.isEmpty()) {
 } // ifの閉じ
 %>
 </table>
+</div>
 <%-- <form action="recipe-all-search2-servlet" method="post">
 
     レシピ名または食材名:

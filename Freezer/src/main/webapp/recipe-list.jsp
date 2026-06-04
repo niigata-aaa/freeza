@@ -34,10 +34,12 @@
 <%
 List<RecipeBean> recipeList = (List<RecipeBean>) request.getAttribute("recipeList");
 %>
+<div class="example">
 <table>
+
 <tr>
 <!--<th>レシピID</th>-->
-<th>レシピ名</th><th>レシピ写真</th><th>材料</th><th>詳細表示</th>
+	        <div class="table_title"><th>レシピ名</th><th>レシピ写真</th><th>材料</th><th>詳細表示</th></div>
 <%
    for(RecipeBean recipe : recipeList){
 %>
@@ -66,6 +68,7 @@ List<RecipeBean> recipeList = (List<RecipeBean>) request.getAttribute("recipeLis
 }
 %>
 </table>
+</div>
 
 <%-- <form action="recipe-search-servlet" method="post">
 
