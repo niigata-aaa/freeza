@@ -18,10 +18,18 @@ if (imgBytes != null) {
 <meta charset="UTF-8">
 <title>確認画面</title>
 <link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/localrecipeTable.css">
 </head>
 
 <body>
-
+<div class="manaita MANA1"></div>
+<div class="totte TOTE1"></div>
+<div class="bg-bubble b1"></div>
+<div class="bg-bubble2 b2"></div>
+<div class="bg-bubble3 b3"></div>
+<div class="container">
+        <div class="card">
+        <div class="color">
 <h2>この内容で登録しますか？</h2>
 
 <table border="1">
@@ -47,13 +55,27 @@ if (imgBytes != null) {
 <br>
 
 <!-- ★POSTで確定 -->
-<form action="recipe-upload-confirm-servlet" method="post">
-    <input type="submit" value="登録する">
-</form>
+<div style="display:flex; gap:15px; justify-content:center; align-items:center;">
 
-<br>
+    <form action="recipe-upload-confirm-servlet" method="post" style="margin:0;">
+        <input type="submit" value="登録する"
+               style="width:140px; height:50px; border-radius:25px;
+                      border:none; background:#6aa84f; color:white;
+                      font-size:16px; cursor:pointer;">
+    </form>
 
-<a href="javascript:history.back()">戻る</a>
+    <a href="javascript:history.back()"
+       style="display:flex; width:140px; height:50px;
+              border-radius:25px; background:#6aa84f;
+              color:white; text-decoration:none;
+              align-items:center; justify-content:center;
+              font-size:16px;">
+        戻る
+    </a>
 
+</div>
+</div>
+</div>
+</div>
 </body>
 </html>
