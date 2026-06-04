@@ -22,7 +22,7 @@
 
 <form action="recipe-all-search2-servlet" method="post">
 
-    レシピ名：
+    レシピ名または食材名：
     <input required type="text" maxlength="50" name="recipeName">
 
     <br><br>

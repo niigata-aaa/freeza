@@ -23,12 +23,12 @@
 
 <form action="recipe-search-servlet" method="post">
 
-    レシピ名：
+    レシピ名または食材名：
     <input required type="text" maxlength="50" name="recipeName">
 
     <br><br>
 
-    <input type="submit" value="検索">
+    <input type="submit" value="検索" class="btn">
 
 </form>
 
@@ -42,7 +42,7 @@
 
 <form action="recipe-list-servlet" method="post">
 
-    <input type="submit" value="レシピ一覧へ戻る">
+    <input type="submit" value="レシピ一覧へ戻る" class="btn">
 
 </form>
 </div>

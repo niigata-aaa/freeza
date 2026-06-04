@@ -24,7 +24,7 @@
 
     <br><br>
 
-    <input type="submit" value="検索">
+    <input type="submit" value="検索" class="btn">
 
 </form>
 
@@ -60,7 +60,7 @@ List<RecipeBean> recipeList = (List<RecipeBean>) request.getAttribute("recipeLis
 <td>
 <form action="recipe-detail-servlet" method="POST">
    <input type="hidden" name="RecipeId2" value="<%=recipe.getRecipeId()%>">
-   <input type="submit" value="詳細表示">
+   <input type="submit" value="詳細表示" class="btn">
 </form>
 </td>
 </tr>
