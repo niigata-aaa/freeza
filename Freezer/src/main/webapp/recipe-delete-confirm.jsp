@@ -25,7 +25,7 @@ request.setCharacterEncoding("UTF-8");
 			value="<%=request.getParameter("RecipeId")%>"> <input
 			type="submit" value="削除する">
 	</form>
-	<a href="">戻る</a>
+	<input type="button" name="back" value="戻る" onclick="history.back()" class="btn">
 </body>
 </html>
 
