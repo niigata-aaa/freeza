@@ -20,20 +20,22 @@ String recipeId = request.getParameter("recipe_id");
 <div class="bg-bubble2 b2"></div>
 <div class="bg-bubble3 b3"></div>
 <div class="container">
-        <div class="card">
+<div class="card">
 <h2>削除確認</h2>
 
 <p>ID：<%= recipeId %> を本当に削除しますか？</p>
 
-<form action="delete-servlet" method="post">
+<form action="delete-servlet" method="post" style="display: flex; justify-content: space-between; width: 100%; margin-top: 40px;">
 
     <input type="hidden" name="recipe_id" value="<%= recipeId %>">
-    <input type="submit" value="削除する">
+    
+    <input type="submit" class="btn" value="削除する" style="min-width: 220px;">	 
+    
+    <button type="button" class="btn" onclick="history.back();" style="min-width: 220px;">
+        キャンセル
+    </button>
+    
 </form>
-
- <button type="button" class="btn" onclick="history.back();">
-                キャンセル
-            </button>
 </div>
 </div>
 </body>
