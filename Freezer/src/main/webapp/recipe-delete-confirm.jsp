@@ -7,7 +7,7 @@
 <title>管理者削除確認画面</title>
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/localrecipeTable.css">
-</head>
+</head>　
 <body>
 <div class="manaita MANA1"></div>
 <div class="totte TOTE1"></div>
