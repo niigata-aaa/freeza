@@ -47,7 +47,7 @@ List<RecipeBean> recipeList = (List<RecipeBean>) request.getAttribute("recipeLis
 <table>
 <tr>
 <!--<th>レシピID</th>-->
-<th>レシピ名</th><th>レシピ写真</th><th>材料</th><th>詳細表示</th> 
+<tr><th>レシピ名</th><th>レシピ写真</th><th>材料</th><th>詳細表示</th> </tr>
 <%
 if (recipeList != null && !recipeList.isEmpty()) {
    for(RecipeBean recipe : recipeList){
