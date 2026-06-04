@@ -36,25 +36,25 @@ RecipeBean employee =
            value="<%= employee.getRecipeId() %>">
 
     レシピ名：
-    <input type="text"
+    <input required type="text"
            name="name"
            value="<%= employee.getRecipeName() %>">
     <br>
 
 	材料
-	<input type="text"
+	<input required type="text"
        name="ingredients"
        value="<%= employee.getRecipeIngredients()%>">
 
 	<br>
 
 	手順
-	<textarea name="howto" cols="50" rows="10"><%= employee.getRecipeHowto()%></textarea>
+	<textarea required name="howto" cols="50" rows="10"><%= employee.getRecipeHowto()%></textarea>
 
 	<br>
 
 	人数
-	<input type="number"
+	<input required type="number"
        name="servings"
        value="<%= employee.getRecipeServings()%>">
     <input type="submit" value="確認" class="btn">
