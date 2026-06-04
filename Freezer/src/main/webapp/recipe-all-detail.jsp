@@ -24,9 +24,17 @@
 レシピ何人前：<jsp:getProperty name="recipe" property="recipeServings"/><br>
 掲載日時：<jsp:getProperty name="recipe" property="postingDatetime"/><br>
 更新日時：<jsp:getProperty name="recipe" property="updateDatetime"/><br>
+
 <form action="recipe-all-list-servlet" method="POST">
-   <input type="submit" value="食材一覧へ戻る" class="btn">
+
+   <input type="submit" value="レシピ一覧へ戻る" class="btn">
+
    </form>
+   
+    <button type="button" onclick="history.back();">
+    前の画面に戻る
+   	</button>
+   
    </div>
    </div>
   
