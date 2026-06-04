@@ -38,11 +38,15 @@ if(error != null){
     }
 }
 %>
-
- 			<button type="button" class="btn btn-cancel" onclick="history.back();">
+	<%-- <button type="button" class="btn btn-cancel" onclick="history.back();">
                 前の画面に戻る
             </button>
+</div>--%>
 </div>
-</div>
+<form action="recipeMypage.jsp" method="POST">
+
+    <input type="submit" value="マイページ" class="btn">
+</form>
+ 		
 </body>
 </html>
