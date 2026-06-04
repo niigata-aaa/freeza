@@ -10,6 +10,7 @@
 <meta charset="UTF-8">
 <title>レシピ検索結果</title>
 <link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/localrecipeTable.css">
 
 <style>
 table, tr, td, th {
@@ -37,10 +38,10 @@ if (recipeList != null) {
 %>
 
 <h2>レシピ検索結果</h2>
-
+<div class="example">
 <table>
 
-<th>レシピ名</th><th>レシピ写真</th><th>材料</th><th>手順</th><th>何人前</th>
+<div class="table_title"><th>レシピ名</th><th>レシピ写真</th><th>材料</th><th>手順</th><th>何人前</th></div>
 <%
 if (recipeList != null && !recipeList.isEmpty()) {
    for(RecipeBean recipe : recipeList){
@@ -73,7 +74,7 @@ if (recipeList != null && !recipeList.isEmpty()) {
 %>
 
 </table>
-
+</div>
 <%
     }
 }
