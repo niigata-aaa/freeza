@@ -15,7 +15,7 @@
 レシピ名：<jsp:getProperty name="recipe" property="recipeName"/><br>
 レシピ画像：<br>
 <% if (recipe.getBase64Image() != null && !recipe.getBase64Image().isEmpty()) { %>
-    <img src="data:image/jpeg;base64,<%= recipe.getBase64Image() %>" width="200px" height="200px">
+    <img src="data:image/jpeg;base64,<%= recipe.getBase64Image() %>" width="125px" height="125px">
 <% } else { %>
     <div style="width:100px; border:1px solid #ccc; padding:10px;">No Image</div>
 <% } %><br>

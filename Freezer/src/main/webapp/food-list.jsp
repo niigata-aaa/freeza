@@ -91,7 +91,7 @@ if (foodList != null && !foodList.isEmpty()) {
     <td>
         <%-- 画像データが存在するかチェック --%>
         <% if (food.getBase64Image() != null && !food.getBase64Image().isEmpty()) { %>
-        <img src="data:image/jpeg;base64,<%= food.getBase64Image() %>"width="200" height="200" style="object-fit: cover;">
+        <img src="data:image/jpeg;base64,<%= food.getBase64Image() %>"width="125" height="125" style="object-fit: cover;">
              
     	<% } else { %>
         	<div style="width:100px">No Image</div>
