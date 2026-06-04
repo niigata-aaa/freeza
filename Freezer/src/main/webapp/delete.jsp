@@ -33,12 +33,12 @@ String recipeId = request.getParameter("recipe_id");
            name="recipe_id"
            value="<%= recipeId %>">
 
-    <input type="submit" value="削除する" class="btn">
+    <input type="submit" value="削除する" class="btn">  <button type="button" class="btn" onclick="history.back();">
+              												キャンセル
+            											</button>
 </form>
 
- <button type="button" class="btn" onclick="history.back();">
-              キャンセル
-            </button>
+
 
 </div>
 
