@@ -31,7 +31,7 @@
         <input type="submit" value="削除" class="btn">
     </form>
 
-    <input type="button" name="cancel" value="キャンセル" onclick="history.back()" class="btn">
+    <input type="button" name="cancel" value="戻る" onclick="history.back()" class="btn">
 
 </div>
 
