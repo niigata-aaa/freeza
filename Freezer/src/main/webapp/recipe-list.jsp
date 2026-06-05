@@ -7,10 +7,42 @@
 <title>管理者レシピ一覧</title>
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/localrecipeTable.css">
-<style>html, body{
+<style>:root{
+    --footer-height: 70px;   /* 固定フッターの高さに合わせる */
+}
+
+html, body{
     height: 100%;
     margin: 0;
     overflow: hidden;        /* 画面全体はスクロールさせない */
+}
+
+/* containerの幅は今のまま */
+.container{
+    height: calc(90vh - var(--footer-height));
+    box-sizing: border-box;
+    padding-bottom: 10px;    /* フッターにピッタリくっつきすぎない用 */
+}
+
+/* cardを縦レイアウトに */
+.card{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* 2. テーブルの下が隠れてしまう問題を解決する設定 */
+.table_title {
+    flex: 1;             /* cardの中の残りの高さをいっぱいに使う */
+    min-height: 0;       /* flex子要素の高さバグを防ぐ */
+    display: flex;       /* 中の .example を正しく広げる */
+    flex-direction: column;
+}
+
+
+
 }</style>
 </head>
 <body>
