@@ -8,6 +8,13 @@
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/localrecipeTable.css">
 <style>
+.photo-upload-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    cursor: pointer;
+}
 .photo-circle-btn {
     width: 80px;
     height: 80px;
@@ -43,9 +50,9 @@
               <td>レシピ名：</td>
               <td><input required type="text" name="recipename" size="10" maxlength="50"></td>
           </tr>
-            <tr>
+          <tr>
               <td>レシピ画像：</td>
-              <td><input required type="file" id="recipePhoto" name="recipePhoto" accept="image/*" class="file-input"></td>
+              <td><input type="file" id="recipePhoto" name="recipePhoto" accept="image/*" class="file-input"></td>
           </tr> 
           <tr>
               <td>レシピ材料：</td>
