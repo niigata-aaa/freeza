@@ -10,6 +10,7 @@
 </head>
 
 <body>
+
 <div class="manaita MANA1"></div>
 <div class="totte TOTE1"></div>
 <div class="bg-bubble b1"></div>
