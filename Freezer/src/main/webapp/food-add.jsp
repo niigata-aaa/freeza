@@ -84,11 +84,10 @@
 	
 	<form action="food-add-confirm-servlet" method="POST" enctype="multipart/form-data" style="width: 100%;" onsubmit="return validateForm()">
 	
-		<label class="photo-upload-wrapper">
-			<input type="file" id="foodPhoto" name="foodPhoto" accept="image/*" class="file-input-hidden">
-			<div class="photo-circle-btn">＋</div>
-			<span class="upload-label-text-local">写真を追加</span>
-		</label>
+
+	    食材画像：<input required type="file" id="foodPhoto" name="foodPhoto" accept="image/*" class="file-input-hidden">
+
+
     	
 		食材名：<input required type="text" name="foodName">
 				<input required type="number" name="number" min="1" step="1">
