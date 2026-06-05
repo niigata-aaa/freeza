@@ -23,7 +23,7 @@ request.setCharacterEncoding("UTF-8");
 	<form action="recipe-delete-servlet" method="POST">
 		<input type="hidden" name="RecipeId"
 			value="<%=request.getParameter("RecipeId")%>"> <input
-			type="submit" value="削除する">
+			type="submit" value="削除する" class="btn">
 	</form>
 	<input type="button" name="back" value="戻る" onclick="history.back()" class="btn">
 </body>

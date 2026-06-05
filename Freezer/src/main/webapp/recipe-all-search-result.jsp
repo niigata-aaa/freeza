@@ -41,7 +41,7 @@ if (recipeList != null) {
 <div class="example">
 <table>
 
-<div class="table_title"><th>レシピ名</th><th>レシピ写真</th><th>材料</th><th>手順</th><th>何人前</th></div>
+<div class="table_title"><th>レシピ名</th><th>レシピ写真</th><th>材料</th><th>詳細表示</th></div>
 <%
 if (recipeList != null && !recipeList.isEmpty()) {
    for(RecipeBean recipe : recipeList){
@@ -58,8 +58,8 @@ if (recipeList != null && !recipeList.isEmpty()) {
     	<% } %></td>
     	
    <td><%=recipe.getRecipeIngredients()%></td>
-   <td><%=recipe.getRecipeHowto()%></td>
-   <td><%=recipe.getRecipeServings()%></td>
+<%--    <td><%=recipe.getRecipeHowto()%></td>
+   <td><%=recipe.getRecipeServings()%></td> --%>
    
 <td>
 <form action="recipe-all-detail-servlet" method="POST">
