@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>管理者レシピ詳細画面</title>
+<title>管理者レシピ詳細</title>
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/localrecipeTable.css">
 </head>
