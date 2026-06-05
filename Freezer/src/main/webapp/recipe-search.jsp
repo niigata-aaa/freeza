@@ -27,6 +27,9 @@
 <form action="recipe-list-servlet" method="post">
    <input type="submit" value="レシピ一覧へ戻る" class="btn">
 </form>
+    <button type="button" onclick="history.back();" class="btn">
+    前の画面に戻る
+   	</button>
 <hr>
 <div>
    <%@ include file="recipe-search-result.jsp" %>

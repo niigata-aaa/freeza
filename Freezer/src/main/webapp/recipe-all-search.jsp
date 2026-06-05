@@ -33,6 +33,9 @@
     <br><br>
 
     <input type="submit" value="検索" class="btn">
+    <button type="button" onclick="history.back();" class="btn">
+    前の画面に戻る
+   	</button>
 
 </form>
 
@@ -46,7 +49,9 @@
 
 <form action="recipe-all-list-servlet" method="post">
 
-    <input type="submit" value="レシピ一覧へ戻る" class="btn">
+<%--    <input type="submit" value="レシピ一覧へ戻る" class="btn"> --%> 
+    <%-- 前の入力画面に戻るボタン --%>
+<a href="javascript:history.back();" class="btn">戻る</a>
 
 </form>
 </div>
