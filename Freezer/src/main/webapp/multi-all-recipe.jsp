@@ -41,7 +41,9 @@ html, body{
     flex-direction: column;
 }
 
-
+.btn {
+	width: 80px;
+}
 
 }</style>
 </head>
@@ -56,7 +58,7 @@ html, body{
         <div class="card">
 <h2>レシピ一覧</h2>        
 <form action="recipe-all-search2-servlet" method="post" style="white-space: nowrap;">レシピ名または食材名: <input required type="text" maxlength="50" name="recipeName" style="width: 240px;"> <input type="submit" value=" 検索 " class="btn"></form>
-<a href="recipe-all-regist-form.jsp" class="btn">レシピ投稿</a>
+<a href="recipe-all-regist-form.jsp" class="btn">レシピ投稿</a><br>
 <div class="table_title"></div>
 
 <%
