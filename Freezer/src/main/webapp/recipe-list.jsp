@@ -7,7 +7,8 @@
 <title>管理者レシピ一覧</title>
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/localrecipeTable.css">
-<style>:root{
+<style>
+:root{
     --footer-height: 70px;   /* 固定フッターの高さに合わせる */
 }
 
@@ -41,7 +42,9 @@ html, body{
     flex-direction: column;
 }
 
-
+.btn {
+	width: 80px;
+}
 
 }</style>
 </head>
@@ -52,9 +55,16 @@ html, body{
 <div class="bg-bubbleaA bb1"></div>
 <div class="bg-bubble2 b2"></div>
 <div class="bg-bubble3 b3"></div>
+
+<div class="container">
+<div class="card">
 <h2>管理者レシピ一覧画面</h2>
 <form action="recipe-search-servlet" method="post" style="white-space: nowrap;">レシピ名または食材名: <input required type="text" maxlength="50" name="recipeName" style="width: 240px;"> <input type="submit" value="検索" class="btn"></form>
-<a href="logout.jsp">ログアウト</a>
+<br>
+<a class="btn btn-sub" href="logout.jsp">
+ログアウト
+</a>
+<br>
 <%
 List<RecipeBean> recipeList = (List<RecipeBean>) request.getAttribute("recipeList");
 %>
@@ -91,6 +101,8 @@ List<RecipeBean> recipeList = (List<RecipeBean>) request.getAttribute("recipeLis
 }
 %>
 </table>
+</div>
+</div>
 </div>
 <%-- <form action="recipe-search-servlet" method="post">
    レシピ名または食材名:
