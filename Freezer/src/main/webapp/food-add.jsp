@@ -81,10 +81,11 @@
 <div class="card">
 <h2>食材追加</h2>
 	
-	<form action="food-add-confirm-servlet" method="POST" enctype="multipart/form-data" style="width: 100%;">
+	
+	<form action="food-add-confirm-servlet" method="POST" enctype="multipart/form-data" style="width: 100%;" onsubmit="return validateForm()">
 	
 		<label class="photo-upload-wrapper">
-			<input required type="file" id="foodPhoto" name="foodPhoto" accept="image/*" class="file-input-hidden">
+			<input type="file" id="foodPhoto" name="foodPhoto" accept="image/*" class="file-input-hidden">
 			<div class="photo-circle-btn">＋</div>
 			<span class="upload-label-text-local">写真を追加</span>
 		</label>
@@ -107,6 +108,21 @@
 </div>
 
 </div>
+
+
+<script>
+function validateForm() {
+    var fileInput = document.getElementById('foodPhoto');
+    
+    // 写真（ファイル）の選択数が0個だった場合の判定
+    if (fileInput.files.length === 0) {
+        alert('写真を追加してください！'); // ポップアップを表示
+        return false; 
+    }
+    return true; 
+}
+</script>
+
 </body>
 
 <%@ include file="footer.jsp" %>
