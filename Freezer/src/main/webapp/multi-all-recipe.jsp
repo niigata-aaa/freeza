@@ -22,10 +22,10 @@
 <div class="bg-bubble3 b3"></div>
 <div class="container">
         <div class="card">
-        
+<h2>レシピ一覧</h2>        
 <form action="recipe-all-search2-servlet" method="post" style="white-space: nowrap;">レシピ名または食材名: <input required type="text" maxlength="50" name="recipeName" style="width: 240px;"> <input type="submit" value=" 検索 " class="btn"></form>
 <a href="recipe-all-regist-form.jsp" class="btn">レシピ投稿</a>
-<div class="table_title">レシピ一覧</div>
+<div class="table_title"></div>
 
 <%
 List<RecipeBean> recipeList = (List<RecipeBean>) request.getAttribute("recipeList");
